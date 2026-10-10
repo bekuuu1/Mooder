@@ -16,25 +16,21 @@
 
 ### 1. Overview Dashboard
 High-level telemetry across the 114,000-track dataset, top hit tracks with audio preview synthesis, and genre distribution.
-![Overview Dashboard](assets/screenshots/overview.png)
 
 ---
 
 ### 2. Music DNA Analyzer
 Detailed 5-dimensional acoustic feature breakdown, spinning vinyl turntable preview, key/tempo analysis, and 5-axis radar polygon comparing against genre averages.
-![Music DNA Analyzer](assets/screenshots/music-dna.png)
 
 ---
 
 ### 3. Mood Explorer (2D Acoustic Plane)
 Interactive 2D Cartesian Quadrant point cloud mapping Energy vs. Valence across 4 emotional zones (Intense, Happy & Energetic, Calm & Sad, Peaceful & Positive) with hover HUD tooltips and nearest neighbor recommendations.
-![Mood Explorer](assets/screenshots/mood-explorer.png)
 
 ---
 
 ### 4. Mood Playlist Generator
 Atmosphere-based synthesizer allowing listeners to pick their vibe (Happy, Chill, Energetic, Melancholic, Focus, Workout), fine-tune acoustic sliders, and generate an instant 25-track playlist with audio playback and CSV download.
-![Playlist Generator](assets/screenshots/playlist-generator.png)
 
 ---
 
