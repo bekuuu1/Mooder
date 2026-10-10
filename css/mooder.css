@@ -1,0 +1,164 @@
+/* Mooder - Obsidian Sonic Intelligence Custom Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --surface-void: #090D16;
+  --surface-card: #0D111C;
+  --surface-elevated: #131A29;
+  --surface-stroke: #1F293D;
+  --surface-stroke-high: #2E3B52;
+  --primary-emerald: #1DB954;
+  --primary-neon: #53E076;
+  --secondary-cyan: #00F2FE;
+  --secondary-cyan-glow: rgba(0, 242, 254, 0.4);
+  --tertiary-violet: #8A2BE2;
+  --sonic-coral: #FF4B72;
+  --warm-amber: #FFB300;
+}
+
+body {
+  background-color: #0f131c;
+  color: #dfe2ef;
+  font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0e17;
+}
+::-webkit-scrollbar-thumb {
+  background: #262a34;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #31353f;
+}
+
+/* Tabular numbers for all metrics */
+.font-mono-telemetry,
+[class*="metric-"],
+[class*="label-code"] {
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+/* Vinyl rotation animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.vinyl-record {
+  animation: spin-slow 16s linear infinite;
+  animation-play-state: paused;
+}
+
+.vinyl-record.playing {
+  animation-play-state: running;
+}
+
+/* Neon Glows */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(29, 185, 84, 0.45);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.45);
+}
+
+.glow-violet {
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.45);
+}
+
+.glow-coral {
+  box-shadow: 0 0 20px rgba(255, 75, 114, 0.45);
+}
+
+/* Hairline Glass Panels */
+.obsidian-card {
+  background-color: rgba(13, 17, 28, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #1F293D;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.obsidian-card:hover {
+  border-color: #2E3B52;
+}
+
+/* Sliders */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #1c1f29;
+  height: 6px;
+  border-radius: 9999px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #dfe2ef;
+  border: 2px solid #0f131c;
+  box-shadow: 0 0 10px rgba(83, 224, 118, 0.7);
+  margin-top: -5px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 14px rgba(83, 224, 118, 0.9);
+}
+
+/* Toast Notification */
+#mooder-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: #131A29;
+  border: 1px solid #2E3B52;
+  border-left: 4px solid #53E076;
+  border-radius: 8px;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.6);
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#mooder-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Global Command Palette Modal */
+#cmd-palette-backdrop {
+  display: none;
+}
+#cmd-palette-backdrop.open {
+  display: flex;
+}

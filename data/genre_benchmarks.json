@@ -1,0 +1,3422 @@
+{
+  "acoustic": {
+    "energy": {
+      "mean": 0.435,
+      "median": 0.396
+    },
+    "valence": {
+      "mean": 0.424,
+      "median": 0.374
+    },
+    "danceability": {
+      "mean": 0.55,
+      "median": 0.559
+    },
+    "acousticness": {
+      "mean": 0.567,
+      "median": 0.692
+    },
+    "instrumentalness": {
+      "mean": 0.038,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.043,
+      "median": 0.035
+    },
+    "liveness": {
+      "mean": 0.153,
+      "median": 0.115
+    }
+  },
+  "afrobeat": {
+    "energy": {
+      "mean": 0.703,
+      "median": 0.727
+    },
+    "valence": {
+      "mean": 0.699,
+      "median": 0.731
+    },
+    "danceability": {
+      "mean": 0.67,
+      "median": 0.691
+    },
+    "acousticness": {
+      "mean": 0.271,
+      "median": 0.188
+    },
+    "instrumentalness": {
+      "mean": 0.253,
+      "median": 0.008
+    },
+    "speechiness": {
+      "mean": 0.087,
+      "median": 0.055
+    },
+    "liveness": {
+      "mean": 0.185,
+      "median": 0.118
+    }
+  },
+  "alt-rock": {
+    "energy": {
+      "mean": 0.754,
+      "median": 0.8
+    },
+    "valence": {
+      "mean": 0.518,
+      "median": 0.526
+    },
+    "danceability": {
+      "mean": 0.534,
+      "median": 0.543
+    },
+    "acousticness": {
+      "mean": 0.122,
+      "median": 0.026
+    },
+    "instrumentalness": {
+      "mean": 0.054,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.055,
+      "median": 0.042
+    },
+    "liveness": {
+      "mean": 0.21,
+      "median": 0.138
+    }
+  },
+  "alternative": {
+    "energy": {
+      "mean": 0.72,
+      "median": 0.745
+    },
+    "valence": {
+      "mean": 0.496,
+      "median": 0.485
+    },
+    "danceability": {
+      "mean": 0.56,
+      "median": 0.56
+    },
+    "acousticness": {
+      "mean": 0.148,
+      "median": 0.037
+    },
+    "instrumentalness": {
+      "mean": 0.038,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.07,
+      "median": 0.049
+    },
+    "liveness": {
+      "mean": 0.201,
+      "median": 0.144
+    }
+  },
+  "ambient": {
+    "energy": {
+      "mean": 0.237,
+      "median": 0.178
+    },
+    "valence": {
+      "mean": 0.167,
+      "median": 0.125
+    },
+    "danceability": {
+      "mean": 0.368,
+      "median": 0.364
+    },
+    "acousticness": {
+      "mean": 0.777,
+      "median": 0.921
+    },
+    "instrumentalness": {
+      "mean": 0.676,
+      "median": 0.875
+    },
+    "speechiness": {
+      "mean": 0.042,
+      "median": 0.037
+    },
+    "liveness": {
+      "mean": 0.129,
+      "median": 0.106
+    }
+  },
+  "anime": {
+    "energy": {
+      "mean": 0.674,
+      "median": 0.774
+    },
+    "valence": {
+      "mean": 0.434,
+      "median": 0.434
+    },
+    "danceability": {
+      "mean": 0.537,
+      "median": 0.536
+    },
+    "acousticness": {
+      "mean": 0.268,
+      "median": 0.09
+    },
+    "instrumentalness": {
+      "mean": 0.263,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.087,
+      "median": 0.054
+    },
+    "liveness": {
+      "mean": 0.197,
+      "median": 0.133
+    }
+  },
+  "black-metal": {
+    "energy": {
+      "mean": 0.875,
+      "median": 0.937
+    },
+    "valence": {
+      "mean": 0.192,
+      "median": 0.152
+    },
+    "danceability": {
+      "mean": 0.296,
+      "median": 0.282
+    },
+    "acousticness": {
+      "mean": 0.027,
+      "median": 0.0
+    },
+    "instrumentalness": {
+      "mean": 0.441,
+      "median": 0.427
+    },
+    "speechiness": {
+      "mean": 0.087,
+      "median": 0.075
+    },
+    "liveness": {
+      "mean": 0.241,
+      "median": 0.196
+    }
+  },
+  "bluegrass": {
+    "energy": {
+      "mean": 0.53,
+      "median": 0.542
+    },
+    "valence": {
+      "mean": 0.635,
+      "median": 0.665
+    },
+    "danceability": {
+      "mean": 0.535,
+      "median": 0.544
+    },
+    "acousticness": {
+      "mean": 0.557,
+      "median": 0.598
+    },
+    "instrumentalness": {
+      "mean": 0.137,
+      "median": 0.001
+    },
+    "speechiness": {
+      "mean": 0.039,
+      "median": 0.033
+    },
+    "liveness": {
+      "mean": 0.228,
+      "median": 0.143
+    }
+  },
+  "blues": {
+    "energy": {
+      "mean": 0.582,
+      "median": 0.584
+    },
+    "valence": {
+      "mean": 0.604,
+      "median": 0.639
+    },
+    "danceability": {
+      "mean": 0.569,
+      "median": 0.579
+    },
+    "acousticness": {
+      "mean": 0.398,
+      "median": 0.346
+    },
+    "instrumentalness": {
+      "mean": 0.034,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.064,
+      "median": 0.043
+    },
+    "liveness": {
+      "mean": 0.192,
+      "median": 0.151
+    }
+  },
+  "brazil": {
+    "energy": {
+      "mean": 0.621,
+      "median": 0.625
+    },
+    "valence": {
+      "mean": 0.47,
+      "median": 0.434
+    },
+    "danceability": {
+      "mean": 0.563,
+      "median": 0.563
+    },
+    "acousticness": {
+      "mean": 0.332,
+      "median": 0.277
+    },
+    "instrumentalness": {
+      "mean": 0.013,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.096,
+      "median": 0.042
+    },
+    "liveness": {
+      "mean": 0.298,
+      "median": 0.16
+    }
+  },
+  "breakbeat": {
+    "energy": {
+      "mean": 0.853,
+      "median": 0.893
+    },
+    "valence": {
+      "mean": 0.475,
+      "median": 0.473
+    },
+    "danceability": {
+      "mean": 0.646,
+      "median": 0.655
+    },
+    "acousticness": {
+      "mean": 0.031,
+      "median": 0.004
+    },
+    "instrumentalness": {
+      "mean": 0.396,
+      "median": 0.333
+    },
+    "speechiness": {
+      "mean": 0.086,
+      "median": 0.058
+    },
+    "liveness": {
+      "mean": 0.22,
+      "median": 0.13
+    }
+  },
+  "british": {
+    "energy": {
+      "mean": 0.507,
+      "median": 0.496
+    },
+    "valence": {
+      "mean": 0.44,
+      "median": 0.406
+    },
+    "danceability": {
+      "mean": 0.501,
+      "median": 0.519
+    },
+    "acousticness": {
+      "mean": 0.428,
+      "median": 0.397
+    },
+    "instrumentalness": {
+      "mean": 0.194,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.05,
+      "median": 0.038
+    },
+    "liveness": {
+      "mean": 0.174,
+      "median": 0.117
+    }
+  },
+  "cantopop": {
+    "energy": {
+      "mean": 0.462,
+      "median": 0.439
+    },
+    "valence": {
+      "mean": 0.394,
+      "median": 0.362
+    },
+    "danceability": {
+      "mean": 0.548,
+      "median": 0.553
+    },
+    "acousticness": {
+      "mean": 0.536,
+      "median": 0.588
+    },
+    "instrumentalness": {
+      "mean": 0.013,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.039,
+      "median": 0.033
+    },
+    "liveness": {
+      "mean": 0.192,
+      "median": 0.129
+    }
+  },
+  "chicago-house": {
+    "energy": {
+      "mean": 0.733,
+      "median": 0.751
+    },
+    "valence": {
+      "mean": 0.587,
+      "median": 0.6
+    },
+    "danceability": {
+      "mean": 0.766,
+      "median": 0.779
+    },
+    "acousticness": {
+      "mean": 0.035,
+      "median": 0.005
+    },
+    "instrumentalness": {
+      "mean": 0.483,
+      "median": 0.571
+    },
+    "speechiness": {
+      "mean": 0.074,
+      "median": 0.057
+    },
+    "liveness": {
+      "mean": 0.138,
+      "median": 0.094
+    }
+  },
+  "children": {
+    "energy": {
+      "mean": 0.495,
+      "median": 0.474
+    },
+    "valence": {
+      "mean": 0.694,
+      "median": 0.767
+    },
+    "danceability": {
+      "mean": 0.716,
+      "median": 0.728
+    },
+    "acousticness": {
+      "mean": 0.499,
+      "median": 0.551
+    },
+    "instrumentalness": {
+      "mean": 0.061,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.093,
+      "median": 0.049
+    },
+    "liveness": {
+      "mean": 0.181,
+      "median": 0.119
+    }
+  },
+  "chill": {
+    "energy": {
+      "mean": 0.427,
+      "median": 0.415
+    },
+    "valence": {
+      "mean": 0.404,
+      "median": 0.372
+    },
+    "danceability": {
+      "mean": 0.664,
+      "median": 0.674
+    },
+    "acousticness": {
+      "mean": 0.534,
+      "median": 0.568
+    },
+    "instrumentalness": {
+      "mean": 0.178,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.102,
+      "median": 0.059
+    },
+    "liveness": {
+      "mean": 0.168,
+      "median": 0.117
+    }
+  },
+  "classical": {
+    "energy": {
+      "mean": 0.19,
+      "median": 0.142
+    },
+    "valence": {
+      "mean": 0.381,
+      "median": 0.346
+    },
+    "danceability": {
+      "mean": 0.382,
+      "median": 0.377
+    },
+    "acousticness": {
+      "mean": 0.92,
+      "median": 0.973
+    },
+    "instrumentalness": {
+      "mean": 0.619,
+      "median": 0.865
+    },
+    "speechiness": {
+      "mean": 0.051,
+      "median": 0.043
+    },
+    "liveness": {
+      "mean": 0.167,
+      "median": 0.12
+    }
+  },
+  "club": {
+    "energy": {
+      "mean": 0.722,
+      "median": 0.768
+    },
+    "valence": {
+      "mean": 0.368,
+      "median": 0.325
+    },
+    "danceability": {
+      "mean": 0.603,
+      "median": 0.613
+    },
+    "acousticness": {
+      "mean": 0.159,
+      "median": 0.037
+    },
+    "instrumentalness": {
+      "mean": 0.348,
+      "median": 0.117
+    },
+    "speechiness": {
+      "mean": 0.094,
+      "median": 0.052
+    },
+    "liveness": {
+      "mean": 0.199,
+      "median": 0.129
+    }
+  },
+  "comedy": {
+    "energy": {
+      "mean": 0.7,
+      "median": 0.716
+    },
+    "valence": {
+      "mean": 0.455,
+      "median": 0.451
+    },
+    "danceability": {
+      "mean": 0.577,
+      "median": 0.569
+    },
+    "acousticness": {
+      "mean": 0.726,
+      "median": 0.802
+    },
+    "instrumentalness": {
+      "mean": 0.001,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.756,
+      "median": 0.917
+    },
+    "liveness": {
+      "mean": 0.662,
+      "median": 0.74
+    }
+  },
+  "country": {
+    "energy": {
+      "mean": 0.597,
+      "median": 0.612
+    },
+    "valence": {
+      "mean": 0.521,
+      "median": 0.515
+    },
+    "danceability": {
+      "mean": 0.555,
+      "median": 0.558
+    },
+    "acousticness": {
+      "mean": 0.321,
+      "median": 0.23
+    },
+    "instrumentalness": {
+      "mean": 0.006,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.042,
+      "median": 0.034
+    },
+    "liveness": {
+      "mean": 0.177,
+      "median": 0.121
+    }
+  },
+  "dance": {
+    "energy": {
+      "mean": 0.709,
+      "median": 0.716
+    },
+    "valence": {
+      "mean": 0.553,
+      "median": 0.56
+    },
+    "danceability": {
+      "mean": 0.688,
+      "median": 0.695
+    },
+    "acousticness": {
+      "mean": 0.131,
+      "median": 0.075
+    },
+    "instrumentalness": {
+      "mean": 0.008,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.088,
+      "median": 0.059
+    },
+    "liveness": {
+      "mean": 0.168,
+      "median": 0.121
+    }
+  },
+  "dancehall": {
+    "energy": {
+      "mean": 0.685,
+      "median": 0.691
+    },
+    "valence": {
+      "mean": 0.629,
+      "median": 0.632
+    },
+    "danceability": {
+      "mean": 0.734,
+      "median": 0.749
+    },
+    "acousticness": {
+      "mean": 0.215,
+      "median": 0.154
+    },
+    "instrumentalness": {
+      "mean": 0.007,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.187,
+      "median": 0.156
+    },
+    "liveness": {
+      "mean": 0.157,
+      "median": 0.112
+    }
+  },
+  "death-metal": {
+    "energy": {
+      "mean": 0.931,
+      "median": 0.961
+    },
+    "valence": {
+      "mean": 0.248,
+      "median": 0.218
+    },
+    "danceability": {
+      "mean": 0.368,
+      "median": 0.372
+    },
+    "acousticness": {
+      "mean": 0.007,
+      "median": 0.0
+    },
+    "instrumentalness": {
+      "mean": 0.276,
+      "median": 0.073
+    },
+    "speechiness": {
+      "mean": 0.111,
+      "median": 0.095
+    },
+    "liveness": {
+      "mean": 0.243,
+      "median": 0.199
+    }
+  },
+  "deep-house": {
+    "energy": {
+      "mean": 0.742,
+      "median": 0.758
+    },
+    "valence": {
+      "mean": 0.447,
+      "median": 0.436
+    },
+    "danceability": {
+      "mean": 0.71,
+      "median": 0.717
+    },
+    "acousticness": {
+      "mean": 0.101,
+      "median": 0.038
+    },
+    "instrumentalness": {
+      "mean": 0.238,
+      "median": 0.013
+    },
+    "speechiness": {
+      "mean": 0.06,
+      "median": 0.048
+    },
+    "liveness": {
+      "mean": 0.171,
+      "median": 0.119
+    }
+  },
+  "detroit-techno": {
+    "energy": {
+      "mean": 0.711,
+      "median": 0.734
+    },
+    "valence": {
+      "mean": 0.469,
+      "median": 0.466
+    },
+    "danceability": {
+      "mean": 0.723,
+      "median": 0.746
+    },
+    "acousticness": {
+      "mean": 0.066,
+      "median": 0.009
+    },
+    "instrumentalness": {
+      "mean": 0.7,
+      "median": 0.858
+    },
+    "speechiness": {
+      "mean": 0.073,
+      "median": 0.057
+    },
+    "liveness": {
+      "mean": 0.155,
+      "median": 0.106
+    }
+  },
+  "disco": {
+    "energy": {
+      "mean": 0.738,
+      "median": 0.777
+    },
+    "valence": {
+      "mean": 0.671,
+      "median": 0.739
+    },
+    "danceability": {
+      "mean": 0.677,
+      "median": 0.693
+    },
+    "acousticness": {
+      "mean": 0.166,
+      "median": 0.084
+    },
+    "instrumentalness": {
+      "mean": 0.081,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.059,
+      "median": 0.044
+    },
+    "liveness": {
+      "mean": 0.195,
+      "median": 0.133
+    }
+  },
+  "disney": {
+    "energy": {
+      "mean": 0.303,
+      "median": 0.259
+    },
+    "valence": {
+      "mean": 0.369,
+      "median": 0.313
+    },
+    "danceability": {
+      "mean": 0.463,
+      "median": 0.458
+    },
+    "acousticness": {
+      "mean": 0.743,
+      "median": 0.835
+    },
+    "instrumentalness": {
+      "mean": 0.384,
+      "median": 0.025
+    },
+    "speechiness": {
+      "mean": 0.075,
+      "median": 0.045
+    },
+    "liveness": {
+      "mean": 0.169,
+      "median": 0.118
+    }
+  },
+  "drum-and-bass": {
+    "energy": {
+      "mean": 0.877,
+      "median": 0.905
+    },
+    "valence": {
+      "mean": 0.321,
+      "median": 0.28
+    },
+    "danceability": {
+      "mean": 0.535,
+      "median": 0.527
+    },
+    "acousticness": {
+      "mean": 0.026,
+      "median": 0.003
+    },
+    "instrumentalness": {
+      "mean": 0.371,
+      "median": 0.256
+    },
+    "speechiness": {
+      "mean": 0.092,
+      "median": 0.059
+    },
+    "liveness": {
+      "mean": 0.221,
+      "median": 0.147
+    }
+  },
+  "dub": {
+    "energy": {
+      "mean": 0.715,
+      "median": 0.721
+    },
+    "valence": {
+      "mean": 0.387,
+      "median": 0.33
+    },
+    "danceability": {
+      "mean": 0.575,
+      "median": 0.561
+    },
+    "acousticness": {
+      "mean": 0.122,
+      "median": 0.051
+    },
+    "instrumentalness": {
+      "mean": 0.089,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.097,
+      "median": 0.057
+    },
+    "liveness": {
+      "mean": 0.19,
+      "median": 0.123
+    }
+  },
+  "dubstep": {
+    "energy": {
+      "mean": 0.759,
+      "median": 0.771
+    },
+    "valence": {
+      "mean": 0.272,
+      "median": 0.239
+    },
+    "danceability": {
+      "mean": 0.518,
+      "median": 0.517
+    },
+    "acousticness": {
+      "mean": 0.114,
+      "median": 0.043
+    },
+    "instrumentalness": {
+      "mean": 0.093,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.09,
+      "median": 0.053
+    },
+    "liveness": {
+      "mean": 0.2,
+      "median": 0.133
+    }
+  },
+  "edm": {
+    "energy": {
+      "mean": 0.756,
+      "median": 0.77
+    },
+    "valence": {
+      "mean": 0.465,
+      "median": 0.466
+    },
+    "danceability": {
+      "mean": 0.648,
+      "median": 0.66
+    },
+    "acousticness": {
+      "mean": 0.114,
+      "median": 0.063
+    },
+    "instrumentalness": {
+      "mean": 0.04,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.07,
+      "median": 0.05
+    },
+    "liveness": {
+      "mean": 0.193,
+      "median": 0.14
+    }
+  },
+  "electro": {
+    "energy": {
+      "mean": 0.665,
+      "median": 0.681
+    },
+    "valence": {
+      "mean": 0.467,
+      "median": 0.466
+    },
+    "danceability": {
+      "mean": 0.652,
+      "median": 0.665
+    },
+    "acousticness": {
+      "mean": 0.228,
+      "median": 0.131
+    },
+    "instrumentalness": {
+      "mean": 0.038,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.079,
+      "median": 0.052
+    },
+    "liveness": {
+      "mean": 0.185,
+      "median": 0.13
+    }
+  },
+  "electronic": {
+    "energy": {
+      "mean": 0.695,
+      "median": 0.719
+    },
+    "valence": {
+      "mean": 0.392,
+      "median": 0.363
+    },
+    "danceability": {
+      "mean": 0.653,
+      "median": 0.664
+    },
+    "acousticness": {
+      "mean": 0.177,
+      "median": 0.063
+    },
+    "instrumentalness": {
+      "mean": 0.249,
+      "median": 0.01
+    },
+    "speechiness": {
+      "mean": 0.082,
+      "median": 0.049
+    },
+    "liveness": {
+      "mean": 0.191,
+      "median": 0.122
+    }
+  },
+  "emo": {
+    "energy": {
+      "mean": 0.67,
+      "median": 0.661
+    },
+    "valence": {
+      "mean": 0.441,
+      "median": 0.433
+    },
+    "danceability": {
+      "mean": 0.599,
+      "median": 0.602
+    },
+    "acousticness": {
+      "mean": 0.195,
+      "median": 0.072
+    },
+    "instrumentalness": {
+      "mean": 0.03,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.109,
+      "median": 0.064
+    },
+    "liveness": {
+      "mean": 0.184,
+      "median": 0.125
+    }
+  },
+  "folk": {
+    "energy": {
+      "mean": 0.546,
+      "median": 0.55
+    },
+    "valence": {
+      "mean": 0.491,
+      "median": 0.478
+    },
+    "danceability": {
+      "mean": 0.559,
+      "median": 0.564
+    },
+    "acousticness": {
+      "mean": 0.475,
+      "median": 0.456
+    },
+    "instrumentalness": {
+      "mean": 0.038,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.059,
+      "median": 0.038
+    },
+    "liveness": {
+      "mean": 0.176,
+      "median": 0.115
+    }
+  },
+  "forro": {
+    "energy": {
+      "mean": 0.79,
+      "median": 0.819
+    },
+    "valence": {
+      "mean": 0.761,
+      "median": 0.788
+    },
+    "danceability": {
+      "mean": 0.65,
+      "median": 0.657
+    },
+    "acousticness": {
+      "mean": 0.398,
+      "median": 0.395
+    },
+    "instrumentalness": {
+      "mean": 0.001,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.057,
+      "median": 0.045
+    },
+    "liveness": {
+      "mean": 0.295,
+      "median": 0.214
+    }
+  },
+  "french": {
+    "energy": {
+      "mean": 0.595,
+      "median": 0.609
+    },
+    "valence": {
+      "mean": 0.43,
+      "median": 0.412
+    },
+    "danceability": {
+      "mean": 0.651,
+      "median": 0.686
+    },
+    "acousticness": {
+      "mean": 0.35,
+      "median": 0.28
+    },
+    "instrumentalness": {
+      "mean": 0.159,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.127,
+      "median": 0.061
+    },
+    "liveness": {
+      "mean": 0.174,
+      "median": 0.119
+    }
+  },
+  "funk": {
+    "energy": {
+      "mean": 0.633,
+      "median": 0.635
+    },
+    "valence": {
+      "mean": 0.6,
+      "median": 0.621
+    },
+    "danceability": {
+      "mean": 0.678,
+      "median": 0.7
+    },
+    "acousticness": {
+      "mean": 0.3,
+      "median": 0.254
+    },
+    "instrumentalness": {
+      "mean": 0.008,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.152,
+      "median": 0.079
+    },
+    "liveness": {
+      "mean": 0.181,
+      "median": 0.123
+    }
+  },
+  "garage": {
+    "energy": {
+      "mean": 0.744,
+      "median": 0.799
+    },
+    "valence": {
+      "mean": 0.518,
+      "median": 0.517
+    },
+    "danceability": {
+      "mean": 0.484,
+      "median": 0.495
+    },
+    "acousticness": {
+      "mean": 0.168,
+      "median": 0.029
+    },
+    "instrumentalness": {
+      "mean": 0.19,
+      "median": 0.003
+    },
+    "speechiness": {
+      "mean": 0.066,
+      "median": 0.045
+    },
+    "liveness": {
+      "mean": 0.213,
+      "median": 0.151
+    }
+  },
+  "german": {
+    "energy": {
+      "mean": 0.532,
+      "median": 0.597
+    },
+    "valence": {
+      "mean": 0.379,
+      "median": 0.372
+    },
+    "danceability": {
+      "mean": 0.524,
+      "median": 0.579
+    },
+    "acousticness": {
+      "mean": 0.382,
+      "median": 0.25
+    },
+    "instrumentalness": {
+      "mean": 0.289,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.098,
+      "median": 0.049
+    },
+    "liveness": {
+      "mean": 0.196,
+      "median": 0.124
+    }
+  },
+  "gospel": {
+    "energy": {
+      "mean": 0.576,
+      "median": 0.583
+    },
+    "valence": {
+      "mean": 0.321,
+      "median": 0.287
+    },
+    "danceability": {
+      "mean": 0.473,
+      "median": 0.479
+    },
+    "acousticness": {
+      "mean": 0.377,
+      "median": 0.351
+    },
+    "instrumentalness": {
+      "mean": 0.003,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.041,
+      "median": 0.034
+    },
+    "liveness": {
+      "mean": 0.299,
+      "median": 0.156
+    }
+  },
+  "goth": {
+    "energy": {
+      "mean": 0.741,
+      "median": 0.792
+    },
+    "valence": {
+      "mean": 0.444,
+      "median": 0.416
+    },
+    "danceability": {
+      "mean": 0.479,
+      "median": 0.476
+    },
+    "acousticness": {
+      "mean": 0.164,
+      "median": 0.022
+    },
+    "instrumentalness": {
+      "mean": 0.119,
+      "median": 0.001
+    },
+    "speechiness": {
+      "mean": 0.073,
+      "median": 0.046
+    },
+    "liveness": {
+      "mean": 0.23,
+      "median": 0.146
+    }
+  },
+  "grindcore": {
+    "energy": {
+      "mean": 0.924,
+      "median": 0.963
+    },
+    "valence": {
+      "mean": 0.216,
+      "median": 0.173
+    },
+    "danceability": {
+      "mean": 0.272,
+      "median": 0.265
+    },
+    "acousticness": {
+      "mean": 0.009,
+      "median": 0.0
+    },
+    "instrumentalness": {
+      "mean": 0.538,
+      "median": 0.676
+    },
+    "speechiness": {
+      "mean": 0.137,
+      "median": 0.123
+    },
+    "liveness": {
+      "mean": 0.281,
+      "median": 0.258
+    }
+  },
+  "groove": {
+    "energy": {
+      "mean": 0.764,
+      "median": 0.809
+    },
+    "valence": {
+      "mean": 0.426,
+      "median": 0.396
+    },
+    "danceability": {
+      "mean": 0.584,
+      "median": 0.61
+    },
+    "acousticness": {
+      "mean": 0.132,
+      "median": 0.024
+    },
+    "instrumentalness": {
+      "mean": 0.146,
+      "median": 0.001
+    },
+    "speechiness": {
+      "mean": 0.071,
+      "median": 0.05
+    },
+    "liveness": {
+      "mean": 0.231,
+      "median": 0.136
+    }
+  },
+  "grunge": {
+    "energy": {
+      "mean": 0.803,
+      "median": 0.85
+    },
+    "valence": {
+      "mean": 0.4,
+      "median": 0.378
+    },
+    "danceability": {
+      "mean": 0.457,
+      "median": 0.468
+    },
+    "acousticness": {
+      "mean": 0.053,
+      "median": 0.003
+    },
+    "instrumentalness": {
+      "mean": 0.037,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.061,
+      "median": 0.045
+    },
+    "liveness": {
+      "mean": 0.222,
+      "median": 0.145
+    }
+  },
+  "guitar": {
+    "energy": {
+      "mean": 0.325,
+      "median": 0.279
+    },
+    "valence": {
+      "mean": 0.432,
+      "median": 0.386
+    },
+    "danceability": {
+      "mean": 0.54,
+      "median": 0.562
+    },
+    "acousticness": {
+      "mean": 0.773,
+      "median": 0.861
+    },
+    "instrumentalness": {
+      "mean": 0.516,
+      "median": 0.776
+    },
+    "speechiness": {
+      "mean": 0.051,
+      "median": 0.045
+    },
+    "liveness": {
+      "mean": 0.15,
+      "median": 0.112
+    }
+  },
+  "happy": {
+    "energy": {
+      "mean": 0.911,
+      "median": 0.945
+    },
+    "valence": {
+      "mean": 0.327,
+      "median": 0.274
+    },
+    "danceability": {
+      "mean": 0.553,
+      "median": 0.545
+    },
+    "acousticness": {
+      "mean": 0.057,
+      "median": 0.011
+    },
+    "instrumentalness": {
+      "mean": 0.264,
+      "median": 0.067
+    },
+    "speechiness": {
+      "mean": 0.12,
+      "median": 0.083
+    },
+    "liveness": {
+      "mean": 0.284,
+      "median": 0.245
+    }
+  },
+  "hard-rock": {
+    "energy": {
+      "mean": 0.795,
+      "median": 0.844
+    },
+    "valence": {
+      "mean": 0.514,
+      "median": 0.508
+    },
+    "danceability": {
+      "mean": 0.482,
+      "median": 0.482
+    },
+    "acousticness": {
+      "mean": 0.09,
+      "median": 0.013
+    },
+    "instrumentalness": {
+      "mean": 0.05,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.066,
+      "median": 0.048
+    },
+    "liveness": {
+      "mean": 0.221,
+      "median": 0.143
+    }
+  },
+  "hardcore": {
+    "energy": {
+      "mean": 0.842,
+      "median": 0.898
+    },
+    "valence": {
+      "mean": 0.496,
+      "median": 0.501
+    },
+    "danceability": {
+      "mean": 0.546,
+      "median": 0.528
+    },
+    "acousticness": {
+      "mean": 0.065,
+      "median": 0.008
+    },
+    "instrumentalness": {
+      "mean": 0.069,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.149,
+      "median": 0.107
+    },
+    "liveness": {
+      "mean": 0.235,
+      "median": 0.182
+    }
+  },
+  "hardstyle": {
+    "energy": {
+      "mean": 0.901,
+      "median": 0.926
+    },
+    "valence": {
+      "mean": 0.312,
+      "median": 0.274
+    },
+    "danceability": {
+      "mean": 0.539,
+      "median": 0.539
+    },
+    "acousticness": {
+      "mean": 0.051,
+      "median": 0.018
+    },
+    "instrumentalness": {
+      "mean": 0.143,
+      "median": 0.001
+    },
+    "speechiness": {
+      "mean": 0.122,
+      "median": 0.083
+    },
+    "liveness": {
+      "mean": 0.257,
+      "median": 0.2
+    }
+  },
+  "heavy-metal": {
+    "energy": {
+      "mean": 0.874,
+      "median": 0.928
+    },
+    "valence": {
+      "mean": 0.388,
+      "median": 0.38
+    },
+    "danceability": {
+      "mean": 0.428,
+      "median": 0.445
+    },
+    "acousticness": {
+      "mean": 0.015,
+      "median": 0.0
+    },
+    "instrumentalness": {
+      "mean": 0.083,
+      "median": 0.001
+    },
+    "speechiness": {
+      "mean": 0.075,
+      "median": 0.06
+    },
+    "liveness": {
+      "mean": 0.28,
+      "median": 0.196
+    }
+  },
+  "hip-hop": {
+    "energy": {
+      "mean": 0.683,
+      "median": 0.69
+    },
+    "valence": {
+      "mean": 0.551,
+      "median": 0.55
+    },
+    "danceability": {
+      "mean": 0.736,
+      "median": 0.753
+    },
+    "acousticness": {
+      "mean": 0.194,
+      "median": 0.124
+    },
+    "instrumentalness": {
+      "mean": 0.011,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.13,
+      "median": 0.095
+    },
+    "liveness": {
+      "mean": 0.193,
+      "median": 0.129
+    }
+  },
+  "honky-tonk": {
+    "energy": {
+      "mean": 0.367,
+      "median": 0.327
+    },
+    "valence": {
+      "mean": 0.632,
+      "median": 0.631
+    },
+    "danceability": {
+      "mean": 0.571,
+      "median": 0.57
+    },
+    "acousticness": {
+      "mean": 0.712,
+      "median": 0.757
+    },
+    "instrumentalness": {
+      "mean": 0.057,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.037,
+      "median": 0.032
+    },
+    "liveness": {
+      "mean": 0.19,
+      "median": 0.146
+    }
+  },
+  "house": {
+    "energy": {
+      "mean": 0.755,
+      "median": 0.768
+    },
+    "valence": {
+      "mean": 0.495,
+      "median": 0.486
+    },
+    "danceability": {
+      "mean": 0.669,
+      "median": 0.674
+    },
+    "acousticness": {
+      "mean": 0.109,
+      "median": 0.062
+    },
+    "instrumentalness": {
+      "mean": 0.038,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.069,
+      "median": 0.049
+    },
+    "liveness": {
+      "mean": 0.188,
+      "median": 0.129
+    }
+  },
+  "idm": {
+    "energy": {
+      "mean": 0.555,
+      "median": 0.569
+    },
+    "valence": {
+      "mean": 0.303,
+      "median": 0.226
+    },
+    "danceability": {
+      "mean": 0.528,
+      "median": 0.561
+    },
+    "acousticness": {
+      "mean": 0.378,
+      "median": 0.252
+    },
+    "instrumentalness": {
+      "mean": 0.675,
+      "median": 0.846
+    },
+    "speechiness": {
+      "mean": 0.075,
+      "median": 0.046
+    },
+    "liveness": {
+      "mean": 0.168,
+      "median": 0.113
+    }
+  },
+  "indian": {
+    "energy": {
+      "mean": 0.567,
+      "median": 0.559
+    },
+    "valence": {
+      "mean": 0.463,
+      "median": 0.439
+    },
+    "danceability": {
+      "mean": 0.592,
+      "median": 0.6
+    },
+    "acousticness": {
+      "mean": 0.485,
+      "median": 0.498
+    },
+    "instrumentalness": {
+      "mean": 0.039,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.072,
+      "median": 0.044
+    },
+    "liveness": {
+      "mean": 0.173,
+      "median": 0.118
+    }
+  },
+  "indie-pop": {
+    "energy": {
+      "mean": 0.561,
+      "median": 0.558
+    },
+    "valence": {
+      "mean": 0.461,
+      "median": 0.447
+    },
+    "danceability": {
+      "mean": 0.604,
+      "median": 0.617
+    },
+    "acousticness": {
+      "mean": 0.372,
+      "median": 0.323
+    },
+    "instrumentalness": {
+      "mean": 0.042,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.066,
+      "median": 0.045
+    },
+    "liveness": {
+      "mean": 0.167,
+      "median": 0.118
+    }
+  },
+  "indie": {
+    "energy": {
+      "mean": 0.556,
+      "median": 0.547
+    },
+    "valence": {
+      "mean": 0.468,
+      "median": 0.453
+    },
+    "danceability": {
+      "mean": 0.587,
+      "median": 0.582
+    },
+    "acousticness": {
+      "mean": 0.38,
+      "median": 0.323
+    },
+    "instrumentalness": {
+      "mean": 0.053,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.063,
+      "median": 0.042
+    },
+    "liveness": {
+      "mean": 0.16,
+      "median": 0.112
+    }
+  },
+  "industrial": {
+    "energy": {
+      "mean": 0.862,
+      "median": 0.91
+    },
+    "valence": {
+      "mean": 0.425,
+      "median": 0.412
+    },
+    "danceability": {
+      "mean": 0.53,
+      "median": 0.545
+    },
+    "acousticness": {
+      "mean": 0.037,
+      "median": 0.001
+    },
+    "instrumentalness": {
+      "mean": 0.192,
+      "median": 0.015
+    },
+    "speechiness": {
+      "mean": 0.087,
+      "median": 0.06
+    },
+    "liveness": {
+      "mean": 0.233,
+      "median": 0.163
+    }
+  },
+  "iranian": {
+    "energy": {
+      "mean": 0.546,
+      "median": 0.541
+    },
+    "valence": {
+      "mean": 0.154,
+      "median": 0.088
+    },
+    "danceability": {
+      "mean": 0.301,
+      "median": 0.281
+    },
+    "acousticness": {
+      "mean": 0.411,
+      "median": 0.282
+    },
+    "instrumentalness": {
+      "mean": 0.59,
+      "median": 0.793
+    },
+    "speechiness": {
+      "mean": 0.091,
+      "median": 0.057
+    },
+    "liveness": {
+      "mean": 0.192,
+      "median": 0.122
+    }
+  },
+  "j-dance": {
+    "energy": {
+      "mean": 0.704,
+      "median": 0.709
+    },
+    "valence": {
+      "mean": 0.564,
+      "median": 0.578
+    },
+    "danceability": {
+      "mean": 0.681,
+      "median": 0.685
+    },
+    "acousticness": {
+      "mean": 0.23,
+      "median": 0.164
+    },
+    "instrumentalness": {
+      "mean": 0.031,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.22,
+      "median": 0.221
+    },
+    "liveness": {
+      "mean": 0.184,
+      "median": 0.13
+    }
+  },
+  "j-idol": {
+    "energy": {
+      "mean": 0.869,
+      "median": 0.913
+    },
+    "valence": {
+      "mean": 0.578,
+      "median": 0.593
+    },
+    "danceability": {
+      "mean": 0.549,
+      "median": 0.549
+    },
+    "acousticness": {
+      "mean": 0.152,
+      "median": 0.059
+    },
+    "instrumentalness": {
+      "mean": 0.037,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.069,
+      "median": 0.052
+    },
+    "liveness": {
+      "mean": 0.229,
+      "median": 0.206
+    }
+  },
+  "j-pop": {
+    "energy": {
+      "mean": 0.68,
+      "median": 0.723
+    },
+    "valence": {
+      "mean": 0.542,
+      "median": 0.549
+    },
+    "danceability": {
+      "mean": 0.552,
+      "median": 0.552
+    },
+    "acousticness": {
+      "mean": 0.282,
+      "median": 0.15
+    },
+    "instrumentalness": {
+      "mean": 0.012,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.059,
+      "median": 0.042
+    },
+    "liveness": {
+      "mean": 0.199,
+      "median": 0.144
+    }
+  },
+  "j-rock": {
+    "energy": {
+      "mean": 0.761,
+      "median": 0.831
+    },
+    "valence": {
+      "mean": 0.538,
+      "median": 0.538
+    },
+    "danceability": {
+      "mean": 0.509,
+      "median": 0.516
+    },
+    "acousticness": {
+      "mean": 0.169,
+      "median": 0.034
+    },
+    "instrumentalness": {
+      "mean": 0.023,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.064,
+      "median": 0.048
+    },
+    "liveness": {
+      "mean": 0.224,
+      "median": 0.174
+    }
+  },
+  "jazz": {
+    "energy": {
+      "mean": 0.353,
+      "median": 0.332
+    },
+    "valence": {
+      "mean": 0.49,
+      "median": 0.504
+    },
+    "danceability": {
+      "mean": 0.51,
+      "median": 0.499
+    },
+    "acousticness": {
+      "mean": 0.716,
+      "median": 0.787
+    },
+    "instrumentalness": {
+      "mean": 0.08,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.055,
+      "median": 0.039
+    },
+    "liveness": {
+      "mean": 0.17,
+      "median": 0.123
+    }
+  },
+  "k-pop": {
+    "energy": {
+      "mean": 0.676,
+      "median": 0.701
+    },
+    "valence": {
+      "mean": 0.557,
+      "median": 0.571
+    },
+    "danceability": {
+      "mean": 0.648,
+      "median": 0.656
+    },
+    "acousticness": {
+      "mean": 0.293,
+      "median": 0.189
+    },
+    "instrumentalness": {
+      "mean": 0.01,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.088,
+      "median": 0.057
+    },
+    "liveness": {
+      "mean": 0.176,
+      "median": 0.124
+    }
+  },
+  "kids": {
+    "energy": {
+      "mean": 0.613,
+      "median": 0.633
+    },
+    "valence": {
+      "mean": 0.681,
+      "median": 0.712
+    },
+    "danceability": {
+      "mean": 0.779,
+      "median": 0.794
+    },
+    "acousticness": {
+      "mean": 0.239,
+      "median": 0.127
+    },
+    "instrumentalness": {
+      "mean": 0.02,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.153,
+      "median": 0.093
+    },
+    "liveness": {
+      "mean": 0.172,
+      "median": 0.117
+    }
+  },
+  "latin": {
+    "energy": {
+      "mean": 0.727,
+      "median": 0.744
+    },
+    "valence": {
+      "mean": 0.631,
+      "median": 0.658
+    },
+    "danceability": {
+      "mean": 0.722,
+      "median": 0.74
+    },
+    "acousticness": {
+      "mean": 0.183,
+      "median": 0.126
+    },
+    "instrumentalness": {
+      "mean": 0.009,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.093,
+      "median": 0.069
+    },
+    "liveness": {
+      "mean": 0.174,
+      "median": 0.123
+    }
+  },
+  "latino": {
+    "energy": {
+      "mean": 0.732,
+      "median": 0.74
+    },
+    "valence": {
+      "mean": 0.63,
+      "median": 0.643
+    },
+    "danceability": {
+      "mean": 0.757,
+      "median": 0.762
+    },
+    "acousticness": {
+      "mean": 0.172,
+      "median": 0.119
+    },
+    "instrumentalness": {
+      "mean": 0.008,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.114,
+      "median": 0.086
+    },
+    "liveness": {
+      "mean": 0.173,
+      "median": 0.124
+    }
+  },
+  "malay": {
+    "energy": {
+      "mean": 0.578,
+      "median": 0.57
+    },
+    "valence": {
+      "mean": 0.502,
+      "median": 0.489
+    },
+    "danceability": {
+      "mean": 0.629,
+      "median": 0.63
+    },
+    "acousticness": {
+      "mean": 0.404,
+      "median": 0.373
+    },
+    "instrumentalness": {
+      "mean": 0.009,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.081,
+      "median": 0.044
+    },
+    "liveness": {
+      "mean": 0.173,
+      "median": 0.123
+    }
+  },
+  "mandopop": {
+    "energy": {
+      "mean": 0.498,
+      "median": 0.491
+    },
+    "valence": {
+      "mean": 0.35,
+      "median": 0.322
+    },
+    "danceability": {
+      "mean": 0.547,
+      "median": 0.548
+    },
+    "acousticness": {
+      "mean": 0.48,
+      "median": 0.503
+    },
+    "instrumentalness": {
+      "mean": 0.004,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.039,
+      "median": 0.033
+    },
+    "liveness": {
+      "mean": 0.159,
+      "median": 0.119
+    }
+  },
+  "metal": {
+    "energy": {
+      "mean": 0.84,
+      "median": 0.89
+    },
+    "valence": {
+      "mean": 0.418,
+      "median": 0.401
+    },
+    "danceability": {
+      "mean": 0.464,
+      "median": 0.472
+    },
+    "acousticness": {
+      "mean": 0.037,
+      "median": 0.003
+    },
+    "instrumentalness": {
+      "mean": 0.065,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.07,
+      "median": 0.055
+    },
+    "liveness": {
+      "mean": 0.205,
+      "median": 0.145
+    }
+  },
+  "metalcore": {
+    "energy": {
+      "mean": 0.914,
+      "median": 0.943
+    },
+    "valence": {
+      "mean": 0.315,
+      "median": 0.292
+    },
+    "danceability": {
+      "mean": 0.424,
+      "median": 0.439
+    },
+    "acousticness": {
+      "mean": 0.01,
+      "median": 0.0
+    },
+    "instrumentalness": {
+      "mean": 0.046,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.11,
+      "median": 0.092
+    },
+    "liveness": {
+      "mean": 0.258,
+      "median": 0.235
+    }
+  },
+  "minimal-techno": {
+    "energy": {
+      "mean": 0.68,
+      "median": 0.683
+    },
+    "valence": {
+      "mean": 0.284,
+      "median": 0.225
+    },
+    "danceability": {
+      "mean": 0.729,
+      "median": 0.743
+    },
+    "acousticness": {
+      "mean": 0.071,
+      "median": 0.009
+    },
+    "instrumentalness": {
+      "mean": 0.745,
+      "median": 0.849
+    },
+    "speechiness": {
+      "mean": 0.063,
+      "median": 0.051
+    },
+    "liveness": {
+      "mean": 0.135,
+      "median": 0.105
+    }
+  },
+  "mpb": {
+    "energy": {
+      "mean": 0.58,
+      "median": 0.592
+    },
+    "valence": {
+      "mean": 0.556,
+      "median": 0.555
+    },
+    "danceability": {
+      "mean": 0.574,
+      "median": 0.581
+    },
+    "acousticness": {
+      "mean": 0.421,
+      "median": 0.403
+    },
+    "instrumentalness": {
+      "mean": 0.015,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.057,
+      "median": 0.039
+    },
+    "liveness": {
+      "mean": 0.339,
+      "median": 0.177
+    }
+  },
+  "new-age": {
+    "energy": {
+      "mean": 0.215,
+      "median": 0.147
+    },
+    "valence": {
+      "mean": 0.183,
+      "median": 0.129
+    },
+    "danceability": {
+      "mean": 0.348,
+      "median": 0.338
+    },
+    "acousticness": {
+      "mean": 0.824,
+      "median": 0.95
+    },
+    "instrumentalness": {
+      "mean": 0.713,
+      "median": 0.879
+    },
+    "speechiness": {
+      "mean": 0.046,
+      "median": 0.039
+    },
+    "liveness": {
+      "mean": 0.2,
+      "median": 0.113
+    }
+  },
+  "opera": {
+    "energy": {
+      "mean": 0.317,
+      "median": 0.278
+    },
+    "valence": {
+      "mean": 0.215,
+      "median": 0.168
+    },
+    "danceability": {
+      "mean": 0.314,
+      "median": 0.29
+    },
+    "acousticness": {
+      "mean": 0.795,
+      "median": 0.909
+    },
+    "instrumentalness": {
+      "mean": 0.163,
+      "median": 0.001
+    },
+    "speechiness": {
+      "mean": 0.046,
+      "median": 0.038
+    },
+    "liveness": {
+      "mean": 0.22,
+      "median": 0.123
+    }
+  },
+  "pagode": {
+    "energy": {
+      "mean": 0.712,
+      "median": 0.724
+    },
+    "valence": {
+      "mean": 0.688,
+      "median": 0.708
+    },
+    "danceability": {
+      "mean": 0.578,
+      "median": 0.58
+    },
+    "acousticness": {
+      "mean": 0.538,
+      "median": 0.577
+    },
+    "instrumentalness": {
+      "mean": 0.001,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.063,
+      "median": 0.049
+    },
+    "liveness": {
+      "mean": 0.52,
+      "median": 0.478
+    }
+  },
+  "party": {
+    "energy": {
+      "mean": 0.871,
+      "median": 0.907
+    },
+    "valence": {
+      "mean": 0.681,
+      "median": 0.707
+    },
+    "danceability": {
+      "mean": 0.667,
+      "median": 0.67
+    },
+    "acousticness": {
+      "mean": 0.093,
+      "median": 0.05
+    },
+    "instrumentalness": {
+      "mean": 0.002,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.087,
+      "median": 0.061
+    },
+    "liveness": {
+      "mean": 0.288,
+      "median": 0.264
+    }
+  },
+  "piano": {
+    "energy": {
+      "mean": 0.32,
+      "median": 0.18
+    },
+    "valence": {
+      "mean": 0.313,
+      "median": 0.262
+    },
+    "danceability": {
+      "mean": 0.455,
+      "median": 0.447
+    },
+    "acousticness": {
+      "mean": 0.705,
+      "median": 0.956
+    },
+    "instrumentalness": {
+      "mean": 0.516,
+      "median": 0.865
+    },
+    "speechiness": {
+      "mean": 0.047,
+      "median": 0.04
+    },
+    "liveness": {
+      "mean": 0.145,
+      "median": 0.109
+    }
+  },
+  "pop-film": {
+    "energy": {
+      "mean": 0.605,
+      "median": 0.614
+    },
+    "valence": {
+      "mean": 0.529,
+      "median": 0.536
+    },
+    "danceability": {
+      "mean": 0.597,
+      "median": 0.607
+    },
+    "acousticness": {
+      "mean": 0.441,
+      "median": 0.43
+    },
+    "instrumentalness": {
+      "mean": 0.008,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.064,
+      "median": 0.042
+    },
+    "liveness": {
+      "mean": 0.166,
+      "median": 0.124
+    }
+  },
+  "pop": {
+    "energy": {
+      "mean": 0.606,
+      "median": 0.618
+    },
+    "valence": {
+      "mean": 0.506,
+      "median": 0.498
+    },
+    "danceability": {
+      "mean": 0.63,
+      "median": 0.643
+    },
+    "acousticness": {
+      "mean": 0.344,
+      "median": 0.281
+    },
+    "instrumentalness": {
+      "mean": 0.009,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.08,
+      "median": 0.048
+    },
+    "liveness": {
+      "mean": 0.158,
+      "median": 0.118
+    }
+  },
+  "power-pop": {
+    "energy": {
+      "mean": 0.802,
+      "median": 0.859
+    },
+    "valence": {
+      "mean": 0.615,
+      "median": 0.636
+    },
+    "danceability": {
+      "mean": 0.473,
+      "median": 0.479
+    },
+    "acousticness": {
+      "mean": 0.086,
+      "median": 0.009
+    },
+    "instrumentalness": {
+      "mean": 0.064,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.058,
+      "median": 0.045
+    },
+    "liveness": {
+      "mean": 0.223,
+      "median": 0.165
+    }
+  },
+  "progressive-house": {
+    "energy": {
+      "mean": 0.813,
+      "median": 0.83
+    },
+    "valence": {
+      "mean": 0.365,
+      "median": 0.346
+    },
+    "danceability": {
+      "mean": 0.624,
+      "median": 0.628
+    },
+    "acousticness": {
+      "mean": 0.061,
+      "median": 0.021
+    },
+    "instrumentalness": {
+      "mean": 0.2,
+      "median": 0.001
+    },
+    "speechiness": {
+      "mean": 0.068,
+      "median": 0.048
+    },
+    "liveness": {
+      "mean": 0.209,
+      "median": 0.147
+    }
+  },
+  "psych-rock": {
+    "energy": {
+      "mean": 0.562,
+      "median": 0.553
+    },
+    "valence": {
+      "mean": 0.565,
+      "median": 0.568
+    },
+    "danceability": {
+      "mean": 0.503,
+      "median": 0.511
+    },
+    "acousticness": {
+      "mean": 0.315,
+      "median": 0.242
+    },
+    "instrumentalness": {
+      "mean": 0.092,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.047,
+      "median": 0.036
+    },
+    "liveness": {
+      "mean": 0.203,
+      "median": 0.13
+    }
+  },
+  "punk-rock": {
+    "energy": {
+      "mean": 0.81,
+      "median": 0.865
+    },
+    "valence": {
+      "mean": 0.567,
+      "median": 0.573
+    },
+    "danceability": {
+      "mean": 0.507,
+      "median": 0.508
+    },
+    "acousticness": {
+      "mean": 0.083,
+      "median": 0.014
+    },
+    "instrumentalness": {
+      "mean": 0.032,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.064,
+      "median": 0.049
+    },
+    "liveness": {
+      "mean": 0.237,
+      "median": 0.158
+    }
+  },
+  "punk": {
+    "energy": {
+      "mean": 0.81,
+      "median": 0.869
+    },
+    "valence": {
+      "mean": 0.556,
+      "median": 0.558
+    },
+    "danceability": {
+      "mean": 0.5,
+      "median": 0.505
+    },
+    "acousticness": {
+      "mean": 0.089,
+      "median": 0.012
+    },
+    "instrumentalness": {
+      "mean": 0.039,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.064,
+      "median": 0.049
+    },
+    "liveness": {
+      "mean": 0.216,
+      "median": 0.148
+    }
+  },
+  "r-n-b": {
+    "energy": {
+      "mean": 0.638,
+      "median": 0.642
+    },
+    "valence": {
+      "mean": 0.633,
+      "median": 0.651
+    },
+    "danceability": {
+      "mean": 0.614,
+      "median": 0.63
+    },
+    "acousticness": {
+      "mean": 0.371,
+      "median": 0.341
+    },
+    "instrumentalness": {
+      "mean": 0.01,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.089,
+      "median": 0.046
+    },
+    "liveness": {
+      "mean": 0.262,
+      "median": 0.157
+    }
+  },
+  "reggae": {
+    "energy": {
+      "mean": 0.726,
+      "median": 0.736
+    },
+    "valence": {
+      "mean": 0.648,
+      "median": 0.679
+    },
+    "danceability": {
+      "mean": 0.745,
+      "median": 0.756
+    },
+    "acousticness": {
+      "mean": 0.176,
+      "median": 0.127
+    },
+    "instrumentalness": {
+      "mean": 0.003,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.115,
+      "median": 0.081
+    },
+    "liveness": {
+      "mean": 0.188,
+      "median": 0.125
+    }
+  },
+  "reggaeton": {
+    "energy": {
+      "mean": 0.739,
+      "median": 0.745
+    },
+    "valence": {
+      "mean": 0.643,
+      "median": 0.668
+    },
+    "danceability": {
+      "mean": 0.759,
+      "median": 0.762
+    },
+    "acousticness": {
+      "mean": 0.165,
+      "median": 0.121
+    },
+    "instrumentalness": {
+      "mean": 0.003,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.121,
+      "median": 0.087
+    },
+    "liveness": {
+      "mean": 0.17,
+      "median": 0.119
+    }
+  },
+  "rock-n-roll": {
+    "energy": {
+      "mean": 0.527,
+      "median": 0.503
+    },
+    "valence": {
+      "mean": 0.67,
+      "median": 0.683
+    },
+    "danceability": {
+      "mean": 0.55,
+      "median": 0.561
+    },
+    "acousticness": {
+      "mean": 0.553,
+      "median": 0.612
+    },
+    "instrumentalness": {
+      "mean": 0.014,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.051,
+      "median": 0.036
+    },
+    "liveness": {
+      "mean": 0.227,
+      "median": 0.173
+    }
+  },
+  "rock": {
+    "energy": {
+      "mean": 0.679,
+      "median": 0.703
+    },
+    "valence": {
+      "mean": 0.539,
+      "median": 0.547
+    },
+    "danceability": {
+      "mean": 0.544,
+      "median": 0.552
+    },
+    "acousticness": {
+      "mean": 0.209,
+      "median": 0.096
+    },
+    "instrumentalness": {
+      "mean": 0.021,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.05,
+      "median": 0.038
+    },
+    "liveness": {
+      "mean": 0.173,
+      "median": 0.117
+    }
+  },
+  "rockabilly": {
+    "energy": {
+      "mean": 0.659,
+      "median": 0.7
+    },
+    "valence": {
+      "mean": 0.727,
+      "median": 0.796
+    },
+    "danceability": {
+      "mean": 0.561,
+      "median": 0.58
+    },
+    "acousticness": {
+      "mean": 0.447,
+      "median": 0.482
+    },
+    "instrumentalness": {
+      "mean": 0.025,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.06,
+      "median": 0.043
+    },
+    "liveness": {
+      "mean": 0.229,
+      "median": 0.181
+    }
+  },
+  "romance": {
+    "energy": {
+      "mean": 0.294,
+      "median": 0.272
+    },
+    "valence": {
+      "mean": 0.393,
+      "median": 0.354
+    },
+    "danceability": {
+      "mean": 0.432,
+      "median": 0.419
+    },
+    "acousticness": {
+      "mean": 0.869,
+      "median": 0.95
+    },
+    "instrumentalness": {
+      "mean": 0.054,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.065,
+      "median": 0.047
+    },
+    "liveness": {
+      "mean": 0.211,
+      "median": 0.136
+    }
+  },
+  "sad": {
+    "energy": {
+      "mean": 0.462,
+      "median": 0.464
+    },
+    "valence": {
+      "mean": 0.422,
+      "median": 0.413
+    },
+    "danceability": {
+      "mean": 0.692,
+      "median": 0.706
+    },
+    "acousticness": {
+      "mean": 0.474,
+      "median": 0.479
+    },
+    "instrumentalness": {
+      "mean": 0.106,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.13,
+      "median": 0.082
+    },
+    "liveness": {
+      "mean": 0.172,
+      "median": 0.122
+    }
+  },
+  "salsa": {
+    "energy": {
+      "mean": 0.725,
+      "median": 0.752
+    },
+    "valence": {
+      "mean": 0.815,
+      "median": 0.858
+    },
+    "danceability": {
+      "mean": 0.668,
+      "median": 0.684
+    },
+    "acousticness": {
+      "mean": 0.469,
+      "median": 0.487
+    },
+    "instrumentalness": {
+      "mean": 0.013,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.056,
+      "median": 0.043
+    },
+    "liveness": {
+      "mean": 0.182,
+      "median": 0.118
+    }
+  },
+  "samba": {
+    "energy": {
+      "mean": 0.673,
+      "median": 0.699
+    },
+    "valence": {
+      "mean": 0.693,
+      "median": 0.733
+    },
+    "danceability": {
+      "mean": 0.575,
+      "median": 0.577
+    },
+    "acousticness": {
+      "mean": 0.49,
+      "median": 0.533
+    },
+    "instrumentalness": {
+      "mean": 0.007,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.084,
+      "median": 0.055
+    },
+    "liveness": {
+      "mean": 0.443,
+      "median": 0.35
+    }
+  },
+  "sertanejo": {
+    "energy": {
+      "mean": 0.71,
+      "median": 0.729
+    },
+    "valence": {
+      "mean": 0.619,
+      "median": 0.614
+    },
+    "danceability": {
+      "mean": 0.592,
+      "median": 0.603
+    },
+    "acousticness": {
+      "mean": 0.437,
+      "median": 0.435
+    },
+    "instrumentalness": {
+      "mean": 0.0,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.065,
+      "median": 0.045
+    },
+    "liveness": {
+      "mean": 0.474,
+      "median": 0.405
+    }
+  },
+  "show-tunes": {
+    "energy": {
+      "mean": 0.399,
+      "median": 0.383
+    },
+    "valence": {
+      "mean": 0.379,
+      "median": 0.357
+    },
+    "danceability": {
+      "mean": 0.464,
+      "median": 0.479
+    },
+    "acousticness": {
+      "mean": 0.637,
+      "median": 0.722
+    },
+    "instrumentalness": {
+      "mean": 0.038,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.108,
+      "median": 0.051
+    },
+    "liveness": {
+      "mean": 0.216,
+      "median": 0.135
+    }
+  },
+  "singer-songwriter": {
+    "energy": {
+      "mean": 0.434,
+      "median": 0.436
+    },
+    "valence": {
+      "mean": 0.414,
+      "median": 0.383
+    },
+    "danceability": {
+      "mean": 0.562,
+      "median": 0.566
+    },
+    "acousticness": {
+      "mean": 0.553,
+      "median": 0.618
+    },
+    "instrumentalness": {
+      "mean": 0.028,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.051,
+      "median": 0.035
+    },
+    "liveness": {
+      "mean": 0.15,
+      "median": 0.113
+    }
+  },
+  "ska": {
+    "energy": {
+      "mean": 0.793,
+      "median": 0.836
+    },
+    "valence": {
+      "mean": 0.697,
+      "median": 0.734
+    },
+    "danceability": {
+      "mean": 0.581,
+      "median": 0.594
+    },
+    "acousticness": {
+      "mean": 0.122,
+      "median": 0.043
+    },
+    "instrumentalness": {
+      "mean": 0.03,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.072,
+      "median": 0.051
+    },
+    "liveness": {
+      "mean": 0.271,
+      "median": 0.173
+    }
+  },
+  "sleep": {
+    "energy": {
+      "mean": 0.342,
+      "median": 0.132
+    },
+    "valence": {
+      "mean": 0.058,
+      "median": 0.031
+    },
+    "danceability": {
+      "mean": 0.168,
+      "median": 0.161
+    },
+    "acousticness": {
+      "mean": 0.657,
+      "median": 0.884
+    },
+    "instrumentalness": {
+      "mean": 0.724,
+      "median": 0.883
+    },
+    "speechiness": {
+      "mean": 0.057,
+      "median": 0.046
+    },
+    "liveness": {
+      "mean": 0.358,
+      "median": 0.17
+    }
+  },
+  "songwriter": {
+    "energy": {
+      "mean": 0.434,
+      "median": 0.436
+    },
+    "valence": {
+      "mean": 0.414,
+      "median": 0.383
+    },
+    "danceability": {
+      "mean": 0.562,
+      "median": 0.566
+    },
+    "acousticness": {
+      "mean": 0.553,
+      "median": 0.618
+    },
+    "instrumentalness": {
+      "mean": 0.028,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.051,
+      "median": 0.035
+    },
+    "liveness": {
+      "mean": 0.15,
+      "median": 0.113
+    }
+  },
+  "soul": {
+    "energy": {
+      "mean": 0.534,
+      "median": 0.526
+    },
+    "valence": {
+      "mean": 0.523,
+      "median": 0.514
+    },
+    "danceability": {
+      "mean": 0.6,
+      "median": 0.609
+    },
+    "acousticness": {
+      "mean": 0.402,
+      "median": 0.35
+    },
+    "instrumentalness": {
+      "mean": 0.014,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.06,
+      "median": 0.042
+    },
+    "liveness": {
+      "mean": 0.182,
+      "median": 0.124
+    }
+  },
+  "spanish": {
+    "energy": {
+      "mean": 0.708,
+      "median": 0.735
+    },
+    "valence": {
+      "mean": 0.548,
+      "median": 0.549
+    },
+    "danceability": {
+      "mean": 0.604,
+      "median": 0.615
+    },
+    "acousticness": {
+      "mean": 0.269,
+      "median": 0.176
+    },
+    "instrumentalness": {
+      "mean": 0.017,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.087,
+      "median": 0.05
+    },
+    "liveness": {
+      "mean": 0.224,
+      "median": 0.129
+    }
+  },
+  "study": {
+    "energy": {
+      "mean": 0.411,
+      "median": 0.397
+    },
+    "valence": {
+      "mean": 0.403,
+      "median": 0.387
+    },
+    "danceability": {
+      "mean": 0.685,
+      "median": 0.696
+    },
+    "acousticness": {
+      "mean": 0.531,
+      "median": 0.571
+    },
+    "instrumentalness": {
+      "mean": 0.79,
+      "median": 0.867
+    },
+    "speechiness": {
+      "mean": 0.1,
+      "median": 0.066
+    },
+    "liveness": {
+      "mean": 0.161,
+      "median": 0.114
+    }
+  },
+  "swedish": {
+    "energy": {
+      "mean": 0.622,
+      "median": 0.658
+    },
+    "valence": {
+      "mean": 0.533,
+      "median": 0.53
+    },
+    "danceability": {
+      "mean": 0.59,
+      "median": 0.601
+    },
+    "acousticness": {
+      "mean": 0.324,
+      "median": 0.194
+    },
+    "instrumentalness": {
+      "mean": 0.022,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.065,
+      "median": 0.041
+    },
+    "liveness": {
+      "mean": 0.19,
+      "median": 0.131
+    }
+  },
+  "synth-pop": {
+    "energy": {
+      "mean": 0.713,
+      "median": 0.734
+    },
+    "valence": {
+      "mean": 0.586,
+      "median": 0.625
+    },
+    "danceability": {
+      "mean": 0.621,
+      "median": 0.629
+    },
+    "acousticness": {
+      "mean": 0.152,
+      "median": 0.072
+    },
+    "instrumentalness": {
+      "mean": 0.082,
+      "median": 0.001
+    },
+    "speechiness": {
+      "mean": 0.048,
+      "median": 0.038
+    },
+    "liveness": {
+      "mean": 0.184,
+      "median": 0.126
+    }
+  },
+  "tango": {
+    "energy": {
+      "mean": 0.373,
+      "median": 0.369
+    },
+    "valence": {
+      "mean": 0.584,
+      "median": 0.598
+    },
+    "danceability": {
+      "mean": 0.538,
+      "median": 0.532
+    },
+    "acousticness": {
+      "mean": 0.846,
+      "median": 0.884
+    },
+    "instrumentalness": {
+      "mean": 0.14,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.08,
+      "median": 0.053
+    },
+    "liveness": {
+      "mean": 0.23,
+      "median": 0.158
+    }
+  },
+  "techno": {
+    "energy": {
+      "mean": 0.746,
+      "median": 0.774
+    },
+    "valence": {
+      "mean": 0.322,
+      "median": 0.258
+    },
+    "danceability": {
+      "mean": 0.684,
+      "median": 0.699
+    },
+    "acousticness": {
+      "mean": 0.081,
+      "median": 0.012
+    },
+    "instrumentalness": {
+      "mean": 0.54,
+      "median": 0.74
+    },
+    "speechiness": {
+      "mean": 0.064,
+      "median": 0.049
+    },
+    "liveness": {
+      "mean": 0.159,
+      "median": 0.108
+    }
+  },
+  "trance": {
+    "energy": {
+      "mean": 0.845,
+      "median": 0.879
+    },
+    "valence": {
+      "mean": 0.277,
+      "median": 0.228
+    },
+    "danceability": {
+      "mean": 0.583,
+      "median": 0.589
+    },
+    "acousticness": {
+      "mean": 0.036,
+      "median": 0.006
+    },
+    "instrumentalness": {
+      "mean": 0.424,
+      "median": 0.458
+    },
+    "speechiness": {
+      "mean": 0.08,
+      "median": 0.054
+    },
+    "liveness": {
+      "mean": 0.234,
+      "median": 0.16
+    }
+  },
+  "trip-hop": {
+    "energy": {
+      "mean": 0.622,
+      "median": 0.625
+    },
+    "valence": {
+      "mean": 0.478,
+      "median": 0.471
+    },
+    "danceability": {
+      "mean": 0.635,
+      "median": 0.644
+    },
+    "acousticness": {
+      "mean": 0.226,
+      "median": 0.125
+    },
+    "instrumentalness": {
+      "mean": 0.384,
+      "median": 0.259
+    },
+    "speechiness": {
+      "mean": 0.076,
+      "median": 0.044
+    },
+    "liveness": {
+      "mean": 0.19,
+      "median": 0.12
+    }
+  },
+  "turkish": {
+    "energy": {
+      "mean": 0.61,
+      "median": 0.62
+    },
+    "valence": {
+      "mean": 0.462,
+      "median": 0.449
+    },
+    "danceability": {
+      "mean": 0.616,
+      "median": 0.633
+    },
+    "acousticness": {
+      "mean": 0.321,
+      "median": 0.25
+    },
+    "instrumentalness": {
+      "mean": 0.036,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.105,
+      "median": 0.056
+    },
+    "liveness": {
+      "mean": 0.181,
+      "median": 0.127
+    }
+  },
+  "world-music": {
+    "energy": {
+      "mean": 0.533,
+      "median": 0.551
+    },
+    "valence": {
+      "mean": 0.25,
+      "median": 0.21
+    },
+    "danceability": {
+      "mean": 0.415,
+      "median": 0.424
+    },
+    "acousticness": {
+      "mean": 0.3,
+      "median": 0.127
+    },
+    "instrumentalness": {
+      "mean": 0.092,
+      "median": 0.0
+    },
+    "speechiness": {
+      "mean": 0.042,
+      "median": 0.034
+    },
+    "liveness": {
+      "mean": 0.25,
+      "median": 0.125
+    }
+  }
+}

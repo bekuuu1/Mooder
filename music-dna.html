@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Mooder — Music DNA Analyzer | Acoustic Profiler</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/mooder.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#0f131c",
+            "surface-dim": "#0f131c",
+            "surface-bright": "#353943",
+            "surface-container-lowest": "#0a0e17",
+            "surface-container-low": "#181b25",
+            "surface-container": "#1c1f29",
+            "surface-container-high": "#262a34",
+            "surface-container-highest": "#31353f",
+            "on-surface": "#dfe2ef",
+            "on-surface-variant": "#bccbb9",
+            "primary": "#53e076",
+            "primary-container": "#1db954",
+            "on-primary": "#003914",
+            "on-primary-container": "#004118",
+            "secondary": "#dcfdff",
+            "secondary-container": "#00f1fd",
+            "secondary-fixed": "#6ff6ff",
+            "secondary-fixed-dim": "#00dce6",
+            "tertiary": "#dcb8ff",
+            "tertiary-container": "#c186ff",
+            "outline": "#869585",
+            "outline-variant": "#3d4a3d",
+            "error": "#ffb4ab",
+            "background": "#0f131c"
+          },
+          fontFamily: {
+            "display": ["Geist", "sans-serif"],
+            "headline-lg": ["Geist", "sans-serif"],
+            "headline-md": ["Geist", "sans-serif"],
+            "headline-sm": ["Geist", "sans-serif"],
+            "body-lg": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "body-sm": ["Geist", "sans-serif"],
+            "metric-display": ["JetBrains Mono", "monospace"],
+            "metric-md": ["JetBrains Mono", "monospace"],
+            "metric-sm": ["JetBrains Mono", "monospace"],
+            "label-code": ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+  <!-- SIDEBAR NAVIGATION -->
+  <aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)] border-r border-surface-container">
+    <div class="flex flex-col">
+      <div class="h-16 px-6 flex items-center justify-between border-b border-surface-container/50">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary-container to-secondary-container flex items-center justify-center shadow-[0_0_12px_rgba(29,185,84,0.4)]">
+            <span class="material-symbols-outlined text-surface font-bold text-xl">graphic_eq</span>
+          </div>
+          <span class="font-headline-sm text-xl text-on-surface tracking-tight font-semibold">Mooder</span>
+        </a>
+      </div>
+
+      <div class="px-3 pt-5">
+        <nav class="flex flex-col gap-1.5">
+          <a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+            <span class="material-symbols-outlined text-xl">dashboard</span>
+            <span class="font-body-md text-sm">Overview</span>
+          </a>
+          <a aria-current="page" href="music-dna.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl transition-all bg-surface-container-high text-primary font-medium border border-primary/20 shadow-sm">
+            <span class="material-symbols-outlined text-xl">graphic_eq</span>
+            <span class="font-body-md text-sm">Music DNA</span>
+          </a>
+          <a href="mood-explorer.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+            <span class="material-symbols-outlined text-xl">bubble_chart</span>
+            <span class="font-body-md text-sm">Mood Explorer</span>
+          </a>
+          <a href="playlist-generator.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+            <span class="material-symbols-outlined text-xl">auto_fix_high</span>
+            <span class="font-body-md text-sm">Playlist Generator</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN VIEW -->
+  <div class="pl-64">
+    <!-- STICKY TOP HEADER -->
+    <header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 flex items-center justify-between px-8 border-b border-surface-container shadow-sm">
+      <div class="flex items-center gap-4 flex-1 max-w-lg">
+        <div class="relative w-full">
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-sm text-outline">search</span>
+          <input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-sm pl-9 pr-12 py-2 rounded-xl border border-surface-container focus:outline-none focus:border-primary transition-colors cursor-pointer" placeholder="Search tracks or artists..." type="text" onclick="MooderShared.openCommandPalette()" readonly/>
+          <span class="absolute right-2.5 top-1/2 -translate-y-1/2 font-label-code text-xs text-outline bg-surface-container px-1.5 py-0.5 rounded cursor-pointer" onclick="MooderShared.openCommandPalette()">⌘K</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button id="add-to-playlist-top-btn" class="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary-container text-on-primary-container font-medium text-xs shadow-sm hover:brightness-110 transition-all">
+          <span class="material-symbols-outlined text-sm">playlist_add</span>
+          <span>Add to Playlist</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY -->
+    <main class="relative pt-20 px-8 py-8 min-h-screen">
+      <div class="flex flex-col gap-6 max-w-6xl mx-auto">
+
+        <!-- HEADER & SEARCH -->
+        <div class="flex flex-col gap-3">
+          <div>
+            <h1 class="font-headline-lg text-2xl font-bold text-on-surface tracking-tight">Music DNA Analyzer</h1>
+            <p class="font-body-md text-xs text-on-surface-variant mt-0.5">
+              Inspect core acoustic features, key, tempo, and find similar tracks.
+            </p>
+          </div>
+
+          <!-- Direct Search Input with Autocomplete -->
+          <div class="relative w-full">
+            <div class="relative flex items-center bg-surface-container-lowest rounded-xl border border-surface-container overflow-hidden p-1 shadow-md">
+              <span class="material-symbols-outlined text-primary text-xl pl-3">search</span>
+              <input id="dna-search" class="w-full bg-transparent text-on-surface placeholder:text-outline font-body-md text-sm px-3 py-2 focus:outline-none" placeholder="Search any track or artist (e.g. Midnight City, Blinding Lights, Unholy)..." type="text" autocomplete="off"/>
+            </div>
+
+            <div id="dna-autocomplete-dropdown" class="absolute left-0 right-0 top-full mt-1.5 bg-surface-container rounded-xl border border-surface-container shadow-2xl z-50 max-h-64 overflow-y-auto hidden divide-y divide-surface-container-high/40"></div>
+          </div>
+        </div>
+
+        <!-- UNIFIED TRACK CENTERPIECE CARD -->
+        <div class="obsidian-card rounded-2xl p-6 shadow-xl relative overflow-hidden">
+          <div class="flex flex-col md:flex-row items-center gap-6">
+            <!-- Vinyl Record & Album Art -->
+            <div class="relative group shrink-0 w-36 h-36">
+              <div id="vinyl-disc" class="vinyl-record absolute -right-3 top-2 w-32 h-32 rounded-full bg-surface-container-highest border-4 border-surface-container flex items-center justify-center shadow-2xl z-0">
+                <div class="w-11 h-11 rounded-full bg-surface-container-lowest border border-surface-container flex items-center justify-center">
+                  <div class="w-4 h-4 rounded-full bg-primary/80"></div>
+                </div>
+              </div>
+
+              <div id="album-cover-box" class="relative w-full h-full rounded-2xl overflow-hidden shadow-xl z-10 flex items-center justify-center border border-surface-container">
+                <span class="material-symbols-outlined text-4xl text-white/50 z-20">album</span>
+              </div>
+            </div>
+
+            <!-- Details, Tags & Controls -->
+            <div class="flex flex-col flex-1 min-w-0 w-full gap-3">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div class="min-w-0">
+                  <h2 id="inspect-title" class="font-headline-md text-xl md:text-2xl font-bold text-on-surface truncate">Midnight City</h2>
+                  <p id="inspect-artist" class="font-body-md text-sm text-on-surface-variant truncate">M83</p>
+                </div>
+                <span id="personality-badge" class="bg-primary/15 text-primary border border-primary/30 px-3.5 py-1 rounded-xl text-xs font-semibold flex items-center gap-1.5 shrink-0">
+                  <span class="material-symbols-outlined text-sm">psychology</span>
+                  <span>Euphoric & Energetic</span>
+                </span>
+              </div>
+
+              <!-- 4 Clean Metric Badges -->
+              <div class="flex flex-wrap items-center gap-2 pt-1">
+                <div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container border border-surface-container text-xs font-label-code">
+                  <span class="text-outline">Key:</span>
+                  <span id="ribbon-key" class="text-secondary-fixed font-semibold">B Maj</span>
+                </div>
+                <div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container border border-surface-container text-xs font-label-code">
+                  <span class="text-outline">Tempo:</span>
+                  <span id="ribbon-tempo" class="text-primary font-semibold">105 BPM</span>
+                </div>
+                <div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container border border-surface-container text-xs font-label-code">
+                  <span class="text-outline">Genre:</span>
+                  <span id="pill-genre" class="text-on-surface capitalize font-medium">Synthpop</span>
+                </div>
+                <div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container border border-surface-container text-xs font-label-code">
+                  <span class="text-outline">Popularity:</span>
+                  <span id="pill-pop" class="text-primary font-semibold">89 / 100</span>
+                </div>
+              </div>
+
+              <!-- Scrubber & Play Controls -->
+              <div class="flex flex-col gap-1.5 pt-2">
+                <div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+                  <div id="player-progress-fill" class="h-full bg-primary w-0 rounded-full transition-all duration-200"></div>
+                </div>
+                <div class="flex justify-between font-mono-telemetry text-[11px] text-outline">
+                  <span id="player-time-elapsed">00:00</span>
+                  <span id="player-time-total">04:03</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 pt-1">
+                <button id="player-main-toggle" class="px-5 py-2 rounded-xl bg-primary hover:bg-primary/90 text-on-primary flex items-center gap-2 transition-all text-xs font-semibold shadow-md">
+                  <span id="player-toggle-icon" class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                  <span>Play Preview</span>
+                </button>
+                <button id="player-add-playlist-btn" class="px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface hover:text-primary transition-colors text-xs font-medium border border-surface-container flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-sm">playlist_add</span>
+                  <span>Add to Playlist</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 CORE FEATURES & RADAR CHART -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          
+          <!-- 5 Audio Feature Vectors (6 Cols) -->
+          <div class="lg:col-span-6 obsidian-card rounded-2xl p-6 shadow-lg flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4 pb-2 border-b border-surface-container">
+                <span class="font-headline-sm text-sm font-bold text-on-surface">Core Acoustic Profile</span>
+                <span class="font-label-code text-xs text-outline">0.0 – 1.0 Scale</span>
+              </div>
+
+              <div id="feature-meters-list" class="space-y-4">
+                <!-- Dynamically populated with 5 core features -->
+              </div>
+            </div>
+          </div>
+
+          <!-- 5-Axis Radar Chart (6 Cols) -->
+          <div class="lg:col-span-6 obsidian-card rounded-2xl p-6 shadow-lg flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-2 pb-2 border-b border-surface-container">
+                <span class="font-headline-sm text-sm font-bold text-on-surface">Acoustic Shape</span>
+                <span id="radar-legend-bench" class="font-label-code text-xs text-secondary-fixed">Vs Genre Average</span>
+              </div>
+
+              <!-- Radar SVG -->
+              <div class="relative w-full aspect-square max-w-xs mx-auto flex items-center justify-center py-2">
+                <svg id="dna-radar-svg" class="w-full h-full overflow-visible" viewBox="0 0 400 400">
+                  <defs>
+                    <radialGradient cx="50%" cy="50%" id="emeraldAura" r="50%">
+                      <stop offset="0%" stop-color="#53e076" stop-opacity="0.45"></stop>
+                      <stop offset="100%" stop-color="#53e076" stop-opacity="0.0"></stop>
+                    </radialGradient>
+                  </defs>
+                </svg>
+              </div>
+
+              <!-- Clean legend -->
+              <div class="flex items-center justify-center gap-6 pt-2 font-label-code text-xs">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+                  <span class="text-on-surface">Track</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed border border-dashed border-secondary-container"></span>
+                  <span class="text-outline">Genre Average</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SIMILAR TRACKS -->
+        <div class="flex flex-col gap-3">
+          <div>
+            <h3 class="font-headline-sm text-base font-bold text-on-surface">Similar Tracks</h3>
+            <p class="font-body-sm text-xs text-outline">Songs with matching acoustic signatures from dataset</p>
+          </div>
+
+          <div id="similar-songs-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Top 4 similar songs -->
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script src="js/mooder-audio.js"></script>
+  <script src="js/mooder-shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      await MooderShared.initGlobalData();
+      const benchmarks = await MooderShared.loadBenchmarks();
+      const catalog = await MooderShared.loadCatalog();
+
+      if (!catalog) return;
+
+      let currentTrack = MooderShared.getInspectedTrack();
+      loadTrackDNA(currentTrack);
+
+      // Search & Autocomplete
+      const searchInput = document.getElementById('dna-search');
+      const dropdown = document.getElementById('dna-autocomplete-dropdown');
+
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.trim().toLowerCase();
+        if (!query) {
+          dropdown.classList.add('hidden');
+          return;
+        }
+
+        const matches = catalog.filter(t => 
+          t.title.toLowerCase().includes(query) || 
+          t.artist.toLowerCase().includes(query)
+        ).slice(0, 8);
+
+        if (matches.length === 0) {
+          dropdown.innerHTML = `<div class="p-3 text-center text-outline text-xs">No matching tracks found</div>`;
+          dropdown.classList.remove('hidden');
+          return;
+        }
+
+        dropdown.innerHTML = matches.map(t => `
+          <div class="dna-dropdown-item flex items-center justify-between p-2.5 hover:bg-surface-container-high cursor-pointer transition-colors" data-id="${t.id}">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <div class="w-7 h-7 rounded flex items-center justify-center text-white text-[10px] shrink-0" style="background: ${MooderShared.getTrackArtwork(t)}">
+                <span class="material-symbols-outlined text-xs">music_note</span>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <span class="font-body-sm text-xs font-semibold text-on-surface truncate">${t.title}</span>
+                <span class="font-body-sm text-[11px] text-outline truncate">${t.artist}</span>
+              </div>
+            </div>
+            <span class="font-label-code text-[11px] text-primary">Pop ${t.pop}</span>
+          </div>
+        `).join('');
+
+        dropdown.classList.remove('hidden');
+
+        dropdown.querySelectorAll('.dna-dropdown-item').forEach(item => {
+          item.addEventListener('click', () => {
+            const id = item.getAttribute('data-id');
+            const found = catalog.find(t => t.id === id);
+            if (found) {
+              currentTrack = found;
+              MooderShared.setInspectedTrack(found);
+              loadTrackDNA(found);
+              dropdown.classList.add('hidden');
+              searchInput.value = '';
+            }
+          });
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) {
+          dropdown.classList.add('hidden');
+        }
+      });
+
+      // Player Controls
+      const playToggle = document.getElementById('player-main-toggle');
+      const toggleIcon = document.getElementById('player-toggle-icon');
+      const vinylDisc = document.getElementById('vinyl-disc');
+      const timeElapsed = document.getElementById('player-time-elapsed');
+      const progressFill = document.getElementById('player-progress-fill');
+
+      playToggle.addEventListener('click', () => {
+        const isPlaying = window.MooderAudio.toggle(currentTrack);
+        updatePlayState(isPlaying);
+      });
+
+      function updatePlayState(isPlaying) {
+        if (isPlaying) {
+          toggleIcon.textContent = 'pause';
+          vinylDisc.classList.add('playing');
+        } else {
+          toggleIcon.textContent = 'play_arrow';
+          vinylDisc.classList.remove('playing');
+        }
+      }
+
+      window.MooderAudio.subscribe((evt, data) => {
+        if (evt === 'timeupdate') {
+          const totalSecs = Math.floor((currentTrack.dur || 240000) / 1000);
+          const elapsedSecs = Math.floor(data.currentTime);
+          timeElapsed.textContent = `${Math.floor(elapsedSecs / 60)}:${(elapsedSecs % 60).toString().padStart(2, '0')}`;
+          const pct = Math.min(100, (data.currentTime / (data.duration || totalSecs)) * 100);
+          progressFill.style.width = `${pct}%`;
+        } else if (evt === 'play') {
+          updatePlayState(true);
+        } else if (evt === 'pause' || evt === 'stop') {
+          updatePlayState(false);
+        }
+      });
+
+      // Add to playlist buttons
+      document.getElementById('player-add-playlist-btn').addEventListener('click', () => {
+        MooderShared.addToPlaylist(currentTrack);
+      });
+      document.getElementById('add-to-playlist-top-btn').addEventListener('click', () => {
+        MooderShared.addToPlaylist(currentTrack);
+      });
+
+      // Load Track Function
+      function loadTrackDNA(t) {
+        if (window.MooderAudio.isPlaying && window.MooderAudio.currentTrack && window.MooderAudio.currentTrack.id !== t.id) {
+          window.MooderAudio.stop();
+        }
+
+        document.getElementById('inspect-title').textContent = t.title;
+        document.getElementById('inspect-artist').textContent = t.artist;
+        document.getElementById('pill-genre').textContent = t.genre;
+        document.getElementById('pill-pop').textContent = `${t.pop} / 100`;
+        document.getElementById('ribbon-key').textContent = MooderShared.getKeyName(t.key, t.mode);
+        document.getElementById('ribbon-tempo').textContent = `${Math.round(t.tmp)} BPM`;
+        document.getElementById('player-time-total').textContent = MooderShared.formatDuration(t.dur);
+        document.getElementById('album-cover-box').style.background = MooderShared.getTrackArtwork(t);
+
+        // Personality Summary
+        const isHighEnergy = (t.eng || 0) >= 0.6;
+        const isHighValence = (t.val || 0) >= 0.5;
+        let badgeLabel = "Balanced Sound";
+        if (isHighEnergy && isHighValence) badgeLabel = "Euphoric & Energetic";
+        else if (isHighEnergy && !isHighValence) badgeLabel = "Intense & Driving";
+        else if (!isHighEnergy && !isHighValence) badgeLabel = "Calm & Melancholic";
+        else badgeLabel = "Chill & Radiant";
+
+        document.getElementById('personality-badge').querySelector('span:last-child').textContent = badgeLabel;
+
+        renderFeatureMeters(t);
+        renderRadarChart(t);
+        calculateSimilarSongs(t);
+      }
+
+      // 5 Core Features
+      function renderFeatureMeters(t) {
+        const list = document.getElementById('feature-meters-list');
+        const features = [
+          { name: 'Energy', desc: 'Intensity & drive', val: t.eng, color: 'bg-primary' },
+          { name: 'Valence', desc: 'Positiveness & mood', val: t.val, color: 'bg-secondary-container' },
+          { name: 'Danceability', desc: 'Rhythm & groove', val: t.dnc, color: 'bg-tertiary-container' },
+          { name: 'Acousticness', desc: 'Natural instruments', val: t.aco, color: 'bg-amber-400' },
+          { name: 'Instrumentalness', desc: 'Presence of vocals', val: t.ins, color: 'bg-cyan-400' }
+        ];
+
+        list.innerHTML = features.map(f => {
+          const pct = Math.round(f.val * 100);
+          return `
+            <div class="flex flex-col gap-1.5">
+              <div class="flex justify-between items-center text-xs">
+                <div>
+                  <span class="text-on-surface font-semibold">${f.name}</span>
+                  <span class="text-outline text-[11px] ml-1.5">(${f.desc})</span>
+                </div>
+                <span class="font-label-code text-on-surface font-bold">${(f.val).toFixed(2)}</span>
+              </div>
+              <div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+                <div class="h-full ${f.color} rounded-full" style="width: ${pct}%;"></div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // 5-Axis Radar Chart
+      function renderRadarChart(t) {
+        const svg = document.getElementById('dna-radar-svg');
+        const cx = 200, cy = 200, maxR = 125;
+
+        const featureKeys = ['eng', 'val', 'dnc', 'aco', 'ins'];
+        const featureLabels = ['ENERGY', 'VALENCE', 'DANCE', 'ACOUSTIC', 'INSTRUM'];
+        const numAxes = featureKeys.length;
+        const angles = featureKeys.map((_, i) => -Math.PI / 2 + (i * 2 * Math.PI / numAxes));
+
+        let benchValues = [0.5, 0.5, 0.5, 0.5, 0.5];
+        if (benchmarks && benchmarks[t.genre]) {
+          const bg = benchmarks[t.genre];
+          benchValues = [
+            bg.energy.mean, bg.valence.mean, bg.danceability.mean,
+            bg.acousticness.mean, bg.instrumentalness.mean
+          ];
+          document.getElementById('radar-legend-bench').textContent = `Vs ${t.genre.toUpperCase()} Average`;
+        }
+
+        function getCoords(values) {
+          return values.map((val, i) => {
+            const r = Math.max(10, Math.min(maxR, val * maxR));
+            return {
+              x: Math.round(cx + r * Math.cos(angles[i])),
+              y: Math.round(cy + r * Math.sin(angles[i]))
+            };
+          });
+        }
+
+        const activeCoords = getCoords([t.eng, t.val, t.dnc, t.aco, t.ins]);
+        const benchCoords = getCoords(benchValues);
+
+        // Concentric rings
+        let gridSvg = '';
+        [0.25, 0.5, 0.75, 1.0].forEach(level => {
+          const pts = angles.map(a => `${Math.round(cx + level * maxR * Math.cos(a))},${Math.round(cy + level * maxR * Math.sin(a))}`).join(' ');
+          gridSvg += `<polygon fill="none" stroke="#262a34" stroke-width="1" points="${pts}"></polygon>`;
+        });
+
+        // Spokes
+        let spokesSvg = angles.map(a => {
+          return `<line x1="${cx}" y1="${cy}" x2="${Math.round(cx + maxR * Math.cos(a))}" y2="${Math.round(cy + maxR * Math.sin(a))}" stroke="#262a34" stroke-width="1"></line>`;
+        }).join('');
+
+        const activePointsStr = activeCoords.map(c => `${c.x},${c.y}`).join(' ');
+        const benchPointsStr = benchCoords.map(c => `${c.x},${c.y}`).join(' ');
+
+        // Labels
+        let labelsSvg = featureLabels.map((lbl, i) => {
+          const r = maxR + 24;
+          const x = Math.round(cx + r * Math.cos(angles[i]));
+          const y = Math.round(cy + r * Math.sin(angles[i]));
+          const anchor = Math.abs(angles[i] - (-Math.PI / 2)) < 0.1 ? 'middle' : (x > cx ? 'start' : 'end');
+          return `<text x="${x}" y="${y + 4}" fill="#dfe2ef" font-family="JetBrains Mono" font-size="10" font-weight="600" text-anchor="${anchor}">${lbl}</text>`;
+        }).join('');
+
+        let verticesSvg = activeCoords.map(c => 
+          `<circle cx="${c.x}" cy="${c.y}" r="4" fill="#53e076"></circle>`
+        ).join('');
+
+        svg.innerHTML = `
+          <defs>
+            <radialGradient cx="50%" cy="50%" id="emeraldAura" r="50%">
+              <stop offset="0%" stop-color="#53e076" stop-opacity="0.45"></stop>
+              <stop offset="100%" stop-color="#53e076" stop-opacity="0.0"></stop>
+            </radialGradient>
+          </defs>
+          ${gridSvg}
+          ${spokesSvg}
+          <polygon points="${benchPointsStr}" fill="#00f1fd" fill-opacity="0.08" stroke="#00dce6" stroke-dasharray="3,3" stroke-width="1.5"></polygon>
+          <polygon points="${activePointsStr}" fill="url(#emeraldAura)" stroke="#53e076" stroke-width="2.5"></polygon>
+          ${verticesSvg}
+          ${labelsSvg}
+        `;
+      }
+
+      function calculateSimilarSongs(t) {
+        if (!catalog) return;
+        const targetVec = [t.eng, t.val, t.dnc, t.aco, t.ins];
+        const targetMag = Math.sqrt(targetVec.reduce((acc, v) => acc + v * v, 0)) || 1;
+
+        const scored = catalog
+          .filter(other => other.id !== t.id)
+          .map(other => {
+            const otherVec = [other.eng, other.val, other.dnc, other.aco, other.ins];
+            const dot = targetVec.reduce((sum, v, i) => sum + v * otherVec[i], 0);
+            const otherMag = Math.sqrt(otherVec.reduce((acc, v) => acc + v * v, 0)) || 1;
+            return { track: other, score: dot / (targetMag * otherMag) };
+          });
+
+        scored.sort((a, b) => b.score - a.score);
+        const top4 = scored.slice(0, 4);
+
+        const container = document.getElementById('similar-songs-grid');
+        container.innerHTML = top4.map(({ track: m, score }) => {
+          const matchPct = (score * 100).toFixed(0);
+          return `
+            <div class="obsidian-card p-4 rounded-xl flex flex-col justify-between shadow-md hover:border-primary/50 transition-all group">
+              <div>
+                <div class="flex items-start justify-between gap-2">
+                  <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-xs shrink-0 shadow-sm" style="background: ${MooderShared.getTrackArtwork(m)}">
+                    <span class="material-symbols-outlined text-sm">music_note</span>
+                  </div>
+                  <span class="font-label-code text-xs px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-bold">
+                    ${matchPct}% match
+                  </span>
+                </div>
+                <div class="mt-3">
+                  <h4 class="font-body-md text-xs font-semibold text-on-surface truncate group-hover:text-primary transition-colors cursor-pointer" onclick='MooderShared.inspectTrackAndNavigate(${JSON.stringify(m).replace(/'/g, "&apos;")})'>${m.title}</h4>
+                  <p class="font-body-sm text-[11px] text-outline truncate">${m.artist}</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 mt-3 pt-2.5 border-t border-surface-container">
+                <button class="add-sim-btn flex-1 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-xs font-medium transition-colors" data-id="${m.id}">
+                  Add
+                </button>
+                <button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-outline text-xs transition-colors" onclick='MooderShared.inspectTrackAndNavigate(${JSON.stringify(m).replace(/'/g, "&apos;")})'>
+                  Inspect
+                </button>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        container.querySelectorAll('.add-sim-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-id');
+            const found = catalog.find(t => t.id === id);
+            if (found) MooderShared.addToPlaylist(found);
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

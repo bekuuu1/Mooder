@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Mooder — Mood Explorer | 2D Acoustic Plane</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/mooder.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#0f131c",
+            "surface-dim": "#0f131c",
+            "surface-bright": "#353943",
+            "surface-container-lowest": "#0a0e17",
+            "surface-container-low": "#181b25",
+            "surface-container": "#1c1f29",
+            "surface-container-high": "#262a34",
+            "surface-container-highest": "#31353f",
+            "on-surface": "#dfe2ef",
+            "on-surface-variant": "#bccbb9",
+            "primary": "#53e076",
+            "primary-container": "#1db954",
+            "on-primary": "#003914",
+            "on-primary-container": "#004118",
+            "secondary": "#dcfdff",
+            "secondary-container": "#00f1fd",
+            "secondary-fixed": "#6ff6ff",
+            "secondary-fixed-dim": "#00dce6",
+            "tertiary": "#dcb8ff",
+            "tertiary-container": "#c186ff",
+            "outline": "#869585",
+            "outline-variant": "#3d4a3d",
+            "error": "#ffb4ab",
+            "background": "#0f131c"
+          },
+          fontFamily: {
+            "display": ["Geist", "sans-serif"],
+            "headline-lg": ["Geist", "sans-serif"],
+            "headline-md": ["Geist", "sans-serif"],
+            "headline-sm": ["Geist", "sans-serif"],
+            "body-lg": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "body-sm": ["Geist", "sans-serif"],
+            "metric-display": ["JetBrains Mono", "monospace"],
+            "metric-md": ["JetBrains Mono", "monospace"],
+            "metric-sm": ["JetBrains Mono", "monospace"],
+            "label-code": ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+  <!-- SIDEBAR NAVIGATION -->
+  <aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)] border-r border-surface-container">
+    <div class="flex flex-col">
+      <div class="h-16 px-6 flex items-center justify-between border-b border-surface-container/50">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary-container to-secondary-container flex items-center justify-center shadow-[0_0_12px_rgba(29,185,84,0.4)]">
+            <span class="material-symbols-outlined text-surface font-bold text-xl">graphic_eq</span>
+          </div>
+          <span class="font-headline-sm text-xl text-on-surface tracking-tight font-semibold">Mooder</span>
+        </a>
+      </div>
+
+      <div class="px-3 pt-5">
+        <nav class="flex flex-col gap-1.5">
+          <a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+            <span class="material-symbols-outlined text-xl">dashboard</span>
+            <span class="font-body-md text-sm">Overview</span>
+          </a>
+          <a href="music-dna.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+            <span class="material-symbols-outlined text-xl">graphic_eq</span>
+            <span class="font-body-md text-sm">Music DNA</span>
+          </a>
+          <a aria-current="page" href="mood-explorer.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl transition-all bg-surface-container-high text-primary font-medium border border-primary/20 shadow-sm">
+            <span class="material-symbols-outlined text-xl">bubble_chart</span>
+            <span class="font-body-md text-sm">Mood Explorer</span>
+          </a>
+          <a href="playlist-generator.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+            <span class="material-symbols-outlined text-xl">auto_fix_high</span>
+            <span class="font-body-md text-sm">Playlist Generator</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN VIEW -->
+  <div class="pl-64">
+    <!-- STICKY TOP HEADER -->
+    <header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 flex items-center justify-between px-8 border-b border-surface-container shadow-sm">
+      <div class="flex items-center gap-4 flex-1 max-w-lg">
+        <div class="relative w-full">
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-sm text-outline">search</span>
+          <input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-sm pl-9 pr-12 py-2 rounded-xl border border-surface-container focus:outline-none focus:border-primary transition-colors cursor-pointer" placeholder="Search tracks or artists..." type="text" onclick="MooderShared.openCommandPalette()" readonly/>
+          <span class="absolute right-2.5 top-1/2 -translate-y-1/2 font-label-code text-xs text-outline bg-surface-container px-1.5 py-0.5 rounded cursor-pointer" onclick="MooderShared.openCommandPalette()">⌘K</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="playlist-generator.html" class="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary-container text-on-primary-container font-medium text-xs shadow-sm hover:brightness-110 transition-all">
+          <span class="material-symbols-outlined text-sm">auto_fix_high</span>
+          <span>Generate Playlist</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY -->
+    <main class="relative pt-20 px-8 py-8 min-h-screen">
+      <div class="flex flex-col gap-5 max-w-6xl mx-auto">
+
+        <!-- HEADER -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h1 class="font-headline-lg text-2xl font-bold text-on-surface tracking-tight">Mood Explorer</h1>
+            <p class="font-body-md text-xs text-on-surface-variant mt-0.5">
+              Click any dot on the Energy vs. Valence map to inspect its mood and similar tracks.
+            </p>
+          </div>
+        </div>
+
+        <!-- CLEAN FILTER BAR -->
+        <div class="bg-surface-container-low rounded-xl p-3 flex flex-wrap items-center justify-between gap-3 border border-surface-container shadow-sm">
+          <div class="flex flex-wrap items-center gap-3 flex-1">
+            <!-- Genre Select -->
+            <div class="flex items-center gap-2 bg-surface-container px-3 py-1.5 rounded-lg border border-surface-container">
+              <span class="font-label-code text-xs text-outline uppercase">Genre:</span>
+              <select id="filter-genre-select" class="bg-transparent text-xs text-on-surface font-medium focus:outline-none capitalize cursor-pointer">
+                <option value="all" class="bg-surface-container text-on-surface">All Genres</option>
+                <option value="pop" class="bg-surface-container text-on-surface">Pop</option>
+                <option value="chill" class="bg-surface-container text-on-surface">Chill</option>
+                <option value="dance" class="bg-surface-container text-on-surface">Dance</option>
+                <option value="electronic" class="bg-surface-container text-on-surface">Electronic</option>
+                <option value="rock" class="bg-surface-container text-on-surface">Rock</option>
+                <option value="synthpop" class="bg-surface-container text-on-surface">Synthpop</option>
+                <option value="indie" class="bg-surface-container text-on-surface">Indie</option>
+              </select>
+            </div>
+
+            <!-- Artist Search Filter -->
+            <div class="relative min-w-[200px] flex-1 max-w-xs">
+              <span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-sm text-outline">search</span>
+              <input id="filter-artist-input" class="w-full bg-surface-container text-on-surface placeholder:text-outline font-body-sm text-xs pl-8 pr-3 py-1.5 rounded-lg border border-surface-container focus:outline-none focus:border-primary transition-colors" placeholder="Filter by track or artist..." type="text"/>
+            </div>
+          </div>
+
+          <button id="filter-reset-btn" class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-code text-xs transition-colors border border-surface-container">
+            <span class="material-symbols-outlined text-sm">restart_alt</span>
+            <span>Reset View</span>
+          </button>
+        </div>
+
+        <!-- 2D MAP & INSPECTOR GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <!-- LEFT 8 COLS: 2D Mood Plane Canvas -->
+          <div class="lg:col-span-8 flex flex-col gap-2.5">
+            <div class="relative w-full aspect-[4/3] max-h-[580px] bg-surface-container-lowest rounded-2xl overflow-hidden shadow-xl border border-surface-container p-3 flex flex-col justify-between">
+              
+              <!-- 4 Quadrants Subtle Labels -->
+              <div class="absolute inset-0 grid grid-cols-2 grid-rows-2 pointer-events-none p-4">
+                <!-- Q2 (Top-Left): Intense -->
+                <div class="flex items-start justify-start">
+                  <span class="font-label-code text-xs text-error font-semibold uppercase flex items-center gap-1.5 bg-surface-container-lowest/80 px-2 py-0.5 rounded border border-error/20">
+                    <span class="w-2 h-2 rounded-full bg-error"></span> Intense
+                  </span>
+                </div>
+
+                <!-- Q1 (Top-Right): Happy / Energetic -->
+                <div class="flex items-start justify-end">
+                  <span class="font-label-code text-xs text-primary font-semibold uppercase flex items-center gap-1.5 bg-surface-container-lowest/80 px-2 py-0.5 rounded border border-primary/20">
+                    Happy & Energetic <span class="w-2 h-2 rounded-full bg-primary"></span>
+                  </span>
+                </div>
+
+                <!-- Q3 (Bottom-Left): Calm / Melancholic -->
+                <div class="flex items-end justify-start">
+                  <span class="font-label-code text-xs text-tertiary font-semibold uppercase flex items-center gap-1.5 bg-surface-container-lowest/80 px-2 py-0.5 rounded border border-tertiary/20">
+                    <span class="w-2 h-2 rounded-full bg-tertiary"></span> Calm & Sad
+                  </span>
+                </div>
+
+                <!-- Q4 (Bottom-Right): Positive / Chill -->
+                <div class="flex items-end justify-end">
+                  <span class="font-label-code text-xs text-secondary-fixed font-semibold uppercase flex items-center gap-1.5 bg-surface-container-lowest/80 px-2 py-0.5 rounded border border-secondary-fixed/20">
+                    Peaceful & Positive <span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Canvas Point Cloud -->
+              <canvas id="explorer-canvas" class="absolute inset-0 w-full h-full cursor-crosshair z-10"></canvas>
+
+              <!-- Zoom Controls -->
+              <div class="absolute bottom-3 right-3 z-20 flex items-center gap-1 bg-surface-container/90 backdrop-blur-md p-1 rounded-lg border border-surface-container shadow-lg">
+                <button id="zoom-in-btn" class="w-7 h-7 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface transition-colors" title="Zoom In">
+                  <span class="material-symbols-outlined text-sm">add</span>
+                </button>
+                <button id="zoom-out-btn" class="w-7 h-7 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface transition-colors" title="Zoom Out">
+                  <span class="material-symbols-outlined text-sm">remove</span>
+                </button>
+                <button id="zoom-reset-btn" class="w-7 h-7 rounded flex items-center justify-center hover:bg-surface-container-high text-on-surface transition-colors" title="Reset View">
+                  <span class="material-symbols-outlined text-sm">crop_free</span>
+                </button>
+              </div>
+
+              <!-- Tooltip -->
+              <div id="explorer-tooltip" class="absolute z-30 pointer-events-none bg-surface-container-high/95 backdrop-blur-md px-3 py-2 rounded-xl border border-surface-container shadow-2xl transition-opacity opacity-0 flex flex-col gap-0.5 min-w-[150px]">
+                <span id="exp-tip-title" class="font-body-sm text-xs font-bold text-on-surface truncate">Track</span>
+                <span id="exp-tip-artist" class="font-body-sm text-[11px] text-outline truncate">Artist</span>
+              </div>
+            </div>
+
+            <!-- Clean Legend -->
+            <div class="flex flex-wrap items-center justify-between gap-3 px-1 font-label-code text-[11px] text-outline">
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-error"></span> Intense</span>
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> Happy</span>
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary"></span> Calm</span>
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary-fixed"></span> Positive</span>
+              </div>
+              <span>Click any dot to inspect track</span>
+            </div>
+          </div>
+
+          <!-- RIGHT 4 COLS: Clean Acoustic Inspector -->
+          <div class="lg:col-span-4 obsidian-card rounded-2xl p-5 shadow-xl flex flex-col justify-between gap-5">
+            <div class="flex flex-col gap-4">
+              <!-- Selected Track Header -->
+              <div class="flex items-center gap-3.5 pb-3 border-b border-surface-container">
+                <div id="inspector-artwork" class="w-12 h-12 rounded-xl flex items-center justify-center text-white shrink-0 shadow-md">
+                  <span class="material-symbols-outlined text-xl">music_note</span>
+                </div>
+                <div class="flex flex-col min-w-0 flex-1">
+                  <h3 id="inspector-title" class="font-headline-sm text-base font-bold text-on-surface truncate">Midnight City</h3>
+                  <p id="inspector-artist" class="font-body-md text-xs text-outline truncate">M83</p>
+                  <span id="inspector-quadrant-badge" class="font-label-code text-[11px] text-primary mt-0.5 block truncate">
+                    Happy & Energetic
+                  </span>
+                </div>
+                <button id="inspector-play-btn" class="w-9 h-9 rounded-xl bg-primary hover:bg-primary/90 text-on-primary flex items-center justify-center transition-all shadow-sm shrink-0" title="Play preview">
+                  <span id="inspector-play-icon" class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                </button>
+              </div>
+
+              <!-- Energy & Valence Sliders -->
+              <div class="flex flex-col gap-2.5 font-mono-telemetry text-xs">
+                <div>
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-outline uppercase text-[10px]">Energy</span>
+                    <span id="insp-eng-score" class="font-bold text-secondary-fixed">0.86</span>
+                  </div>
+                  <div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+                    <div id="insp-eng-bar" class="h-full bg-secondary-fixed rounded-full" style="width: 86%;"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-outline uppercase text-[10px]">Valence (Mood)</span>
+                    <span id="insp-val-score" class="font-bold text-primary">0.71</span>
+                  </div>
+                  <div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+                    <div id="insp-val-bar" class="h-full bg-primary rounded-full" style="width: 71%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Top 4 Neighbor Tracks -->
+              <div class="flex flex-col gap-1.5 pt-2 border-t border-surface-container">
+                <span class="font-label-code text-[11px] text-outline uppercase font-semibold">Similar Mood Tracks</span>
+                <div id="inspector-neighbors-list" class="flex flex-col gap-1 max-h-48 overflow-y-auto divide-y divide-surface-container/30">
+                  <!-- Injected via JS -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex flex-col gap-2 pt-3 border-t border-surface-container">
+              <button id="add-selected-to-playlist-btn" class="w-full py-2.5 rounded-xl bg-primary hover:bg-primary/90 text-on-primary font-semibold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md">
+                <span class="material-symbols-outlined text-base">playlist_add</span>
+                <span>Add to Playlist</span>
+              </button>
+              <button id="inspect-dna-deep-btn" class="w-full py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-medium text-xs flex items-center justify-center gap-1.5 transition-colors border border-surface-container">
+                <span class="material-symbols-outlined text-sm text-primary">graphic_eq</span>
+                <span>Inspect in Music DNA</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script src="js/mooder-audio.js"></script>
+  <script src="js/mooder-shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      await MooderShared.initGlobalData();
+      const catalog = await MooderShared.loadCatalog();
+
+      if (!catalog) return;
+
+      let focusedTrack = MooderShared.getInspectedTrack() || catalog[0];
+
+      let selectedGenre = 'all';
+      let artistFilter = '';
+
+      const canvas = document.getElementById('explorer-canvas');
+      const ctx = canvas.getContext('2d');
+      const tooltip = document.getElementById('explorer-tooltip');
+      const tipTitle = document.getElementById('exp-tip-title');
+      const tipArtist = document.getElementById('exp-tip-artist');
+
+      let zoom = 1.0;
+      let panX = 0;
+      let panY = 0;
+      let isDragging = false;
+      let dragStartX = 0;
+      let dragStartY = 0;
+      let hoveredNode = null;
+
+      function resizeCanvas() {
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width * window.devicePixelRatio;
+        canvas.height = rect.height * window.devicePixelRatio;
+        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+        draw();
+      }
+
+      window.addEventListener('resize', resizeCanvas);
+
+      function getFilteredTracks() {
+        return catalog.filter(t => {
+          if (selectedGenre !== 'all' && !t.genre.toLowerCase().includes(selectedGenre)) return false;
+          if (artistFilter && !t.artist.toLowerCase().includes(artistFilter) && !t.title.toLowerCase().includes(artistFilter)) return false;
+          return true;
+        });
+      }
+
+      function draw() {
+        const w = canvas.clientWidth;
+        const h = canvas.clientHeight;
+        ctx.clearRect(0, 0, w, h);
+
+        const tracks = getFilteredTracks();
+        const padding = 30;
+        const plotW = w - padding * 2;
+        const plotH = h - padding * 2;
+
+        ctx.save();
+        ctx.translate(panX, panY);
+
+        // Center lines
+        const midX = padding + plotW * 0.5 * zoom;
+        const midY = padding + plotH * 0.5 * zoom;
+
+        ctx.strokeStyle = '#262a34';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(padding, midY);
+        ctx.lineTo(padding + plotW * zoom, midY);
+        ctx.moveTo(midX, padding);
+        ctx.lineTo(midX, padding + plotH * zoom);
+        ctx.stroke();
+
+        // Points
+        tracks.forEach(t => {
+          const px = padding + t.val * plotW * zoom;
+          const py = padding + (1 - t.eng) * plotH * zoom;
+
+          const isSelected = focusedTrack && focusedTrack.id === t.id;
+          const isHovered = hoveredNode && hoveredNode.id === t.id;
+
+          let color = '#72fe8f';
+          if (t.val < 0.5 && t.eng >= 0.5) color = '#ffb4ab';
+          else if (t.val < 0.5 && t.eng < 0.5) color = '#dcb8ff';
+          else if (t.val >= 0.5 && t.eng < 0.5) color = '#6ff6ff';
+
+          if (isSelected) {
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.arc(px, py, 12, 0, Math.PI * 2);
+            ctx.globalAlpha = 0.3;
+            ctx.fill();
+            ctx.globalAlpha = 1.0;
+
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.arc(px, py, 6, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+
+          ctx.fillStyle = color;
+          ctx.beginPath();
+          ctx.arc(px, py, isHovered ? 6 : (isSelected ? 5 : 3.5), 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.strokeStyle = '#090D16';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        });
+
+        ctx.restore();
+      }
+
+      function getTrackAtPos(mx, my) {
+        const w = canvas.clientWidth;
+        const h = canvas.clientHeight;
+        const padding = 30;
+        const plotW = w - padding * 2;
+        const plotH = h - padding * 2;
+
+        const tracks = getFilteredTracks();
+        for (let i = tracks.length - 1; i >= 0; i--) {
+          const t = tracks[i];
+          const px = panX + padding + t.val * plotW * zoom;
+          const py = panY + padding + (1 - t.eng) * plotH * zoom;
+          const dist = Math.hypot(mx - px, my - py);
+          if (dist <= 8) return t;
+        }
+        return null;
+      }
+
+      canvas.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const mx = e.clientX - rect.left;
+        const my = e.clientY - rect.top;
+
+        if (isDragging) {
+          panX += mx - dragStartX;
+          panY += my - dragStartY;
+          dragStartX = mx;
+          dragStartY = my;
+          draw();
+          return;
+        }
+
+        const match = getTrackAtPos(mx, my);
+        hoveredNode = match;
+
+        if (match) {
+          tipTitle.textContent = match.title;
+          tipArtist.textContent = match.artist;
+          tooltip.style.left = `${Math.min(rect.width - 160, mx + 12)}px`;
+          tooltip.style.top = `${Math.max(10, my - 50)}px`;
+          tooltip.classList.remove('opacity-0');
+          tooltip.classList.add('opacity-100');
+        } else {
+          tooltip.classList.remove('opacity-100');
+          tooltip.classList.add('opacity-0');
+        }
+
+        draw();
+      });
+
+      canvas.addEventListener('mousedown', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const mx = e.clientX - rect.left;
+        const my = e.clientY - rect.top;
+        const match = getTrackAtPos(mx, my);
+
+        if (match) {
+          focusedTrack = match;
+          MooderShared.setInspectedTrack(match);
+          updateInspector(match);
+          draw();
+        } else {
+          isDragging = true;
+          dragStartX = mx;
+          dragStartY = my;
+        }
+      });
+
+      window.addEventListener('mouseup', () => { isDragging = false; });
+
+      // Zoom Controls
+      document.getElementById('zoom-in-btn').addEventListener('click', () => { zoom = Math.min(3.0, zoom * 1.25); draw(); });
+      document.getElementById('zoom-out-btn').addEventListener('click', () => { zoom = Math.max(0.6, zoom / 1.25); draw(); });
+      document.getElementById('zoom-reset-btn').addEventListener('click', () => { zoom = 1.0; panX = 0; panY = 0; draw(); });
+
+      // Filters
+      const genreSelect = document.getElementById('filter-genre-select');
+      const artistInput = document.getElementById('filter-artist-input');
+
+      genreSelect.addEventListener('change', (e) => { selectedGenre = e.target.value.toLowerCase(); draw(); });
+      artistInput.addEventListener('input', (e) => { artistFilter = e.target.value.trim().toLowerCase(); draw(); });
+
+      document.getElementById('filter-reset-btn').addEventListener('click', () => {
+        genreSelect.value = 'all';
+        artistInput.value = '';
+        selectedGenre = 'all';
+        artistFilter = '';
+        zoom = 1.0;
+        panX = 0;
+        panY = 0;
+        draw();
+      });
+
+      // Update Inspector
+      function updateInspector(t) {
+        document.getElementById('inspector-artwork').style.background = MooderShared.getTrackArtwork(t);
+        document.getElementById('inspector-title').textContent = t.title;
+        document.getElementById('inspector-artist').textContent = t.artist;
+
+        let quadName = "Happy & Energetic";
+        let quadClass = "text-primary";
+        if (t.val < 0.5 && t.eng >= 0.5) { quadName = "Intense"; quadClass = "text-error"; }
+        else if (t.val < 0.5 && t.eng < 0.5) { quadName = "Calm & Sad"; quadClass = "text-tertiary"; }
+        else if (t.val >= 0.5 && t.eng < 0.5) { quadName = "Peaceful & Positive"; quadClass = "text-secondary-fixed"; }
+
+        const badge = document.getElementById('inspector-quadrant-badge');
+        badge.className = `font-label-code text-[11px] ${quadClass} truncate font-semibold`;
+        badge.textContent = quadName;
+
+        document.getElementById('insp-val-score').textContent = t.val.toFixed(2);
+        document.getElementById('insp-val-bar').style.width = `${Math.round(t.val * 100)}%`;
+        document.getElementById('insp-eng-score').textContent = t.eng.toFixed(2);
+        document.getElementById('insp-eng-bar').style.width = `${Math.round(t.eng * 100)}%`;
+
+        document.getElementById('inspector-play-icon').textContent = 
+          (window.MooderAudio.isPlaying && window.MooderAudio.currentTrack && window.MooderAudio.currentTrack.id === t.id) ? 'pause' : 'play_arrow';
+
+        // 4 Similar Neighbors
+        const neighborsList = document.getElementById('inspector-neighbors-list');
+        const scored = catalog
+          .filter(o => o.id !== t.id)
+          .map(o => {
+            const dist = Math.hypot(o.val - t.val, o.eng - t.eng);
+            return { track: o, dist };
+          });
+
+        scored.sort((a, b) => a.dist - b.dist);
+        const top4 = scored.slice(0, 4);
+
+        neighborsList.innerHTML = top4.map(({ track: n }) => `
+          <div class="neighbor-row flex items-center justify-between p-2 rounded-lg hover:bg-surface-container transition-colors cursor-pointer" data-id="${n.id}">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <button class="neighbor-play-btn text-outline hover:text-primary transition-colors shrink-0" data-id="${n.id}">
+                <span class="material-symbols-outlined text-base">play_circle</span>
+              </button>
+              <div class="flex flex-col min-w-0">
+                <span class="font-body-sm text-xs font-semibold text-on-surface truncate">${n.title}</span>
+                <span class="font-body-sm text-[11px] text-outline truncate">${n.artist}</span>
+              </div>
+            </div>
+            <span class="font-label-code text-[10px] text-primary shrink-0">${n.genre}</span>
+          </div>
+        `).join('');
+
+        neighborsList.querySelectorAll('.neighbor-row').forEach(row => {
+          row.addEventListener('click', (e) => {
+            if (e.target.closest('.neighbor-play-btn')) return;
+            const id = row.getAttribute('data-id');
+            const found = catalog.find(x => x.id === id);
+            if (found) {
+              focusedTrack = found;
+              MooderShared.setInspectedTrack(found);
+              updateInspector(found);
+              draw();
+            }
+          });
+        });
+
+        neighborsList.querySelectorAll('.neighbor-play-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const id = btn.getAttribute('data-id');
+            const found = catalog.find(x => x.id === id);
+            if (found) window.MooderAudio.toggle(found);
+          });
+        });
+      }
+
+      document.getElementById('inspector-play-btn').addEventListener('click', () => {
+        if (!focusedTrack) return;
+        const isPlaying = window.MooderAudio.toggle(focusedTrack);
+        document.getElementById('inspector-play-icon').textContent = isPlaying ? 'pause' : 'play_arrow';
+      });
+
+      document.getElementById('add-selected-to-playlist-btn').addEventListener('click', () => {
+        if (focusedTrack) MooderShared.addToPlaylist(focusedTrack);
+      });
+
+      document.getElementById('inspect-dna-deep-btn').addEventListener('click', () => {
+        if (focusedTrack) MooderShared.inspectTrackAndNavigate(focusedTrack);
+      });
+
+      resizeCanvas();
+      updateInspector(focusedTrack);
+    });
+  </script>
+</body>
+</html>

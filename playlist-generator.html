@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Mooder — Playlist Generator | Mood-Based Synthesizer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/mooder.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#0f131c",
+            "surface-dim": "#0f131c",
+            "surface-bright": "#353943",
+            "surface-container-lowest": "#0a0e17",
+            "surface-container-low": "#181b25",
+            "surface-container": "#1c1f29",
+            "surface-container-high": "#262a34",
+            "surface-container-highest": "#31353f",
+            "on-surface": "#dfe2ef",
+            "on-surface-variant": "#bccbb9",
+            "primary": "#53e076",
+            "primary-container": "#1db954",
+            "on-primary": "#003914",
+            "on-primary-container": "#004118",
+            "secondary": "#dcfdff",
+            "secondary-container": "#00f1fd",
+            "secondary-fixed": "#6ff6ff",
+            "secondary-fixed-dim": "#00dce6",
+            "tertiary": "#dcb8ff",
+            "tertiary-container": "#c186ff",
+            "outline": "#869585",
+            "outline-variant": "#3d4a3d",
+            "error": "#ffb4ab",
+            "background": "#0f131c"
+          },
+          fontFamily: {
+            "display": ["Geist", "sans-serif"],
+            "headline-lg": ["Geist", "sans-serif"],
+            "headline-md": ["Geist", "sans-serif"],
+            "headline-sm": ["Geist", "sans-serif"],
+            "body-lg": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "body-sm": ["Geist", "sans-serif"],
+            "metric-display": ["JetBrains Mono", "monospace"],
+            "metric-md": ["JetBrains Mono", "monospace"],
+            "metric-sm": ["JetBrains Mono", "monospace"],
+            "label-code": ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+  <!-- SIDEBAR NAVIGATION -->
+  <aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)] border-r border-surface-container">
+    <div class="flex flex-col">
+      <div class="h-16 px-6 flex items-center justify-between border-b border-surface-container/50">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary-container to-secondary-container flex items-center justify-center shadow-[0_0_12px_rgba(29,185,84,0.4)]">
+            <span class="material-symbols-outlined text-surface font-bold text-xl">graphic_eq</span>
+          </div>
+          <span class="font-headline-sm text-xl text-on-surface tracking-tight font-semibold">Mooder</span>
+        </a>
+      </div>
+
+      <div class="px-3 pt-5">
+        <nav class="flex flex-col gap-1.5">
+          <a href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+            <span class="material-symbols-outlined text-xl">dashboard</span>
+            <span class="font-body-md text-sm">Overview</span>
+          </a>
+          <a href="music-dna.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+            <span class="material-symbols-outlined text-xl">graphic_eq</span>
+            <span class="font-body-md text-sm">Music DNA</span>
+          </a>
+          <a href="mood-explorer.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+            <span class="material-symbols-outlined text-xl">bubble_chart</span>
+            <span class="font-body-md text-sm">Mood Explorer</span>
+          </a>
+          <a aria-current="page" href="playlist-generator.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl transition-all bg-surface-container-high text-primary font-medium border border-primary/20 shadow-sm">
+            <span class="material-symbols-outlined text-xl">auto_fix_high</span>
+            <span class="font-body-md text-sm">Playlist Generator</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN VIEW -->
+  <div class="pl-64">
+    <!-- STICKY TOP HEADER -->
+    <header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 flex items-center justify-between px-8 border-b border-surface-container shadow-sm">
+      <div class="flex items-center gap-4 flex-1 max-w-lg">
+        <div class="relative w-full">
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-sm text-outline">search</span>
+          <input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-sm pl-9 pr-12 py-2 rounded-xl border border-surface-container focus:outline-none focus:border-primary transition-colors cursor-pointer" placeholder="Search tracks or artists..." type="text" onclick="MooderShared.openCommandPalette()" readonly/>
+          <span class="absolute right-2.5 top-1/2 -translate-y-1/2 font-label-code text-xs text-outline bg-surface-container px-1.5 py-0.5 rounded cursor-pointer" onclick="MooderShared.openCommandPalette()">⌘K</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button id="download-playlist-top-btn" class="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary-container text-on-primary-container font-medium text-xs shadow-sm hover:brightness-110 transition-all">
+          <span class="material-symbols-outlined text-sm">download</span>
+          <span>Download CSV</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY -->
+    <main class="relative pt-20 px-8 py-8 min-h-screen">
+      <div class="flex flex-col gap-6 max-w-6xl mx-auto">
+
+        <!-- HEADER -->
+        <div>
+          <h1 class="font-display text-2xl lg:text-3xl font-bold text-on-surface tracking-tight">Mood Playlist Generator</h1>
+          <p class="font-body-md text-xs text-on-surface-variant mt-1">
+            Pick your desired mood, adjust parameters, and generate an instant 25-track playlist.
+          </p>
+        </div>
+
+        <!-- 6 CLEAN MOOD CARDS -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          <!-- 1. Happy -->
+          <div class="mood-card p-4 rounded-xl obsidian-card hover:bg-surface-container transition-all cursor-pointer shadow-sm flex flex-col items-center text-center gap-2" data-mood="happy">
+            <span class="material-symbols-outlined text-amber-300 text-2xl">light_mode</span>
+            <span class="font-headline-sm text-sm font-bold text-on-surface">Happy</span>
+          </div>
+
+          <!-- 2. Chill (Active) -->
+          <div class="mood-card active p-4 rounded-xl bg-surface-container-high ring-1 ring-secondary-fixed transition-all cursor-pointer shadow-md flex flex-col items-center text-center gap-2" data-mood="chill">
+            <span class="material-symbols-outlined text-secondary-container text-2xl">waves</span>
+            <span class="font-headline-sm text-sm font-bold text-secondary-fixed">Chill</span>
+          </div>
+
+          <!-- 3. Energetic (Active) -->
+          <div class="mood-card active p-4 rounded-xl bg-surface-container-high ring-1 ring-primary transition-all cursor-pointer shadow-md flex flex-col items-center text-center gap-2" data-mood="energetic">
+            <span class="material-symbols-outlined text-primary text-2xl">bolt</span>
+            <span class="font-headline-sm text-sm font-bold text-primary">Energetic</span>
+          </div>
+
+          <!-- 4. Melancholic -->
+          <div class="mood-card p-4 rounded-xl obsidian-card hover:bg-surface-container transition-all cursor-pointer shadow-sm flex flex-col items-center text-center gap-2" data-mood="melancholic">
+            <span class="material-symbols-outlined text-tertiary text-2xl">rainy</span>
+            <span class="font-headline-sm text-sm font-bold text-on-surface">Melancholic</span>
+          </div>
+
+          <!-- 5. Focus -->
+          <div class="mood-card p-4 rounded-xl obsidian-card hover:bg-surface-container transition-all cursor-pointer shadow-sm flex flex-col items-center text-center gap-2" data-mood="focus">
+            <span class="material-symbols-outlined text-on-surface text-2xl">center_focus_strong</span>
+            <span class="font-headline-sm text-sm font-bold text-on-surface">Focus</span>
+          </div>
+
+          <!-- 6. Workout -->
+          <div class="mood-card p-4 rounded-xl obsidian-card hover:bg-surface-container transition-all cursor-pointer shadow-sm flex flex-col items-center text-center gap-2" data-mood="workout">
+            <span class="material-symbols-outlined text-orange-400 text-2xl">local_fire_department</span>
+            <span class="font-headline-sm text-sm font-bold text-on-surface">Workout</span>
+          </div>
+        </div>
+
+        <!-- CONTROLS & GENERATE ACTION -->
+        <div class="obsidian-card p-5 rounded-2xl shadow-lg flex flex-col gap-5">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <!-- Energy Slider -->
+            <div class="flex flex-col gap-1.5">
+              <div class="flex justify-between items-center text-xs">
+                <span class="font-medium text-on-surface">Energy Level</span>
+                <span id="slider-eng-val" class="font-mono-telemetry font-bold text-primary">0.78</span>
+              </div>
+              <input id="slider-eng" type="range" min="0" max="100" value="78" class="w-full accent-primary" />
+            </div>
+
+            <!-- Valence Slider -->
+            <div class="flex flex-col gap-1.5">
+              <div class="flex justify-between items-center text-xs">
+                <span class="font-medium text-on-surface">Mood (Valence)</span>
+                <span id="slider-val-val" class="font-mono-telemetry font-bold text-secondary-fixed">0.65</span>
+              </div>
+              <input id="slider-val" type="range" min="0" max="100" value="65" class="w-full accent-secondary-fixed" />
+            </div>
+
+            <!-- Danceability Slider -->
+            <div class="flex flex-col gap-1.5">
+              <div class="flex justify-between items-center text-xs">
+                <span class="font-medium text-on-surface">Danceability</span>
+                <span id="slider-dnc-val" class="font-mono-telemetry font-bold text-primary">0.82</span>
+              </div>
+              <input id="slider-dnc" type="range" min="0" max="100" value="82" class="w-full accent-primary" />
+            </div>
+          </div>
+
+          <!-- Bottom Action -->
+          <div class="flex items-center justify-between pt-3 border-t border-surface-container flex-wrap gap-4">
+            <span id="active-moods-text" class="text-xs text-outline font-label-code">
+              Selected: Chill + Energetic
+            </span>
+
+            <button id="generate-playlist-btn" class="flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-primary hover:bg-primary-fixed-dim text-on-primary font-semibold text-xs shadow-md transition-all">
+              <span class="material-symbols-outlined text-base">auto_fix_high</span>
+              <span>Generate Playlist (25 Tracks)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- GENERATED PLAYLIST RESULTS -->
+        <div class="flex flex-col gap-4">
+          <!-- Playlist Header Card -->
+          <div class="obsidian-card p-5 rounded-2xl shadow-xl flex items-center justify-between gap-4 flex-wrap">
+            <div class="flex items-center gap-4">
+              <div id="playlist-cover-art" class="w-14 h-14 rounded-xl flex items-center justify-center shadow-lg shrink-0 text-white" style="background: linear-gradient(135deg, #1DB954 0%, #00F2FE 100%);">
+                <span class="material-symbols-outlined text-2xl">auto_awesome</span>
+              </div>
+              <div class="flex flex-col">
+                <h2 id="playlist-title" class="font-headline-sm text-lg font-bold text-on-surface">
+                  Chill & Energetic Mix
+                </h2>
+                <div class="flex items-center gap-2 mt-1 font-label-code text-xs text-outline">
+                  <span id="pl-track-count" class="text-primary font-semibold">25 Tracks</span>
+                  <span>•</span>
+                  <span id="pl-total-duration">1 hr 34 min</span>
+                </div>
+              </div>
+            </div>
+
+            <button id="macro-download-csv-btn" class="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary-container text-on-primary-container font-medium text-xs shadow-sm hover:brightness-110 transition-all">
+              <span class="material-symbols-outlined text-sm">download</span>
+              <span>Download CSV</span>
+            </button>
+          </div>
+
+          <!-- Clean Tracks Table -->
+          <div class="obsidian-card rounded-2xl overflow-hidden shadow-xl border border-surface-container">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs font-body-md border-collapse">
+                <thead>
+                  <tr class="bg-surface-container-high/60 border-b border-surface-container font-label-code text-outline uppercase tracking-wider text-[10px]">
+                    <th class="py-2.5 px-4 w-10 text-center">#</th>
+                    <th class="py-2.5 px-4">Track</th>
+                    <th class="py-2.5 px-4">Artist</th>
+                    <th class="py-2.5 px-4">Genre</th>
+                    <th class="py-2.5 px-4">Duration</th>
+                    <th class="py-2.5 px-4">BPM</th>
+                    <th class="py-2.5 px-4">Match</th>
+                    <th class="py-2.5 px-4 text-center">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="generated-tracks-tbody" class="divide-y divide-surface-container/30">
+                  <!-- Generated tracks injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script src="js/mooder-audio.js"></script>
+  <script src="js/mooder-shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      await MooderShared.initGlobalData();
+      const catalog = await MooderShared.loadCatalog();
+
+      if (!catalog) return;
+
+      const activeMoods = new Set(['chill', 'energetic']);
+      const moodPresets = {
+        happy: { eng: 0.75, val: 0.90, dnc: 0.80 },
+        chill: { eng: 0.45, val: 0.60, dnc: 0.65 },
+        energetic: { eng: 0.88, val: 0.70, dnc: 0.85 },
+        melancholic: { eng: 0.35, val: 0.22, dnc: 0.45 },
+        focus: { eng: 0.50, val: 0.48, dnc: 0.55 },
+        workout: { eng: 0.95, val: 0.75, dnc: 0.88 }
+      };
+
+      const sliderEng = document.getElementById('slider-eng');
+      const sliderVal = document.getElementById('slider-val');
+      const sliderDnc = document.getElementById('slider-dnc');
+
+      const valEng = document.getElementById('slider-eng-val');
+      const valVal = document.getElementById('slider-val-val');
+      const valDnc = document.getElementById('slider-dnc-val');
+
+      function syncLabels() {
+        valEng.textContent = (sliderEng.value / 100).toFixed(2);
+        valVal.textContent = (sliderVal.value / 100).toFixed(2);
+        valDnc.textContent = (sliderDnc.value / 100).toFixed(2);
+      }
+
+      [sliderEng, sliderVal, sliderDnc].forEach(s => s.addEventListener('input', syncLabels));
+
+      // Mood Selection
+      const moodCards = document.querySelectorAll('.mood-card');
+      moodCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const m = card.getAttribute('data-mood');
+
+          if (activeMoods.has(m)) {
+            if (activeMoods.size > 1) {
+              activeMoods.delete(m);
+              card.classList.remove('active', 'bg-surface-container-high', 'ring-1', 'ring-primary', 'ring-secondary-fixed');
+              card.classList.add('obsidian-card');
+              card.querySelector('span:last-child').className = 'font-headline-sm text-sm font-bold text-on-surface';
+            }
+          } else {
+            activeMoods.add(m);
+            card.classList.add('active', 'bg-surface-container-high', 'ring-1', 'ring-primary');
+            card.classList.remove('obsidian-card');
+            card.querySelector('span:last-child').className = 'font-headline-sm text-sm font-bold text-primary';
+          }
+
+          // Update label
+          const names = Array.from(activeMoods).map(n => n.charAt(0).toUpperCase() + n.slice(1)).join(' + ');
+          document.getElementById('active-moods-text').textContent = `Selected: ${names}`;
+
+          // Average sliders
+          let sumE = 0, sumV = 0, sumD = 0;
+          activeMoods.forEach(k => {
+            if (moodPresets[k]) {
+              sumE += moodPresets[k].eng;
+              sumV += moodPresets[k].val;
+              sumD += moodPresets[k].dnc;
+            }
+          });
+          sliderEng.value = Math.round((sumE / activeMoods.size) * 100);
+          sliderVal.value = Math.round((sumV / activeMoods.size) * 100);
+          sliderDnc.value = Math.round((sumD / activeMoods.size) * 100);
+          syncLabels();
+        });
+      });
+
+      let currentGeneratedTracks = [];
+
+      function generatePlaylist() {
+        const targetEng = sliderEng.value / 100;
+        const targetVal = sliderVal.value / 100;
+        const targetDnc = sliderDnc.value / 100;
+
+        const scored = catalog.map(t => {
+          const dist = Math.hypot(t.eng - targetEng, t.val - targetVal, t.dnc - targetDnc);
+          const match = Math.max(0.75, Math.min(0.995, 1.0 - dist * 0.4));
+          return { track: t, dist, match };
+        });
+
+        scored.sort((a, b) => a.dist - b.dist);
+
+        // Include saved tracks if any
+        const saved = MooderShared.getSavedPlaylist();
+        const selection = [];
+        const seen = new Set();
+
+        saved.forEach(st => {
+          if (!seen.has(st.id)) {
+            seen.add(st.id);
+            selection.push({ track: st, match: 0.99 });
+          }
+        });
+
+        for (const item of scored) {
+          if (selection.length >= 25) break;
+          if (!seen.has(item.track.id)) {
+            seen.add(item.track.id);
+            selection.push(item);
+          }
+        }
+
+        currentGeneratedTracks = selection.map(s => s.track);
+        renderTable(selection);
+
+        const names = Array.from(activeMoods).map(n => n.charAt(0).toUpperCase() + n.slice(1)).join(' & ');
+        document.getElementById('playlist-title').textContent = `${names} Mix`;
+
+        let totalMs = 0;
+        selection.forEach(s => totalMs += s.track.dur || 210000);
+        const mins = Math.floor(totalMs / 60000);
+        const hrs = Math.floor(mins / 60);
+        const rem = mins % 60;
+        document.getElementById('pl-total-duration').textContent = `${hrs > 0 ? hrs + ' hr ' : ''}${rem} min`;
+
+        MooderShared.showToast("Generated 25 tracks for your mood!", "auto_fix_high");
+      }
+
+      function renderTable(items) {
+        const tbody = document.getElementById('generated-tracks-tbody');
+        tbody.innerHTML = items.map((item, idx) => {
+          const t = item.track;
+          const matchPct = Math.round(item.match * 100);
+          return `
+            <tr class="hover:bg-surface-container transition-colors group">
+              <td class="py-2.5 px-4 text-center font-label-code text-outline">${(idx + 1).toString().padStart(2, '0')}</td>
+              <td class="py-2.5 px-4 font-semibold text-on-surface cursor-pointer group-hover:text-primary transition-colors flex items-center gap-2.5" onclick='MooderShared.inspectTrackAndNavigate(${JSON.stringify(t).replace(/'/g, "&apos;")})'>
+                <div class="w-7 h-7 rounded flex items-center justify-center text-white text-[10px] shrink-0" style="background: ${MooderShared.getTrackArtwork(t)}">
+                  <span class="material-symbols-outlined text-xs">music_note</span>
+                </div>
+                <span class="truncate max-w-[180px]">${t.title}</span>
+              </td>
+              <td class="py-2.5 px-4 text-outline truncate max-w-[140px]">${t.artist}</td>
+              <td class="py-2.5 px-4 capitalize text-outline font-label-code text-[11px]">${t.genre}</td>
+              <td class="py-2.5 px-4 font-mono-telemetry text-outline">${MooderShared.formatDuration(t.dur)}</td>
+              <td class="py-2.5 px-4 font-mono-telemetry text-outline">${Math.round(t.tmp)}</td>
+              <td class="py-2.5 px-4">
+                <span class="font-label-code text-xs text-primary font-bold bg-primary/10 px-2 py-0.5 rounded-full">${matchPct}%</span>
+              </td>
+              <td class="py-2.5 px-4 text-center">
+                <div class="flex items-center justify-center gap-2">
+                  <button class="pl-play-btn p-1 rounded hover:bg-surface-container-high text-outline hover:text-primary transition-colors" data-id="${t.id}" title="Play preview">
+                    <span class="material-symbols-outlined text-base">play_arrow</span>
+                  </button>
+                  <button class="pl-add-btn p-1 rounded hover:bg-surface-container-high text-outline hover:text-primary transition-colors" data-id="${t.id}" title="Add to saved">
+                    <span class="material-symbols-outlined text-base">playlist_add</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          `;
+        }).join('');
+
+        tbody.querySelectorAll('.pl-play-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-id');
+            const found = catalog.find(x => x.id === id);
+            if (found) {
+              const isPlaying = window.MooderAudio.toggle(found);
+              btn.querySelector('.material-symbols-outlined').textContent = isPlaying ? 'pause' : 'play_arrow';
+            }
+          });
+        });
+
+        tbody.querySelectorAll('.pl-add-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.getAttribute('data-id');
+            const found = catalog.find(x => x.id === id);
+            if (found) MooderShared.addToPlaylist(found);
+          });
+        });
+      }
+
+      document.getElementById('generate-playlist-btn').addEventListener('click', generatePlaylist);
+
+      function downloadCSV() {
+        if (!currentGeneratedTracks || currentGeneratedTracks.length === 0) {
+          MooderShared.showToast("Generate a playlist first", "warning");
+          return;
+        }
+
+        let csvContent = "data:text/csv;charset=utf-8,Track,Artist,Genre,Duration_ms,BPM,Energy,Valence,Danceability\n";
+        currentGeneratedTracks.forEach(t => {
+          csvContent += `"${t.title.replace(/"/g, '""')}","${t.artist.replace(/"/g, '""')}",${t.genre},${t.dur},${Math.round(t.tmp)},${t.eng},${t.val},${t.dnc}\n`;
+        });
+
+        const link = document.createElement("a");
+        link.setAttribute("href", encodeURI(csvContent));
+        link.setAttribute("download", `mooder_playlist_${Date.now()}.csv`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        MooderShared.showToast("Downloaded playlist CSV", "download_done");
+      }
+
+      document.getElementById('download-playlist-top-btn').addEventListener('click', downloadCSV);
+      document.getElementById('macro-download-csv-btn').addEventListener('click', downloadCSV);
+
+      // Initial generation
+      generatePlaylist();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-background": "#dfe2ef", "primary-fixed-dim": "#53e076", "on-primary-fixed-variant": "#005320", "outline-variant": "#3d4a3d", "on-secondary-container": "#006a6f", "surface-container-highest": "#31353f", "on-secondary-fixed-variant": "#004f53", "on-surface-variant": "#bccbb9", "on-primary-container": "#004118", "on-tertiary-fixed-variant": "#6700b5", "surface-container": "#1c1f29", "on-error-container": "#ffdad6", "on-tertiary-fixed": "#2c0051", "secondary-fixed": "#6ff6ff", "on-secondary": "#00373a", "error-container": "#93000a", "secondary-container": "#00f1fd", "surface-bright": "#353943", "surface-tint": "#53e076", "surface-container-high": "#262a34", "error": "#ffb4ab", "inverse-on-surface": "#2c303a", "on-primary-fixed": "#002108", "surface": "#0f131c", "on-primary": "#003914", "secondary-fixed-dim": "#00dce6", "tertiary": "#dcb8ff", "outline": "#869585", "on-secondary-fixed": "#002022", "surface-dim": "#0f131c", "secondary": "#dcfdff", "surface-container-lowest": "#0a0e17", "inverse-surface": "#dfe2ef", "on-error": "#690005", "tertiary-fixed-dim": "#dcb8ff", "surface-container-low": "#181b25", "background": "#0f131c", "tertiary-container": "#c186ff", "primary-fixed": "#72fe8f", "surface-variant": "#31353f", "tertiary-fixed": "#efdbff", "primary-container": "#1db954", "on-surface": "#dfe2ef", "on-tertiary-container": "#530092", "on-tertiary": "#480081", "inverse-primary": "#006e2d", "primary": "#53e076" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-md": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-xl": "2rem", "space-lg": "1.25rem", "space-md": "0.75rem", "gutter": "1rem", "margin-lg": "2rem", "gutter-lg": "1.5rem", "margin": "1rem" }, "fontFamily": { "headline-lg-mobile": [ "Geist" ], "label-code": [ "JetBrains Mono" ], "display-mobile": [ "Geist" ], "headline-md": [ "Geist" ], "body-sm": [ "Geist" ], "headline-lg": [ "Geist" ], "headline-sm": [ "Geist" ], "metric-display": [ "JetBrains Mono" ], "metric-md": [ "JetBrains Mono" ], "metric-sm": [ "JetBrains Mono" ], "display": [ "Geist" ], "body-md": [ "Geist" ], "body-lg": [ "Geist" ] }, "fontSize": { "headline-lg-mobile": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-code": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" } ], "display-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" } ], "headline-md": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "500" } ], "body-sm": [ "12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "600" } ], "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "500" } ], "metric-display": [ "32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "metric-md": [ "20px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "500" } ], "metric-sm": [ "13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" } ], "display": [ "48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "600" } ], "body-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" } ], "body-lg": [ "16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" } ] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="SoundScope Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VfFWcOObDCwaJTlPB7qd1Sc5eIpqJSQVFLUvsErD0kcL2fWgNEgp8pesr_QQPFliG3Wsl4FOlzHmT14fDu0zNShiGJbpU8-67OaLiduNJ892GpiCvOE1YbpF0qt21my3_vQod2QZK0Z56uvYLmW8iNZIumW6pbn7ZvITtLYnSqi9CkTRlhq1tYnsMUP1KJGNXBf_eLRYF0JjUVRDLznaFOcby-dtWLyyRZyB4H2opqF3lE_3eECaNXKngX"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">SoundScope</span></div><span class="font-label-code text-label-code text-primary bg-surface-container-low px-space-xs py-0.5 rounded">v2.4 Live</span></div><div class="px-space-md pt-space-md"><div class="px-space-sm pb-space-xs"><span class="font-label-code text-label-code uppercase text-outline tracking-wider">Intelligence Suite</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-surface-container-high text-primary font-body-md"><a class="flex items-center gap-space-md px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-metric-md">dashboard</span><span class="font-body-md text-body-md">Overview</span></a><a class="flex items-center gap-space-md px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="music-dna" href="#"><span class="material-symbols-outlined text-metric-md">graphic_eq</span><span class="font-body-md text-body-md">Music DNA</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-sm py-2 rounded transition-colors bg-surface-container-high text-primary font-body-md" data-path="mood-explorer" href="#"><span class="material-symbols-outlined text-metric-md">bubble_chart</span><span class="font-body-md text-body-md">Mood Explorer</span></a><a class="flex items-center gap-space-md px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="playlist-generator" href="#"><span class="material-symbols-outlined text-metric-md">auto_fix_high</span><span class="font-body-md text-body-md">Playlist Generator</span></a><a class="flex items-center gap-space-md px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="music-analytics" href="#"><span class="material-symbols-outlined text-metric-md">insights</span><span class="font-body-md text-body-md">Music Analytics</span></a><a class="flex items-center gap-space-md px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="discover" href="#"><span class="material-symbols-outlined text-metric-md">library_music</span><span class="font-body-md text-body-md">Discover</span></a><a class="flex items-center gap-space-md px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-metric-md">tune</span><span class="font-body-md text-body-md">Settings</span></a></nav></div></div><div class="p-space-md flex flex-col gap-space-sm"><div class="flex items-center justify-between px-space-sm py-1.5 rounded bg-surface-container-low"><div class="flex items-center gap-space-xs"><span class="h-2 w-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-code text-label-code text-on-surface-variant">Spotify 100k Tracks</span></div><span class="font-label-code text-label-code text-primary">Ready</span></div><div class="flex items-center gap-space-sm p-space-sm rounded bg-surface-container-low"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1I_C-o27xglSvM9QQcVGH5IBrYk3LwYk-zRqdH3a8FRcLd6eJoO5SKFNYHgPV9b2lSTqwQC3Btq_skqMPq8M93JKYuG-cFURIp-yBYPFD5wnnIh0-yamvNmH2GWIIBP3iF4QjLMQapJjqeoUA9yQ8LjhO2Sslr_9REb9wnqdIy0qQhxtLQK8imyBHCZXS4FNj4pcuTUtM_raHQcGY7h4WSv7tmN3SLbeJ5ToxA11RgOw-Vjs2OKci9g"/><div class="flex-1 min-w-0"><div class="flex items-center justify-between"><span class="font-body-sm text-body-sm text-on-surface truncate">Alex Vance</span><span class="font-label-code text-label-code px-1 rounded bg-tertiary-container text-on-tertiary-container uppercase">Pro</span></div><span class="font-label-code text-label-code text-outline truncate block">Audio Data Scientist</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-gutter-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg flex-1 max-w-xl"><div class="relative w-full max-w-md"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-metric-sm text-outline">search</span><input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-body-sm pl-9 pr-12 py-1.5 rounded focus:outline-none focus:ring-1 focus:ring-secondary-fixed" placeholder="Search songs, artists, or genres..." type="text"/><span class="absolute right-2.5 top-1/2 -translate-y-1/2 font-label-code text-label-code text-outline bg-surface-container px-1 py-0.5 rounded">⌘K</span></div><div class="hidden xl:flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1 rounded text-on-surface"><span class="material-symbols-outlined text-metric-sm text-secondary-fixed-dim">dataset</span><span class="font-label-code text-label-code">Spotify Global Audio Features 2024</span><span class="material-symbols-outlined text-metric-sm text-outline">expand_more</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-code text-label-code transition-colors"><span class="material-symbols-outlined text-metric-sm">filter_list</span><span>Filter</span></button><div class="flex items-center gap-1.5 px-space-sm py-1 rounded bg-surface-container-low"><span class="h-1.5 w-1.5 rounded-full bg-primary"></span><span class="font-label-code text-label-code text-on-surface-variant">60 FPS WebGL</span></div><button class="p-1.5 rounded bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-metric-sm">dark_mode</span></button><button class="relative p-1.5 rounded bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-metric-sm">notifications</span><span class="absolute top-1 right-1 w-1.5 h-1.5 bg-primary rounded-full"></span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1I_C-o27xglSvM9QQcVGH5IBrYk3LwYk-zRqdH3a8FRcLd6eJoO5SKFNYHgPV9b2lSTqwQC3Btq_skqMPq8M93JKYuG-cFURIp-yBYPFD5wnnIh0-yamvNmH2GWIIBP3iF4QjLMQapJjqeoUA9yQ8LjhO2Sslr_9REb9wnqdIy0qQhxtLQK8imyBHCZXS4FNj4pcuTUtM_raHQcGY7h4WSv7tmN3SLbeJ5ToxA11RgOw-Vjs2OKci9g"/></div></header><main class="relative pt-16 bg-surface min-h-screen w-full px-gutter-lg py-margin-md"><div class="flex flex-col w-full gap-space-lg">
+<div class="flex flex-col xl:flex-row items-start xl:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-code text-label-code text-primary uppercase tracking-wider bg-surface-container-high px-space-xs py-0.5 rounded">Telemetry Matrix</span>
+<span class="font-label-code text-label-code text-outline">/</span>
+<span class="font-label-code text-label-code text-secondary-fixed">Valence vs Energy</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Mood Explorer</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Explore the emotional landscape of 10,000+ tracks plotted across Valence and Energy dimensions. Identify latent acoustic clusters, boundary crossings, and emotional outliers.
+      </p>
+</div>
+<div class="flex items-center gap-space-md bg-surface-container-lowest px-space-md py-space-sm rounded shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-code text-label-code text-outline uppercase tracking-wider">Indexed Tracks</span>
+</div>
+<div class="font-metric-md text-metric-md text-on-surface">
+        4,820 <span class="text-outline text-metric-sm font-normal">/ 10,000</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded p-space-md flex flex-wrap items-center justify-between gap-space-md shadow-sm">
+<div class="flex flex-wrap items-center gap-space-md flex-1">
+<div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1.5 rounded text-on-surface min-w-[200px]">
+<span class="material-symbols-outlined text-metric-sm text-outline">category</span>
+<div class="flex flex-col">
+<span class="font-label-code text-label-code text-outline uppercase">Genre</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">Synthwave, Indie, Pop +2</span>
+</div>
+<span class="material-symbols-outlined text-metric-sm text-outline ml-auto">expand_more</span>
+</div>
+<div class="relative min-w-[220px]">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-metric-sm text-outline">person_search</span>
+<input class="w-full bg-surface-container text-on-surface placeholder:text-outline font-body-sm text-body-sm pl-8 pr-3 py-2 rounded focus:outline-none focus:bg-surface-container-high transition-colors" placeholder="Filter artist name..." type="text" value="M83, Grimes"/>
+</div>
+<div class="flex items-center gap-space-md bg-surface-container px-space-md py-1.5 rounded">
+<div class="flex flex-col gap-0.5">
+<div class="flex justify-between items-center gap-space-sm">
+<span class="font-label-code text-label-code text-outline uppercase">Popularity</span>
+<span class="font-label-code text-label-code text-secondary-fixed">50 - 100%</span>
+</div>
+<div class="w-28 h-1 bg-surface-container-highest rounded-full overflow-hidden relative">
+<div class="absolute left-1/2 right-0 h-full bg-secondary-fixed rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md bg-surface-container px-space-md py-1.5 rounded">
+<div class="flex flex-col gap-0.5">
+<div class="flex justify-between items-center gap-space-sm">
+<span class="font-label-code text-label-code text-outline uppercase">Tempo</span>
+<span class="font-label-code text-label-code text-primary">60 - 180 BPM</span>
+</div>
+<div class="w-32 h-1 bg-surface-container-highest rounded-full overflow-hidden relative">
+<div class="absolute left-2 right-4 h-full bg-primary rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-code text-label-code uppercase tracking-wider transition-colors">
+<span class="material-symbols-outlined text-metric-sm">restart_alt</span>
+<span>Reset Filters</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded bg-primary-container text-on-primary-container font-label-code text-label-code uppercase tracking-wider font-semibold shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-metric-sm">tune</span>
+<span>Re-Cluster</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-lg items-start">
+<div class="xl:col-span-8 flex flex-col gap-space-sm">
+<div class="relative w-full aspect-[4/3] max-h-[720px] bg-surface-container-lowest rounded overflow-hidden select-none shadow-xl flex flex-col justify-between p-space-md">
+<div class="absolute inset-0 grid grid-cols-2 grid-rows-2 pointer-events-none">
+<div class="relative bg-gradient-to-br from-error/10 via-transparent to-transparent p-space-lg flex flex-col justify-start items-start">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label-code text-label-code text-error tracking-wider uppercase font-semibold">Intense &amp; Melancholic</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">High Energy + Low Valence · Cathartic, Rock, Aggressive</span>
+</div>
+<div class="relative bg-gradient-to-bl from-primary/15 via-secondary-container/5 to-transparent p-space-lg flex flex-col justify-start items-end text-right">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-code text-label-code text-primary tracking-wider uppercase font-semibold">Happy &amp; Energetic</span>
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(83,224,118,0.8)]"></span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">High Energy + High Valence · Euphoric, Dance, Anthem</span>
+</div>
+<div class="relative bg-gradient-to-tr from-tertiary/10 via-transparent to-transparent p-space-lg flex flex-col justify-end items-start">
+<span class="font-body-sm text-body-sm text-outline mb-0.5">Low Energy + Low Valence · Ambient, Minimal, Late Night</span>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-code text-label-code text-tertiary tracking-wider uppercase font-semibold">Calm &amp; Melancholic</span>
+</div>
+</div>
+<div class="relative bg-gradient-to-tl from-secondary-fixed/10 via-transparent to-transparent p-space-lg flex flex-col justify-end items-end text-right">
+<span class="font-body-sm text-body-sm text-outline mb-0.5">Low Energy + High Valence · Chillhop, Acoustic, Sunlit</span>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-code text-label-code text-secondary-fixed tracking-wider uppercase font-semibold">Calm &amp; Positive</span>
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+</div>
+</div>
+</div>
+<div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+<div class="w-full h-[1px] bg-surface-container-highest"></div>
+<div class="h-full w-[1px] bg-surface-container-highest absolute"></div>
+<div class="absolute w-2 h-2 rounded-full bg-surface-bright"></div>
+</div>
+<div class="relative z-10 flex justify-between items-center text-outline font-label-code text-label-code">
+<span class="bg-surface-container-low px-space-xs py-0.5 rounded">Energy: 1.0 (Intense)</span>
+<div class="flex items-center gap-space-xs bg-surface-container-low p-1 rounded">
+<button class="w-6 h-6 flex items-center justify-center hover:bg-surface-container text-on-surface rounded transition-colors" title="Zoom in">
+<span class="material-symbols-outlined text-metric-sm">add</span>
+</button>
+<button class="w-6 h-6 flex items-center justify-center hover:bg-surface-container text-on-surface rounded transition-colors" title="Zoom out">
+<span class="material-symbols-outlined text-metric-sm">remove</span>
+</button>
+<button class="w-6 h-6 flex items-center justify-center bg-surface-container-high text-primary rounded transition-colors" title="Pan Mode">
+<span class="material-symbols-outlined text-metric-sm">pan_tool</span>
+</button>
+</div>
+</div>
+<div class="absolute inset-0 z-20">
+<svg class="w-full h-full" fill="none" viewbox="0 0 1000 750" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-75 hover:opacity-100 transition-opacity cursor-pointer" cx="210" cy="180" fill="#ffb4ab" r="4.5"></circle>
+<circle class="opacity-60 hover:opacity-100 transition-opacity cursor-pointer" cx="160" cy="220" fill="#ffb4ab" r="3.5"></circle>
+<circle class="opacity-80 hover:opacity-100 transition-opacity cursor-pointer" cx="280" cy="140" fill="#ffb4ab" r="5"></circle>
+<circle class="opacity-65 hover:opacity-100 transition-opacity cursor-pointer" cx="340" cy="290" fill="#ffb4ab" r="4"></circle>
+<circle class="opacity-50 hover:opacity-100 transition-opacity cursor-pointer" cx="120" cy="310" fill="#ffb4ab" r="3"></circle>
+<circle class="opacity-70 hover:opacity-100 transition-opacity cursor-pointer" cx="240" cy="260" fill="#ffb4ab" r="4"></circle>
+<circle class="opacity-75 hover:opacity-100 transition-opacity cursor-pointer" cx="380" cy="190" fill="#ffb4ab" r="5"></circle>
+<circle class="opacity-60 hover:opacity-100 transition-opacity cursor-pointer" cx="190" cy="110" fill="#ffb4ab" r="3.5"></circle>
+<circle class="opacity-70 hover:opacity-100 transition-opacity cursor-pointer" cx="310" cy="230" fill="#ffb4ab" r="4"></circle>
+<circle class="opacity-60 hover:opacity-100 transition-opacity cursor-pointer" cx="420" cy="280" fill="#ffb4ab" r="3"></circle>
+<circle class="opacity-75 hover:opacity-100 transition-opacity cursor-pointer" cx="250" cy="340" fill="#ffb4ab" r="4.5"></circle>
+<circle class="opacity-80 hover:opacity-100 transition-opacity cursor-pointer" cx="150" cy="160" fill="#ffb4ab" r="4"></circle>
+<circle class="opacity-60 hover:opacity-100 transition-opacity cursor-pointer" cx="300" cy="190" fill="#ffb4ab" r="3"></circle>
+<circle class="opacity-85 hover:opacity-100 transition-opacity cursor-pointer" cx="390" cy="120" fill="#ffb4ab" r="5.5"></circle>
+<circle class="opacity-70 hover:opacity-100 transition-opacity cursor-pointer" cx="220" cy="220" fill="#ffb4ab" r="4"></circle>
+<circle class="opacity-65 hover:opacity-100 transition-opacity cursor-pointer" cx="180" cy="520" fill="#dcb8ff" r="4"></circle>
+<circle class="opacity-75 hover:opacity-100 transition-opacity cursor-pointer" cx="240" cy="620" fill="#dcb8ff" r="5"></circle>
+<circle class="opacity-55 hover:opacity-100 transition-opacity cursor-pointer" cx="120" cy="460" fill="#dcb8ff" r="3.5"></circle>
+<circle class="opacity-70 hover:opacity-100 transition-opacity cursor-pointer" cx="310" cy="560" fill="#dcb8ff" r="4.5"></circle>
+<circle class="opacity-60 hover:opacity-100 transition-opacity cursor-pointer" cx="290" cy="670" fill="#dcb8ff" r="3"></circle>
+<circle class="opacity-80 hover:opacity-100 transition-opacity cursor-pointer" cx="380" cy="480" fill="#dcb8ff" r="5"></circle>
+<circle class="opacity-65 hover:opacity-100 transition-opacity cursor-pointer" cx="160" cy="590" fill="#dcb8ff" r="4"></circle>
+<circle class="opacity-50 hover:opacity-100 transition-opacity cursor-pointer" cx="220" cy="440" fill="#dcb8ff" r="3"></circle>
+<circle class="opacity-75 hover:opacity-100 transition-opacity cursor-pointer" cx="340" cy="610" fill="#dcb8ff" r="4"></circle>
+<circle class="opacity-70 hover:opacity-100 transition-opacity cursor-pointer" cx="430" cy="530" fill="#dcb8ff" r="4.5"></circle>
+<circle class="opacity-60 hover:opacity-100 transition-opacity cursor-pointer" cx="270" cy="500" fill="#dcb8ff" r="3.5"></circle>
+<circle class="opacity-70 hover:opacity-100 transition-opacity cursor-pointer" cx="130" cy="640" fill="#dcb8ff" r="4"></circle>
+<circle class="opacity-55 hover:opacity-100 transition-opacity cursor-pointer" cx="390" cy="640" fill="#dcb8ff" r="3"></circle>
+<circle class="opacity-65 hover:opacity-100 transition-opacity cursor-pointer" cx="450" cy="600" fill="#dcb8ff" r="4"></circle>
+<circle class="opacity-50 hover:opacity-100 transition-opacity cursor-pointer" cx="200" cy="480" fill="#dcb8ff" r="3"></circle>
+<circle class="opacity-75 hover:opacity-100 transition-opacity cursor-pointer" cx="680" cy="520" fill="#6ff6ff" r="4.5"></circle>
+<circle class="opacity-70 hover:opacity-100 transition-opacity cursor-pointer" cx="750" cy="610" fill="#6ff6ff" r="4"></circle>
+<circle class="opacity-60 hover:opacity-100 transition-opacity cursor-pointer" cx="620" cy="440" fill="#6ff6ff" r="3.5"></circle>
+<circle class="opacity-80 hover:opacity-100 transition-opacity cursor-pointer" cx="830" cy="560" fill="#6ff6ff" r="5"></circle>
+<circle class="opacity-50 hover:opacity-100 transition-opacity cursor-pointer" cx="890" cy="640" fill="#6ff6ff" r="3"></circle>
+<circle class="opacity-65 hover:opacity-100 transition-opacity cursor-pointer" cx="710" cy="470" fill="#6ff6ff" r="4"></circle>
+<circle class="opacity-75 hover:opacity-100 transition-opacity cursor-pointer" cx="580" cy="580" fill="#6ff6ff" r="4.5"></circle>
+<circle class="opacity-85 hover:opacity-100 transition-opacity cursor-pointer" cx="790" cy="490" fill="#6ff6ff" r="5.5"></circle>
+<circle class="opacity-55 hover:opacity-100 transition-opacity cursor-pointer" cx="640" cy="650" fill="#6ff6ff" r="3"></circle>
+<circle class="opacity-70 hover:opacity-100 transition-opacity cursor-pointer" cx="860" cy="450" fill="#6ff6ff" r="4"></circle>
+<circle class="opacity-60 hover:opacity-100 transition-opacity cursor-pointer" cx="560" cy="510" fill="#6ff6ff" r="3.5"></circle>
+<circle class="opacity-65 hover:opacity-100 transition-opacity cursor-pointer" cx="720" cy="670" fill="#6ff6ff" r="4"></circle>
+<circle class="opacity-55 hover:opacity-100 transition-opacity cursor-pointer" cx="810" cy="630" fill="#6ff6ff" r="3"></circle>
+<circle class="opacity-75 hover:opacity-100 transition-opacity cursor-pointer" cx="910" cy="510" fill="#6ff6ff" r="4"></circle>
+<circle class="opacity-70 hover:opacity-100 transition-opacity cursor-pointer" cx="670" cy="590" fill="#6ff6ff" r="4.5"></circle>
+<circle class="opacity-75 hover:opacity-100 transition-opacity cursor-pointer" cx="610" cy="240" fill="#53e076" r="4"></circle>
+<circle class="opacity-80 hover:opacity-100 transition-opacity cursor-pointer" cx="650" cy="180" fill="#53e076" r="4.5"></circle>
+<circle class="opacity-60 hover:opacity-100 transition-opacity cursor-pointer" cx="590" cy="120" fill="#53e076" r="3"></circle>
+<circle class="opacity-85 hover:opacity-100 transition-opacity cursor-pointer" cx="800" cy="220" fill="#53e076" r="5"></circle>
+<circle class="opacity-70 hover:opacity-100 transition-opacity cursor-pointer" cx="850" cy="160" fill="#53e076" r="4"></circle>
+<circle class="opacity-90 hover:opacity-100 transition-opacity cursor-pointer" cx="780" cy="90" fill="#53e076" r="5.5"></circle>
+<circle class="opacity-65 hover:opacity-100 transition-opacity cursor-pointer" cx="920" cy="260" fill="#53e076" r="3.5"></circle>
+<circle class="opacity-75 hover:opacity-100 transition-opacity cursor-pointer" cx="880" cy="110" fill="#53e076" r="4"></circle>
+<circle class="opacity-70 hover:opacity-100 transition-opacity cursor-pointer" cx="690" cy="280" fill="#53e076" r="4"></circle>
+<circle class="opacity-80 hover:opacity-100 transition-opacity cursor-pointer" cx="740" cy="140" fill="#53e076" r="4.5"></circle>
+<circle class="opacity-60 hover:opacity-100 transition-opacity cursor-pointer" cx="830" cy="290" fill="#53e076" r="3.5"></circle>
+<circle class="opacity-55 hover:opacity-100 transition-opacity cursor-pointer" cx="640" cy="320" fill="#53e076" r="3"></circle>
+<circle class="opacity-65 hover:opacity-100 transition-opacity cursor-pointer" cx="770" cy="330" fill="#53e076" r="4"></circle>
+<circle class="opacity-75 hover:opacity-100 transition-opacity cursor-pointer" cx="910" cy="170" fill="#53e076" r="4"></circle>
+<circle class="opacity-60 hover:opacity-100 transition-opacity cursor-pointer" cx="860" cy="340" fill="#53e076" r="3"></circle>
+<circle class="opacity-60" cx="740" cy="140" fill="none" r="16" stroke="#53e076" stroke-dasharray="3 3" stroke-width="1.5"></circle>
+<circle class="opacity-50" cx="680" cy="130" fill="none" r="14" stroke="#6ff6ff" stroke-dasharray="2 2" stroke-width="1"></circle>
+<circle class="opacity-50" cx="650" cy="180" fill="none" r="14" stroke="#6ff6ff" stroke-dasharray="2 2" stroke-width="1"></circle>
+<g class="cursor-pointer" transform="translate(710, 105)">
+<circle class="animate-ping" cx="0" cy="0" fill="#53e076" fill-opacity="0.15" r="22" style="transform-origin: 0 0; animation-duration: 3s;"></circle>
+<circle class="opacity-90" cx="0" cy="0" fill="none" r="12" stroke="#53e076" stroke-width="2"></circle>
+<circle cx="0" cy="0" fill="#53e076" r="6"></circle>
+<circle cx="0" cy="0" fill="#0f131c" r="2"></circle>
+</g>
+</svg>
+<div class="absolute left-[725px] top-[75px] hidden xl:flex flex-col bg-surface-container-high/95 backdrop-blur-md p-space-sm rounded shadow-2xl z-30 pointer-events-none min-w-[210px] transform -translate-y-full">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Midnight City</span>
+<span class="font-label-code text-label-code text-primary bg-primary/10 px-1 py-0.5 rounded">Selected</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">M83 · Hurry Up, We're Dreaming</span>
+<div class="grid grid-cols-2 gap-space-xs mt-space-xs pt-space-xs bg-surface-container-lowest/60 p-space-xs rounded">
+<span class="font-label-code text-label-code text-on-surface-variant">Valence: <span class="text-on-surface font-semibold">0.71</span></span>
+<span class="font-label-code text-label-code text-on-surface-variant">Energy: <span class="text-primary font-semibold">0.86</span></span>
+<span class="font-label-code text-label-code text-outline col-span-2">Genre: Synthwave / Indie Pop</span>
+</div>
+</div>
+</div>
+<div class="relative z-10 flex justify-between items-center text-outline font-label-code text-label-code">
+<span class="bg-surface-container-low px-space-xs py-0.5 rounded">Valence: 0.0 (Negative)</span>
+<span class="font-label-code text-label-code text-outline uppercase tracking-wider">SoundScope Vector Engine v2</span>
+<span class="bg-surface-container-low px-space-xs py-0.5 rounded">Valence: 1.0 (Positive)</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-sm p-space-sm bg-surface-container-low rounded text-outline font-label-code text-label-code">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span>Intense/Melancholic</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span>Happy/Energetic</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span>Calm/Melancholic</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed"></span>
+<span>Calm/Positive</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-metric-sm text-primary">touch_app</span>
+<span class="text-on-surface-variant">Click any node to focus &amp; inspect audio geometry</span>
+</div>
+</div>
+</div>
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<div class="bg-surface-container-low rounded p-space-lg flex flex-col gap-space-md shadow-lg">
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-metric-md text-primary">graphic_eq</span>
+<span class="font-label-code text-label-code text-outline uppercase tracking-wider">Acoustic Inspector</span>
+</div>
+<span class="font-label-code text-label-code text-primary bg-surface-container px-space-xs py-0.5 rounded">Active Focus</span>
+</div>
+<div class="flex items-start gap-space-md">
+<img class="w-16 h-16 rounded object-cover shadow-md flex-shrink-0" data-alt="Cyberpunk neon album artwork with deep indigo and cyan hues, glowing synthesizers and futuristic urban mist in a minimalist graphic design layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjvVHWcrG17BTLWp85GmX90YNghZDBY-2Ab3BNZ0kbdX8pugA9El1--p40JCv-beZ1c3S14zq488xZrY1DIix63ou9eoW81cAE_ihxc1kcQHs3SVfqWBdS6MREt8i2tZoEwbCuatbdoruozyoN1kkBMnVo7jxf_gFbnase9PKuZN3QrZEWvW5vumlivWT1v1o0LbLlv-BW7BDWB2pkEveaBJUZDIQUW7_NJmEFlcB6eaHVEj5tZkr5rw"/>
+<div class="flex flex-col min-w-0 flex-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate">Midnight City</h2>
+<p class="font-body-md text-body-md text-on-surface-variant truncate">M83</p>
+<div class="flex items-center gap-space-xs mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-code text-label-code text-secondary-fixed">Quadrant I: Euphoric Anthem</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs bg-surface-container p-space-md rounded">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-label-code text-label-code text-outline uppercase">Valence (Positivity)</span>
+<span class="font-metric-sm text-metric-sm font-semibold text-primary">0.71 <span class="text-outline font-normal">(71%)</span></span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 71%;"></div>
+</div>
+<div class="flex justify-between items-center text-on-surface mt-2">
+<span class="font-label-code text-label-code text-outline uppercase">Energy (Intensity)</span>
+<span class="font-metric-sm text-metric-sm font-semibold text-secondary-fixed">0.86 <span class="text-outline font-normal">(86%)</span></span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed rounded-full" style="width: 86%;"></div>
+</div>
+<div class="grid grid-cols-3 gap-space-xs mt-space-sm pt-space-xs bg-surface-container-lowest/50 p-space-xs rounded">
+<div class="flex flex-col">
+<span class="font-label-code text-label-code text-outline uppercase">Danceability</span>
+<span class="font-metric-sm text-metric-sm text-on-surface font-semibold">0.70</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-code text-label-code text-outline uppercase">Acousticness</span>
+<span class="font-metric-sm text-metric-sm text-on-surface font-semibold">0.04</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-code text-label-code text-outline uppercase">Tempo</span>
+<span class="font-metric-sm text-metric-sm text-on-surface font-semibold">105 BPM</span>
+</div>
+</div>
+</div>
+<button class="w-full py-2.5 px-space-md rounded bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center gap-space-sm font-label-code text-label-code uppercase tracking-wider transition-colors shadow-sm">
+<span class="material-symbols-outlined text-metric-sm text-primary">radar</span>
+<span>Find 10 Nearest Neighbors</span>
+</button>
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-center px-1">
+<span class="font-label-code text-label-code text-outline uppercase tracking-wider">Acoustic Cluster Neighbors</span>
+<span class="font-label-code text-label-code text-secondary-fixed">Euclidean Dist.</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between p-space-sm bg-surface-container rounded hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-metric-sm text-outline group-hover:text-primary transition-colors">play_circle</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Shooting Stars</span>
+<span class="font-label-code text-label-code text-outline truncate">Bag Raiders</span>
+</div>
+</div>
+<span class="font-label-code text-label-code text-primary bg-primary/10 px-1.5 py-0.5 rounded">0.04 Δ</span>
+</div>
+<div class="flex items-center justify-between p-space-sm bg-surface-container rounded hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-metric-sm text-outline group-hover:text-primary transition-colors">play_circle</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Genesis</span>
+<span class="font-label-code text-label-code text-outline truncate">Grimes</span>
+</div>
+</div>
+<span class="font-label-code text-label-code text-secondary-fixed bg-secondary-fixed/10 px-1.5 py-0.5 rounded">0.06 Δ</span>
+</div>
+<div class="flex items-center justify-between p-space-sm bg-surface-container rounded hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-metric-sm text-outline group-hover:text-primary transition-colors">play_circle</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Intro</span>
+<span class="font-label-code text-label-code text-outline truncate">The xx</span>
+</div>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant bg-surface-container-high px-1.5 py-0.5 rounded">0.09 Δ</span>
+</div>
+</div>
+</div>
+<button class="w-full py-3 px-space-md rounded bg-primary-container hover:bg-primary-fixed text-on-primary-container flex items-center justify-center gap-space-sm font-body-md text-body-md font-semibold transition-all shadow-md">
+<span class="material-symbols-outlined text-metric-sm">playlist_add</span>
+<span>Add Selected Track to Mood Playlist</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded p-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded object-cover flex-shrink-0" data-alt="Sound wave spectral density graphic visualizing multidimensional timbre frequencies in glowing monochrome gradients on a midnight slate background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5bE8vegAccKHTeJxC-UYHd012IBZdftflARks4RQEnJBGuA02QAL4YfhMRED51dDzd9mV0CbgYCaWLxQNIM3b4Odz3bGS7oY-co88sS1AzAsUMDkbqRYem8zDUcvk1nw38_vepy4qUrJlhkXilALnWaWDkNWkGB1_ipbIX8NrCc8Gov7qzXbFHrRG7DUBANOHxP-QMmJkU5ptEHHFSrMJVQ68TH1qb8yNe4ivqUXkb5arMCJ76qZ67Q"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Dimensional Latency</span>
+<span class="font-label-code text-label-code text-outline">t-SNE Embeddings Cached</span>
+</div>
+</div>
+<span class="font-label-code text-label-code text-primary bg-surface-container-highest px-space-xs py-1 rounded">2.1ms</span>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

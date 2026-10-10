@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Mooder — Overview Dashboard | Music Intelligence Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/mooder.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#0f131c",
+            "surface-dim": "#0f131c",
+            "surface-bright": "#353943",
+            "surface-container-lowest": "#0a0e17",
+            "surface-container-low": "#181b25",
+            "surface-container": "#1c1f29",
+            "surface-container-high": "#262a34",
+            "surface-container-highest": "#31353f",
+            "on-surface": "#dfe2ef",
+            "on-surface-variant": "#bccbb9",
+            "primary": "#53e076",
+            "primary-container": "#1db954",
+            "on-primary": "#003914",
+            "on-primary-container": "#004118",
+            "secondary": "#dcfdff",
+            "secondary-container": "#00f1fd",
+            "secondary-fixed": "#6ff6ff",
+            "secondary-fixed-dim": "#00dce6",
+            "tertiary": "#dcb8ff",
+            "tertiary-container": "#c186ff",
+            "outline": "#869585",
+            "outline-variant": "#3d4a3d",
+            "error": "#ffb4ab",
+            "background": "#0f131c"
+          },
+          fontFamily: {
+            "display": ["Geist", "sans-serif"],
+            "headline-lg": ["Geist", "sans-serif"],
+            "headline-md": ["Geist", "sans-serif"],
+            "headline-sm": ["Geist", "sans-serif"],
+            "body-lg": ["Geist", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "body-sm": ["Geist", "sans-serif"],
+            "metric-display": ["JetBrains Mono", "monospace"],
+            "metric-md": ["JetBrains Mono", "monospace"],
+            "metric-sm": ["JetBrains Mono", "monospace"],
+            "label-code": ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+  <!-- SIDEBAR NAVIGATION -->
+  <aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)] border-r border-surface-container">
+    <div class="flex flex-col">
+      <!-- Mooder Brand Header -->
+      <div class="h-16 px-6 flex items-center justify-between border-b border-surface-container/50">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary-container to-secondary-container flex items-center justify-center shadow-[0_0_12px_rgba(29,185,84,0.4)]">
+            <span class="material-symbols-outlined text-surface font-bold text-xl">graphic_eq</span>
+          </div>
+          <span class="font-headline-sm text-xl text-on-surface tracking-tight font-semibold">Mooder</span>
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="px-3 pt-5">
+        <nav class="flex flex-col gap-1.5">
+          <a aria-current="page" href="index.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl transition-all bg-surface-container-high text-primary font-medium border border-primary/20 shadow-sm">
+            <span class="material-symbols-outlined text-xl">dashboard</span>
+            <span class="font-body-md text-sm">Overview</span>
+          </a>
+          <a href="music-dna.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+            <span class="material-symbols-outlined text-xl">graphic_eq</span>
+            <span class="font-body-md text-sm">Music DNA</span>
+          </a>
+          <a href="mood-explorer.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+            <span class="material-symbols-outlined text-xl">bubble_chart</span>
+            <span class="font-body-md text-sm">Mood Explorer</span>
+          </a>
+          <a href="playlist-generator.html" class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+            <span class="material-symbols-outlined text-xl">auto_fix_high</span>
+            <span class="font-body-md text-sm">Playlist Generator</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN VIEW CONTAINER -->
+  <div class="pl-64">
+    <!-- STICKY TOP HEADER -->
+    <header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 flex items-center justify-between px-8 border-b border-surface-container shadow-sm">
+      <div class="flex items-center gap-4 flex-1 max-w-lg">
+        <div class="relative w-full">
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-sm text-outline">search</span>
+          <input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-sm pl-9 pr-12 py-2 rounded-xl border border-surface-container focus:outline-none focus:border-primary transition-colors cursor-pointer" placeholder="Search tracks or artists..." type="text" onclick="MooderShared.openCommandPalette()" readonly/>
+          <span class="absolute right-2.5 top-1/2 -translate-y-1/2 font-label-code text-xs text-outline bg-surface-container px-1.5 py-0.5 rounded cursor-pointer" onclick="MooderShared.openCommandPalette()">⌘K</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="playlist-generator.html" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary-container text-on-primary-container font-medium text-xs shadow-sm hover:brightness-110 transition-all">
+          <span class="material-symbols-outlined text-sm">auto_fix_high</span>
+          <span>Generate Playlist</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY -->
+    <main class="relative pt-20 px-8 py-8 min-h-screen">
+      <div class="flex flex-col gap-8 max-w-6xl mx-auto">
+
+        <!-- CLEAN HERO SECTION -->
+        <section class="relative overflow-hidden rounded-2xl bg-surface-container-low p-8 border border-surface-container shadow-xl">
+          <div class="absolute -top-24 -left-20 w-96 h-96 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+          
+          <div class="relative z-10 flex flex-col gap-4 max-w-2xl">
+            <h1 class="font-display text-3xl lg:text-4xl font-bold text-on-surface tracking-tight leading-tight">
+              Discover the Sound & Emotion <br/>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary-container to-tertiary">Behind Your Music</span>
+            </h1>
+            <p class="font-body-lg text-sm text-on-surface-variant leading-relaxed">
+              Explore 114,000 tracks. Analyze acoustic features, find similar moods, and generate custom playlists in real time.
+            </p>
+            
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a href="music-dna.html" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-container text-on-primary-container font-semibold text-sm hover:brightness-110 shadow-[0_0_20px_rgba(29,185,84,0.35)] transition-all">
+                <span class="material-symbols-outlined text-base">graphic_eq</span>
+                <span>Analyze Music DNA</span>
+              </a>
+              <a href="mood-explorer.html" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-semibold text-sm border border-surface-container">
+                <span class="material-symbols-outlined text-secondary-fixed text-base">bubble_chart</span>
+                <span>Explore Mood Map</span>
+              </a>
+              <a href="playlist-generator.html" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-medium text-sm border border-surface-container">
+                <span class="material-symbols-outlined text-tertiary text-base">auto_fix_high</span>
+                <span>Create Playlist</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4 CLEAN KPI CARDS -->
+        <section class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Tracks -->
+          <div class="obsidian-card p-5 rounded-xl shadow-md">
+            <div class="flex items-center justify-between pb-1 text-outline">
+              <span class="font-label-code text-xs uppercase font-medium">Total Tracks</span>
+              <span class="material-symbols-outlined text-primary text-base">album</span>
+            </div>
+            <span id="kpi-tracks" class="font-metric-display text-2xl font-bold text-on-surface">114,000</span>
+          </div>
+
+          <!-- Artists -->
+          <div class="obsidian-card p-5 rounded-xl shadow-md">
+            <div class="flex items-center justify-between pb-1 text-outline">
+              <span class="font-label-code text-xs uppercase font-medium">Artists</span>
+              <span class="material-symbols-outlined text-secondary-fixed text-base">group</span>
+            </div>
+            <span id="kpi-artists" class="font-metric-display text-2xl font-bold text-on-surface">29,858</span>
+          </div>
+
+          <!-- Genres -->
+          <div class="obsidian-card p-5 rounded-xl shadow-md">
+            <div class="flex items-center justify-between pb-1 text-outline">
+              <span class="font-label-code text-xs uppercase font-medium">Genres</span>
+              <span class="material-symbols-outlined text-tertiary text-base">layers</span>
+            </div>
+            <span id="kpi-genres" class="font-metric-display text-2xl font-bold text-on-surface">114</span>
+          </div>
+
+          <!-- Avg Popularity -->
+          <div class="obsidian-card p-5 rounded-xl shadow-md">
+            <div class="flex items-center justify-between pb-1 text-outline">
+              <span class="font-label-code text-xs uppercase font-medium">Avg Popularity</span>
+              <span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+            </div>
+            <div class="flex items-baseline gap-1.5">
+              <span id="kpi-pop" class="font-metric-display text-2xl font-bold text-on-surface">33.2</span>
+              <span class="text-xs text-outline font-label-code">/ 100</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2 CORE ANALYTICS: TOP TRACKS & TOP GENRES -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+          <!-- Left 7 Cols: Top Hit Tracks (Playable Leaderboard) -->
+          <div class="lg:col-span-7 obsidian-card p-6 rounded-2xl shadow-lg flex flex-col justify-between gap-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <h2 class="font-headline-sm text-base font-semibold text-on-surface">Top Hit Tracks</h2>
+                <p class="font-body-sm text-xs text-outline">Click play for audio preview or click title to inspect DNA</p>
+              </div>
+              <a href="music-dna.html" class="text-xs text-primary font-label-code hover:underline flex items-center gap-1">
+                <span>DNA Analyzer</span>
+                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </a>
+            </div>
+
+            <div id="top-tracks-list" class="flex flex-col gap-2 divide-y divide-surface-container/40">
+              <!-- Injected from dataset_stats.json -->
+            </div>
+          </div>
+
+          <!-- Right 5 Cols: Most Popular Genres -->
+          <div class="lg:col-span-5 obsidian-card p-6 rounded-2xl shadow-lg flex flex-col justify-between gap-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <h2 class="font-headline-sm text-base font-semibold text-on-surface">Top Music Genres</h2>
+                <p class="font-body-sm text-xs text-outline">Ranked by streaming popularity in dataset</p>
+              </div>
+              <a href="mood-explorer.html" class="text-xs text-secondary-fixed font-label-code hover:underline flex items-center gap-1">
+                <span>Explore Map</span>
+                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </a>
+            </div>
+
+            <div id="genres-progress-list" class="flex flex-col gap-4 pt-1">
+              <!-- Dynamically populated from dataset_stats.json -->
+            </div>
+          </div>
+
+        </section>
+
+        <!-- 3 SLEEK FEATURE NAVIGATION CARDS -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <!-- Card 1 -->
+          <a href="music-dna.html" class="obsidian-card p-5 rounded-2xl hover:border-primary/50 transition-all group flex flex-col justify-between gap-3 shadow-md">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-xl">graphic_eq</span>
+              </div>
+              <span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-lg">arrow_forward</span>
+            </div>
+            <div>
+              <h3 class="font-headline-sm text-sm font-bold text-on-surface group-hover:text-primary transition-colors">Music DNA Analyzer</h3>
+              <p class="font-body-sm text-xs text-outline mt-1 leading-relaxed">
+                Inspect 5 acoustic features, key signatures, and tempo for any track.
+              </p>
+            </div>
+          </a>
+
+          <!-- Card 2 -->
+          <a href="mood-explorer.html" class="obsidian-card p-5 rounded-2xl hover:border-secondary-container/50 transition-all group flex flex-col justify-between gap-3 shadow-md">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-secondary-container/10 flex items-center justify-center text-secondary-fixed group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-xl">bubble_chart</span>
+              </div>
+              <span class="material-symbols-outlined text-outline group-hover:text-secondary-fixed transition-colors text-lg">arrow_forward</span>
+            </div>
+            <div>
+              <h3 class="font-headline-sm text-sm font-bold text-on-surface group-hover:text-secondary-fixed transition-colors">Mood Explorer</h3>
+              <p class="font-body-sm text-xs text-outline mt-1 leading-relaxed">
+                Browse tracks visually across 4 emotional quadrants of energy and valence.
+              </p>
+            </div>
+          </a>
+
+          <!-- Card 3 -->
+          <a href="playlist-generator.html" class="obsidian-card p-5 rounded-2xl hover:border-tertiary/50 transition-all group flex flex-col justify-between gap-3 shadow-md">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-xl">auto_fix_high</span>
+              </div>
+              <span class="material-symbols-outlined text-outline group-hover:text-tertiary transition-colors text-lg">arrow_forward</span>
+            </div>
+            <div>
+              <h3 class="font-headline-sm text-sm font-bold text-on-surface group-hover:text-tertiary transition-colors">Playlist Generator</h3>
+              <p class="font-body-sm text-xs text-outline mt-1 leading-relaxed">
+                Pick your vibe, fine-tune sliders, and generate an instant 25-song playlist.
+              </p>
+            </div>
+          </a>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script src="js/mooder-audio.js"></script>
+  <script src="js/mooder-shared.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const stats = await MooderShared.loadStats();
+
+      if (stats) {
+        document.getElementById('kpi-tracks').textContent = MooderShared.formatNumber(stats.total_tracks);
+        document.getElementById('kpi-artists').textContent = MooderShared.formatNumber(stats.total_artists);
+        document.getElementById('kpi-genres').textContent = stats.total_genres;
+        document.getElementById('kpi-pop').textContent = stats.avg_popularity.toFixed(1);
+
+        // Render Top 5 Genres
+        const genresList = document.getElementById('genres-progress-list');
+        const top5 = stats.top_genres.slice(0, 5);
+        genresList.innerHTML = top5.map(g => `
+          <div class="flex flex-col gap-1.5">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-on-surface font-medium capitalize">${g.name}</span>
+              <span class="font-label-code text-secondary-fixed font-bold">${g.avg_popularity} pop</span>
+            </div>
+            <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-primary to-secondary-container h-full rounded-full" style="width: ${Math.min(100, g.avg_popularity * 1.5)}%;"></div>
+            </div>
+          </div>
+        `).join('');
+
+        // Render Top 5 Tracks
+        renderTopTracks(stats.top_tracks.slice(0, 5));
+      }
+
+      function renderTopTracks(tracks) {
+        const list = document.getElementById('top-tracks-list');
+        list.innerHTML = tracks.map((t, i) => `
+          <div class="flex items-center justify-between p-2.5 rounded-xl hover:bg-surface-container transition-colors group">
+            <div class="flex items-center gap-3.5 min-w-0">
+              <span class="font-label-code text-xs font-bold text-primary w-4">0${i + 1}</span>
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white text-xs shrink-0 shadow-sm" style="background: ${MooderShared.getTrackArtwork(t)}">
+                <button class="track-play-btn opacity-90 hover:scale-110 transition-transform" data-id="${t.id}" title="Play preview">
+                  <span class="material-symbols-outlined text-lg">play_arrow</span>
+                </button>
+              </div>
+              <div class="flex flex-col min-w-0 cursor-pointer" onclick='MooderShared.inspectTrackAndNavigate(${JSON.stringify(t).replace(/'/g, "&apos;")})'>
+                <span class="font-body-md text-sm font-semibold text-on-surface truncate group-hover:text-primary transition-colors">${t.title}</span>
+                <span class="font-body-sm text-xs text-outline truncate">${t.artist}</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="px-2.5 py-0.5 rounded font-label-code text-[11px] bg-surface-container text-on-surface-variant capitalize">${t.genre}</span>
+              <span class="font-mono-telemetry text-xs text-primary font-bold">Pop ${t.pop}</span>
+            </div>
+          </div>
+        `).join('');
+
+        list.querySelectorAll('.track-play-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const id = btn.getAttribute('data-id');
+            const track = tracks.find(t => t.id === id);
+            if (track) {
+              const isPlaying = window.MooderAudio.toggle(track);
+              btn.querySelector('.material-symbols-outlined').textContent = isPlaying ? 'pause' : 'play_arrow';
+            }
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

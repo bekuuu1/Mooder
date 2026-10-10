@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-background": "#dfe2ef", "primary-fixed-dim": "#53e076", "on-primary-fixed-variant": "#005320", "outline-variant": "#3d4a3d", "on-secondary-container": "#006a6f", "surface-container-highest": "#31353f", "on-secondary-fixed-variant": "#004f53", "on-surface-variant": "#bccbb9", "on-primary-container": "#004118", "on-tertiary-fixed-variant": "#6700b5", "surface-container": "#1c1f29", "on-error-container": "#ffdad6", "on-tertiary-fixed": "#2c0051", "secondary-fixed": "#6ff6ff", "on-secondary": "#00373a", "error-container": "#93000a", "secondary-container": "#00f1fd", "surface-bright": "#353943", "surface-tint": "#53e076", "surface-container-high": "#262a34", "error": "#ffb4ab", "inverse-on-surface": "#2c303a", "on-primary-fixed": "#002108", "surface": "#0f131c", "on-primary": "#003914", "secondary-fixed-dim": "#00dce6", "tertiary": "#dcb8ff", "outline": "#869585", "on-secondary-fixed": "#002022", "surface-dim": "#0f131c", "secondary": "#dcfdff", "surface-container-lowest": "#0a0e17", "inverse-surface": "#dfe2ef", "on-error": "#690005", "tertiary-fixed-dim": "#dcb8ff", "surface-container-low": "#181b25", "background": "#0f131c", "tertiary-container": "#c186ff", "primary-fixed": "#72fe8f", "surface-variant": "#31353f", "tertiary-fixed": "#efdbff", "primary-container": "#1db954", "on-surface": "#dfe2ef", "on-tertiary-container": "#530092", "on-tertiary": "#480081", "inverse-primary": "#006e2d", "primary": "#53e076" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-md": "1.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-xl": "2rem", "space-lg": "1.25rem", "space-md": "0.75rem", "gutter": "1rem", "margin-lg": "2rem", "gutter-lg": "1.5rem", "margin": "1rem" }, "fontFamily": { "headline-lg-mobile": [ "Geist" ], "label-code": [ "JetBrains Mono" ], "display-mobile": [ "Geist" ], "headline-md": [ "Geist" ], "body-sm": [ "Geist" ], "headline-lg": [ "Geist" ], "headline-sm": [ "Geist" ], "metric-display": [ "JetBrains Mono" ], "metric-md": [ "JetBrains Mono" ], "metric-sm": [ "JetBrains Mono" ], "display": [ "Geist" ], "body-md": [ "Geist" ], "body-lg": [ "Geist" ] }, "fontSize": { "headline-lg-mobile": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-code": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" } ], "display-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "600" } ], "headline-md": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "500" } ], "body-sm": [ "12px", { "lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "600" } ], "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "500" } ], "metric-display": [ "32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "metric-md": [ "20px", { "lineHeight": "26px", "letterSpacing": "-0.015em", "fontWeight": "500" } ], "metric-sm": [ "13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" } ], "display": [ "48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "600" } ], "body-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "400" } ], "body-lg": [ "16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" } ] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="SoundScope Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VfFWcOObDCwaJTlPB7qd1Sc5eIpqJSQVFLUvsErD0kcL2fWgNEgp8pesr_QQPFliG3Wsl4FOlzHmT14fDu0zNShiGJbpU8-67OaLiduNJ892GpiCvOE1YbpF0qt21my3_vQod2QZK0Z56uvYLmW8iNZIumW6pbn7ZvITtLYnSqi9CkTRlhq1tYnsMUP1KJGNXBf_eLRYF0JjUVRDLznaFOcby-dtWLyyRZyB4H2opqF3lE_3eECaNXKngX"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">SoundScope</span></div><span class="font-label-code text-label-code text-primary bg-surface-container-low px-space-xs py-0.5 rounded">v2.4 Live</span></div><div class="px-space-md pt-space-md"><div class="px-space-sm pb-space-xs"><span class="font-label-code text-label-code uppercase text-outline tracking-wider">Intelligence Suite</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-surface-container-high text-primary font-body-md"><a class="flex items-center gap-space-md px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-metric-md">dashboard</span><span class="font-body-md text-body-md">Overview</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-sm py-2 rounded transition-colors bg-surface-container-high text-primary font-body-md" data-path="music-dna" href="#"><span class="material-symbols-outlined text-metric-md">graphic_eq</span><span class="font-body-md text-body-md">Music DNA</span></a><a class="flex items-center gap-space-md px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="mood-explorer" href="#"><span class="material-symbols-outlined text-metric-md">bubble_chart</span><span class="font-body-md text-body-md">Mood Explorer</span></a><a class="flex items-center gap-space-md px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="playlist-generator" href="#"><span class="material-symbols-outlined text-metric-md">auto_fix_high</span><span class="font-body-md text-body-md">Playlist Generator</span></a><a class="flex items-center gap-space-md px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="music-analytics" href="#"><span class="material-symbols-outlined text-metric-md">insights</span><span class="font-body-md text-body-md">Music Analytics</span></a><a class="flex items-center gap-space-md px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="discover" href="#"><span class="material-symbols-outlined text-metric-md">library_music</span><span class="font-body-md text-body-md">Discover</span></a><a class="flex items-center gap-space-md px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-metric-md">tune</span><span class="font-body-md text-body-md">Settings</span></a></nav></div></div><div class="p-space-md flex flex-col gap-space-sm"><div class="flex items-center justify-between px-space-sm py-1.5 rounded bg-surface-container-low"><div class="flex items-center gap-space-xs"><span class="h-2 w-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-code text-label-code text-on-surface-variant">Spotify 100k Tracks</span></div><span class="font-label-code text-label-code text-primary">Ready</span></div><div class="flex items-center gap-space-sm p-space-sm rounded bg-surface-container-low"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1I_C-o27xglSvM9QQcVGH5IBrYk3LwYk-zRqdH3a8FRcLd6eJoO5SKFNYHgPV9b2lSTqwQC3Btq_skqMPq8M93JKYuG-cFURIp-yBYPFD5wnnIh0-yamvNmH2GWIIBP3iF4QjLMQapJjqeoUA9yQ8LjhO2Sslr_9REb9wnqdIy0qQhxtLQK8imyBHCZXS4FNj4pcuTUtM_raHQcGY7h4WSv7tmN3SLbeJ5ToxA11RgOw-Vjs2OKci9g"/><div class="flex-1 min-w-0"><div class="flex items-center justify-between"><span class="font-body-sm text-body-sm text-on-surface truncate">Alex Vance</span><span class="font-label-code text-label-code px-1 rounded bg-tertiary-container text-on-tertiary-container uppercase">Pro</span></div><span class="font-label-code text-label-code text-outline truncate block">Audio Data Scientist</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-gutter-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-lg flex-1 max-w-xl"><div class="relative w-full max-w-md"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-metric-sm text-outline">search</span><input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-body-sm pl-9 pr-12 py-1.5 rounded focus:outline-none focus:ring-1 focus:ring-secondary-fixed" placeholder="Search songs, artists, or genres..." type="text"/><span class="absolute right-2.5 top-1/2 -translate-y-1/2 font-label-code text-label-code text-outline bg-surface-container px-1 py-0.5 rounded">⌘K</span></div><div class="hidden xl:flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1 rounded text-on-surface"><span class="material-symbols-outlined text-metric-sm text-secondary-fixed-dim">dataset</span><span class="font-label-code text-label-code">Spotify Global Audio Features 2024</span><span class="material-symbols-outlined text-metric-sm text-outline">expand_more</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-1 px-space-sm py-1 rounded bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-code text-label-code transition-colors"><span class="material-symbols-outlined text-metric-sm">filter_list</span><span>Filter</span></button><div class="flex items-center gap-1.5 px-space-sm py-1 rounded bg-surface-container-low"><span class="h-1.5 w-1.5 rounded-full bg-primary"></span><span class="font-label-code text-label-code text-on-surface-variant">60 FPS WebGL</span></div><button class="p-1.5 rounded bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-metric-sm">dark_mode</span></button><button class="relative p-1.5 rounded bg-surface-container-low text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-metric-sm">notifications</span><span class="absolute top-1 right-1 w-1.5 h-1.5 bg-primary rounded-full"></span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1I_C-o27xglSvM9QQcVGH5IBrYk3LwYk-zRqdH3a8FRcLd6eJoO5SKFNYHgPV9b2lSTqwQC3Btq_skqMPq8M93JKYuG-cFURIp-yBYPFD5wnnIh0-yamvNmH2GWIIBP3iF4QjLMQapJjqeoUA9yQ8LjhO2Sslr_9REb9wnqdIy0qQhxtLQK8imyBHCZXS4FNj4pcuTUtM_raHQcGY7h4WSv7tmN3SLbeJ5ToxA11RgOw-Vjs2OKci9g"/></div></header><main class="relative pt-16 bg-surface min-h-screen w-full px-gutter-lg py-margin-md"><div class="flex flex-col w-full">
+<!-- Dynamic Audio Telemetry Radial Blur Backdrop -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-20 right-10 w-80 h-80 bg-secondary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Header & Interactive Track Selection Engine -->
+<div class="flex flex-col gap-space-md mb-margin-lg">
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-code text-label-code uppercase text-primary tracking-widest">Acoustic Vector Profiler</span>
+<span class="text-outline text-body-sm font-label-code">/</span>
+<span class="font-label-code text-label-code text-outline tracking-wider">REF: TRK-89240-M83</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Music DNA Analyzer</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1">
+            Deep multi-dimensional acoustic profiling &amp; mathematical song similarity matching across high-resolution latent spectral features.
+          </p>
+</div>
+<!-- Quick Telemetry Action Strip -->
+<div class="flex items-center gap-space-sm self-start xl:self-auto">
+<div class="bg-surface-container px-space-md py-space-xs rounded flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-metric-sm">model_training</span>
+<div class="flex flex-col">
+<span class="font-label-code text-label-code text-outline uppercase">Vector Dimension</span>
+<span class="font-metric-sm text-metric-sm text-on-surface font-semibold">7D Latent Space</span>
+</div>
+</div>
+<div class="bg-surface-container px-space-md py-space-xs rounded flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-metric-sm">speed</span>
+<div class="flex flex-col">
+<span class="font-label-code text-label-code text-outline uppercase">Cosine Precision</span>
+<span class="font-metric-sm text-metric-sm text-primary font-semibold">Float32 Exact</span>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-on-primary font-body-md text-body-md px-space-md py-2 rounded flex items-center gap-space-xs transition-colors shadow-md">
+<span class="material-symbols-outlined text-metric-sm">share</span>
+<span>Export DNA</span>
+</button>
+</div>
+</div>
+<!-- Real-time Song Selector Search Matrix -->
+<div class="relative w-full mt-space-sm">
+<div class="relative flex items-center bg-surface-container-lowest rounded overflow-hidden p-1 shadow-lg">
+<div class="flex items-center pl-space-md text-primary">
+<span class="material-symbols-outlined text-metric-md">radar</span>
+</div>
+<input class="w-full bg-transparent text-on-surface placeholder:text-outline font-body-lg text-body-lg px-space-md py-2.5 focus:outline-none" id="dna-search" placeholder="Search track to inspect DNA (e.g. Midnight City, Blinding Lights, Resonator)..." type="text" value="Midnight City — M83"/>
+<div class="flex items-center gap-space-xs pr-space-sm">
+<span class="font-label-code text-label-code text-secondary-container bg-surface-container px-2 py-1 rounded hidden md:inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-label-code">check_circle</span> LOADED
+            </span>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface px-space-md py-2 rounded font-body-sm text-body-sm flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-metric-sm">search</span>
+<span>Inspect</span>
+</button>
+</div>
+</div>
+<!-- Active Selected Track Pill Bar -->
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-space-xs mt-space-sm px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-code text-label-code uppercase text-outline">Selected Track:</span>
+<span class="font-body-md text-body-md text-primary font-semibold">Midnight City</span>
+<span class="text-outline font-body-sm">•</span>
+<span class="font-body-md text-body-md text-on-surface-variant">M83</span>
+</div>
+<span class="hidden sm:inline text-surface-container-highest">|</span>
+<div class="flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant">
+<span>Genre: <strong class="text-on-surface font-normal">Synthpop / Electronic</strong></span>
+<span>•</span>
+<span>Key: <strong class="text-secondary-fixed font-normal">B Major</strong></span>
+<span>•</span>
+<span>Released: <strong class="text-on-surface font-normal">2011</strong></span>
+<span>•</span>
+<span>Popularity: <strong class="text-primary font-normal">89 / 100</strong></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Master Showcase Grid: Hero Album Showcase & Musical Personality -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg mb-margin-lg">
+<!-- Track Visual Card & Transport Module -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between relative shadow-xl">
+<div class="relative flex flex-col sm:flex-row items-center sm:items-start gap-space-lg">
+<!-- Vinyl Mockup Art Frame -->
+<div class="relative group shrink-0 w-44 h-44 sm:w-48 sm:h-48">
+<div class="absolute -right-4 top-2 w-40 h-40 sm:w-44 sm:h-44 rounded-full bg-surface-container-highest animate-spin" style="animation-duration: 18s;">
+<div class="w-full h-full rounded-full border-4 border-surface-container flex items-center justify-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest flex items-center justify-center">
+<div class="w-6 h-6 rounded-full bg-primary/80"></div>
+</div>
+</div>
+</div>
+<div class="relative w-full h-full rounded-lg overflow-hidden shadow-2xl bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Futuristic dark synthwave album art cover for Midnight City by M83, glowing neon cyan and emerald tones against an obsidian night cityscape, sharp geometric light rays, premium vinyl record aesthetic, cinematic high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvvK_7fWm7bQlNLSvpzHGNmJq98sxp28WqHVRbregA84OWqnnJsHgJsRiqQ_BrzjMPFyvMb4yvSyzpXtM7ixgha3aQkbeVX3IcK5cBl7LDL-oHluj-g10pGZYFZIiXhTsDjbSjaVk4ZLe-_Vkia6XVC1qNlv_3Xvtymu3TwX79onvGH5n8Zg_pN_HWYwzcYoL4mr-VGkr1YHFF4KPAiWXsIuM-ubqn_TsixdVOw8wpTbBiLACGlFjoVw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-2 left-2 flex items-center gap-1 bg-surface-container-lowest/80 backdrop-blur-md px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-primary text-metric-sm">equalizer</span>
+<span class="font-label-code text-label-code text-primary">LOSSLESS 24b</span>
+</div>
+</div>
+</div>
+<!-- Metadata & Playback Scrub Hub -->
+<div class="flex flex-col flex-1 min-w-0 w-full">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-secondary-fixed bg-surface-container px-space-xs py-0.5 rounded uppercase">Master Analysis</span>
+<span class="font-label-code text-label-code text-primary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                ACTIVE INSPECTION
+              </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-space-xs truncate">Midnight City</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant truncate">M83</p>
+<p class="font-body-sm text-body-sm text-outline mt-0.5 truncate">Hurry Up, We're Dreaming</p>
+<!-- Mini Audio Scrubber & Waveform Mock -->
+<div class="mt-space-md flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-code text-label-code text-outline">
+<span class="text-primary font-semibold">01:42</span>
+<span>04:03</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden relative cursor-pointer group">
+<div class="h-full bg-gradient-to-r from-primary to-secondary-fixed w-[42%] rounded-full relative">
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-on-surface rounded-full shadow-md group-hover:scale-125 transition-transform"></div>
+</div>
+</div>
+</div>
+<!-- Transport Control Bar -->
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<div class="flex items-center gap-space-xs">
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-metric-sm">fast_rewind</span>
+</button>
+<button class="w-9 h-9 rounded bg-primary hover:bg-primary/90 text-on-primary flex items-center justify-center transition-colors shadow-md">
+<span class="material-symbols-outlined text-metric-md" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-metric-sm">fast_forward</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors" title="Spectral Loop">
+<span class="material-symbols-outlined text-metric-sm text-outline hover:text-on-surface">repeat</span>
+</button>
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors" title="Bookmark Vector">
+<span class="material-symbols-outlined text-metric-sm text-outline hover:text-on-surface">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Real-time Track Core Telemetry Footer Ribbon -->
+<div class="grid grid-cols-5 gap-2 mt-space-lg pt-space-md bg-surface-container rounded-lg p-space-sm text-center">
+<div>
+<span class="font-label-code text-label-code uppercase text-outline block">Key</span>
+<span class="font-metric-sm text-metric-sm text-on-surface font-semibold">B Maj</span>
+</div>
+<div>
+<span class="font-label-code text-label-code uppercase text-outline block">Tempo</span>
+<span class="font-metric-sm text-metric-sm text-on-surface font-semibold">105.0</span>
+</div>
+<div>
+<span class="font-label-code text-label-code uppercase text-outline block">Meter</span>
+<span class="font-metric-sm text-metric-sm text-on-surface font-semibold">4 / 4</span>
+</div>
+<div>
+<span class="font-label-code text-label-code uppercase text-outline block">Length</span>
+<span class="font-metric-sm text-metric-sm text-on-surface font-semibold">4m 03s</span>
+</div>
+<div>
+<span class="font-label-code text-label-code uppercase text-outline block">Gain</span>
+<span class="font-metric-sm text-metric-sm text-secondary-fixed font-semibold">-5.2 dB</span>
+</div>
+</div>
+</div>
+<!-- Musical Personality & AI Neural Profiling Badge Card -->
+<div class="lg:col-span-7 bg-surface-container-low rounded-xl p-space-lg flex flex-col justify-between shadow-xl relative overflow-hidden">
+<div class="flex flex-col gap-space-md">
+<!-- Badges & Personality Hierarchy -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="bg-primary/15 text-primary px-space-md py-1 rounded font-body-sm text-body-sm font-semibold flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-metric-sm">psychology</span>
+                Happy &amp; Energetic (Euphoric Synthwave)
+              </span>
+<span class="bg-surface-container-highest text-secondary-fixed px-space-sm py-1 rounded font-label-code text-label-code uppercase">
+                Vector Class: High Valence
+              </span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-code text-label-code">
+<span class="material-symbols-outlined text-label-code text-primary">verified</span>
+<span>Model Confidence: 99.4%</span>
+</div>
+</div>
+<!-- Semantic Vector Summary Tag Strip -->
+<div class="bg-surface-container-lowest p-space-sm rounded flex flex-wrap items-center gap-x-space-md gap-y-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-code text-label-code text-on-surface">High Energy (0.86)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="font-label-code text-label-code text-on-surface">High Valence (0.71)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-code text-label-code text-on-surface">Mid Danceability (0.70)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label-code text-label-code text-on-surface">Synthetic Texture</span>
+</div>
+</div>
+<!-- Human-readable AI Acoustic Interpretation -->
+<div class="relative bg-surface-container rounded-lg p-space-md">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="material-symbols-outlined text-metric-md text-primary">auto_awesome</span>
+<span class="font-label-code text-label-code uppercase tracking-wider text-on-surface-variant font-semibold">SoundScope Neural Audio Deconstruction</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+              “Midnight City delivers an explosive acoustic profile characterized by blistering synth resonance <span class="text-primary font-semibold">(Energy 0.86)</span> paired with uplifting melodic valence <span class="text-secondary-fixed font-semibold">(0.71)</span>. Low acousticness <span class="text-outline font-semibold">(0.04)</span> and high synthetic density create an expansive, stadium-filling euphoria ideal for peak nocturnal stimulation.”
+            </p>
+</div>
+<!-- Micro Insights Matrix -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm mt-space-xs">
+<div class="bg-surface-container-lowest p-space-sm rounded">
+<span class="font-label-code text-label-code text-outline uppercase block">Dynamic Range</span>
+<span class="font-metric-md text-metric-md text-on-surface font-semibold">14.8 LUFS</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Pumping sidechain compression</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded">
+<span class="font-label-code text-label-code text-outline uppercase block">Harmonic Weight</span>
+<span class="font-metric-md text-metric-md text-primary font-semibold">Major Dominant</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">High optimism tonal center</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded">
+<span class="font-label-code text-label-code text-outline uppercase block">Club &amp; Radio Fit</span>
+<span class="font-metric-md text-metric-md text-secondary-fixed font-semibold">94 / 100</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Peak-hour festival affinity</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs font-label-code text-label-code text-outline">
+<span>SOURCE: SPOTIFY WEB API CORPUS V2</span>
+<span>CALCULATED VIA EUCLIDEAN CENTROID</span>
+</div>
+</div>
+</div>
+<!-- Central Section: 7-Axis DNA Radar Visualization & Precision Characteristic Breakdown -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-lg mb-margin-lg">
+<!-- Interactive Audio Characteristics Breakdown Meters -->
+<div class="xl:col-span-6 bg-surface-container-lowest rounded-xl p-space-lg shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<span class="font-label-code text-label-code uppercase text-primary tracking-wider">Metric Matrix</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Audio Feature Vectors</h3>
+</div>
+<span class="font-label-code text-label-code bg-surface-container px-2 py-1 rounded text-outline">
+              Scale 0.00 – 1.00
+            </span>
+</div>
+<!-- List of 7 high precision feature meters with Spotify definitions -->
+<div class="space-y-space-md">
+<!-- 1. Energy -->
+<div class="group">
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary shadow-sm"></span>
+<span class="text-on-surface font-semibold">Energy</span>
+<span class="font-label-code text-label-code text-outline">(Drive &amp; Intensity)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-code text-label-code text-primary font-bold">0.86</span>
+<span class="font-label-code text-label-code text-outline">/ 1.00</span>
+</div>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden relative">
+<div class="h-full bg-primary rounded-full transition-all duration-700" style="width: 86%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-outline group-hover:text-on-surface-variant transition-colors mt-0.5">
+                Spotify descriptor: Perceptual measure of dynamic intensity, loud timbral density, and rhythm speed.
+              </p>
+</div>
+<!-- 2. Valence -->
+<div class="group">
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container shadow-sm"></span>
+<span class="text-on-surface font-semibold">Valence</span>
+<span class="font-label-code text-label-code text-outline">(Positivity &amp; Cheer)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-code text-label-code text-secondary-container font-bold">0.71</span>
+<span class="font-label-code text-label-code text-outline">/ 1.00</span>
+</div>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden relative">
+<div class="h-full bg-secondary-container rounded-full transition-all duration-700" style="width: 71%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-outline group-hover:text-on-surface-variant transition-colors mt-0.5">
+                Musical positiveness conveyed by track: High valence sounds happy/euphoric; low sounds melancholic.
+              </p>
+</div>
+<!-- 3. Danceability -->
+<div class="group">
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container shadow-sm"></span>
+<span class="text-on-surface font-semibold">Danceability</span>
+<span class="font-label-code text-label-code text-outline">(Groove &amp; Regularity)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-code text-label-code text-tertiary font-bold">0.70</span>
+<span class="font-label-code text-label-code text-outline">/ 1.00</span>
+</div>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden relative">
+<div class="h-full bg-tertiary-container rounded-full transition-all duration-700" style="width: 70%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-outline group-hover:text-on-surface-variant transition-colors mt-0.5">
+                Evaluates tempo consistency, beat strength, rhythm stability, and overall physical movement suitability.
+              </p>
+</div>
+<!-- 4. Acousticness -->
+<div class="group">
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-error shadow-sm"></span>
+<span class="text-on-surface font-semibold">Acousticness</span>
+<span class="font-label-code text-label-code text-outline">(Natural vs Electric)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-code text-label-code text-error font-bold">0.04</span>
+<span class="font-label-code text-label-code text-outline">/ 1.00</span>
+</div>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden relative">
+<div class="h-full bg-error rounded-full transition-all duration-700" style="width: 4%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-outline group-hover:text-on-surface-variant transition-colors mt-0.5">
+                Confidence threshold measuring whether the audio relies solely on natural non-electric instruments.
+              </p>
+</div>
+<!-- 5. Instrumentalness -->
+<div class="group">
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed shadow-sm"></span>
+<span class="text-on-surface font-semibold">Instrumentalness</span>
+<span class="font-label-code text-label-code text-outline">(Vocal Content Ratio)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-code text-label-code text-secondary-fixed font-bold">0.12</span>
+<span class="font-label-code text-label-code text-outline">/ 1.00</span>
+</div>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden relative">
+<div class="h-full bg-secondary-fixed rounded-full transition-all duration-700" style="width: 12%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-outline group-hover:text-on-surface-variant transition-colors mt-0.5">
+                Detects absence of sung vocals. Rap or spoken utterances register as high speechiness, not instrumental.
+              </p>
+</div>
+<!-- 6. Speechiness -->
+<div class="group">
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed shadow-sm"></span>
+<span class="text-on-surface font-semibold">Speechiness</span>
+<span class="font-label-code text-label-code text-outline">(Spoken Word Ratio)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-code text-label-code text-primary-fixed font-bold">0.05</span>
+<span class="font-label-code text-label-code text-outline">/ 1.00</span>
+</div>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden relative">
+<div class="h-full bg-primary-fixed rounded-full transition-all duration-700" style="width: 5%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-outline group-hover:text-on-surface-variant transition-colors mt-0.5">
+                Measures presence of spoken words. Values below 0.33 typically represent predominantly music tracks.
+              </p>
+</div>
+<!-- 7. Liveness -->
+<div class="group">
+<div class="flex items-center justify-between text-body-sm font-body-sm mb-1">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim shadow-sm"></span>
+<span class="text-on-surface font-semibold">Liveness</span>
+<span class="font-label-code text-label-code text-outline">(Audience &amp; Reverb)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-code text-label-code text-tertiary-fixed-dim font-bold">0.18</span>
+<span class="font-label-code text-label-code text-outline">/ 1.00</span>
+</div>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden relative">
+<div class="h-full bg-tertiary-fixed-dim rounded-full transition-all duration-700" style="width: 18%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-outline group-hover:text-on-surface-variant transition-colors mt-0.5">
+                Detects presence of audience cheer or ambient room acoustics indicating a live stage performance.
+              </p>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container rounded p-space-sm flex items-center justify-between">
+<span class="font-label-code text-label-code text-outline">Mean Feature Saturation:</span>
+<span class="font-metric-sm text-metric-sm text-primary font-semibold">0.380 Composite</span>
+</div>
+</div>
+<!-- Central 7-Axis Glowing Radar Chart Showcase -->
+<div class="xl:col-span-6 bg-surface-container-low rounded-xl p-space-lg shadow-xl flex flex-col justify-between">
+<div>
+<!-- Radar Header & Toggle Controls -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<span class="font-label-code text-label-code uppercase text-secondary-fixed tracking-wider">Spatial Geometry</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Music DNA Polygon</h3>
+</div>
+<!-- Quick View Toggle Buttons -->
+<div class="inline-flex p-1 bg-surface-container-lowest rounded">
+<button class="px-space-sm py-1 rounded bg-surface-container text-primary font-label-code text-label-code font-semibold transition-colors" id="toggle-genre">
+                Vs Genre Avg
+              </button>
+<button class="px-space-sm py-1 rounded text-on-surface-variant hover:text-on-surface font-label-code text-label-code transition-colors" id="toggle-track">
+                Vs 2nd Track
+              </button>
+</div>
+</div>
+<!-- Radar Chart Visual Graphic -->
+<div class="relative w-full aspect-square max-w-md mx-auto flex items-center justify-center py-space-xs">
+<svg class="w-full h-full overflow-visible" viewbox="0 0 400 400">
+<defs>
+<!-- Glowing polygon gradient for Midnight City -->
+<radialgradient cx="50%" cy="50%" id="emeraldAura" r="50%">
+<stop offset="0%" stop-color="#53e076" stop-opacity="0.45"></stop>
+<stop offset="70%" stop-color="#53e076" stop-opacity="0.15"></stop>
+<stop offset="100%" stop-color="#53e076" stop-opacity="0.0"></stop>
+</radialgradient>
+<filter height="140%" id="vertexGlow" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="3"></fegaussianblur>
+<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
+</filter>
+</defs>
+<!-- Concentric 7-gon Axis Rings (0.2, 0.4, 0.6, 0.8, 1.0) -->
+<!-- Center is 200, 200, Radius max = 140 -->
+<!-- Ring 1 (100%) -->
+<polygon fill="none" points="200,60 323,100 337,235 231,337 169,337 63,235 77,100" stroke="#262a34" stroke-width="1"></polygon>
+<!-- Ring 2 (80%) -->
+<polygon fill="none" points="200,88 298,120 310,228 225,310 175,310 90,228 102,120" stroke="#1c1f29" stroke-dasharray="2,2" stroke-width="1"></polygon>
+<!-- Ring 3 (60%) -->
+<polygon fill="none" points="200,116 274,140 282,221 219,282 181,282 118,221 126,140" stroke="#1c1f29" stroke-width="1"></polygon>
+<!-- Ring 4 (40%) -->
+<polygon fill="none" points="200,144 249,160 255,214 212,255 188,255 145,214 151,160" stroke="#1c1f29" stroke-dasharray="2,2" stroke-width="1"></polygon>
+<!-- Ring 5 (20%) -->
+<polygon fill="none" points="200,172 225,180 227,207 206,227 194,227 173,207 175,180" stroke="#1c1f29" stroke-width="1"></polygon>
+<!-- 7 Radial Axis Spokes -->
+<!-- 0: Energy (Top: 0 deg) -->
+<line stroke="#31353f" stroke-width="1" x1="200" x2="200" y1="200" y2="60"></line>
+<!-- 1: Valence (~51.4 deg) -->
+<line stroke="#31353f" stroke-width="1" x1="200" x2="323" y1="200" y2="100"></line>
+<!-- 2: Danceability (~102.8 deg) -->
+<line stroke="#31353f" stroke-width="1" x1="200" x2="337" y1="200" y2="235"></line>
+<!-- 3: Acousticness (~154.3 deg) -->
+<line stroke="#31353f" stroke-width="1" x1="200" x2="231" y1="200" y2="337"></line>
+<!-- 4: Instrumentalness (~205.7 deg) -->
+<line stroke="#31353f" stroke-width="1" x1="200" x2="169" y1="200" y2="337"></line>
+<!-- 5: Speechiness (~257.1 deg) -->
+<line stroke="#31353f" stroke-width="1" x1="200" x2="63" y1="200" y2="235"></line>
+<!-- 6: Liveness (~308.6 deg) -->
+<line stroke="#31353f" stroke-width="1" x1="200" x2="77" y1="200" y2="100"></line>
+<!-- Benchmark Polygon: Synthpop Genre Average (Dashed Cyan) -->
+<!-- Approx values: Energy: 0.68, Valence: 0.59, Danceability: 0.65, Acousticness: 0.18, Instrumentalness: 0.22, Speechiness: 0.08, Liveness: 0.15 -->
+<polygon fill="#00f1fd" fill-opacity="0.06" points="200,105 287,141 289,223 206,225 193,230 178,206 181,185" stroke="#00dce6" stroke-dasharray="4,4" stroke-width="1.5"></polygon>
+<!-- Active Polygon: Midnight City (Glowing Emerald Solid & Vertices) -->
+<!-- Exact vector coordinates scaled to radius 140 -->
+<!-- Energy: 0.86 -> y: 80 -->
+<!-- Valence: 0.71 -> x: 287, y: 129 -->
+<!-- Danceability: 0.70 -> x: 296, y: 224 -->
+<!-- Acousticness: 0.04 -> x: 201, y: 205 -->
+<!-- Instrumentalness: 0.12 -> x: 196, y: 216 -->
+<!-- Speechiness: 0.05 -> x: 193, y: 202 -->
+<!-- Liveness: 0.18 -> x: 178, y: 182 -->
+<polygon fill="url(#emeraldAura)" points="200,80 287,129 296,224 201,205 196,216 193,202 178,182" stroke="#53e076" stroke-width="2.5"></polygon>
+<!-- Midnight City Vertices with Neon Bloom -->
+<circle cx="200" cy="80" fill="#53e076" filter="url(#vertexGlow)" r="4.5"></circle>
+<circle cx="287" cy="129" fill="#53e076" filter="url(#vertexGlow)" r="4.5"></circle>
+<circle cx="296" cy="224" fill="#53e076" filter="url(#vertexGlow)" r="4.5"></circle>
+<circle cx="201" cy="205" fill="#53e076" r="4.5"></circle>
+<circle cx="196" cy="216" fill="#53e076" r="4.5"></circle>
+<circle cx="193" cy="202" fill="#53e076" r="4.5"></circle>
+<circle cx="178" cy="182" fill="#53e076" r="4.5"></circle>
+<!-- Vertex Label Typography in SVG -->
+<text fill="#dfe2ef" font-family="JetBrains Mono" font-size="11" font-weight="600" text-anchor="middle" x="200" y="48">ENERGY (0.86)</text>
+<text fill="#dfe2ef" font-family="JetBrains Mono" font-size="11" text-anchor="start" x="345" y="98">VALENCE (0.71)</text>
+<text fill="#dfe2ef" font-family="JetBrains Mono" font-size="11" text-anchor="start" x="350" y="240">DANCE (0.70)</text>
+<text fill="#869585" font-family="JetBrains Mono" font-size="10" text-anchor="start" x="238" y="355">ACOUSTIC (0.04)</text>
+<text fill="#869585" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="162" y="355">INSTRUM (0.12)</text>
+<text fill="#869585" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="45" y="240">SPEECH (0.05)</text>
+<text fill="#dfe2ef" font-family="JetBrains Mono" font-size="11" text-anchor="end" x="55" y="98">LIVENESS (0.18)</text>
+</svg>
+</div>
+<!-- Radar Legend & Metric Variance Strip -->
+<div class="mt-space-sm grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="flex items-center gap-space-sm bg-surface-container rounded p-space-sm">
+<span class="w-3 h-3 rounded-full bg-primary ring-2 ring-primary/40"></span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Midnight City (M83)</span>
+<span class="font-label-code text-label-code text-primary">Primary Target Audio Profile</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container rounded p-space-sm">
+<span class="w-3 h-3 rounded-full bg-secondary-fixed border-2 border-dashed border-secondary-container"></span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Synthpop Benchmark</span>
+<span class="font-label-code text-label-code text-secondary-fixed-dim">Genre Standard Median (N=14,280)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Delta Variance Metric Feedbacks -->
+<div class="mt-space-md pt-space-sm bg-surface-container-highest/50 rounded-lg p-space-sm flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs font-label-code text-label-code">
+<span class="text-primary font-bold">+18.0%</span>
+<span class="text-outline">Energy vs Synthpop</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-code text-label-code">
+<span class="text-secondary-fixed font-bold">+12.0%</span>
+<span class="text-outline">Valence vs Synthpop</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-code text-label-code">
+<span class="text-tertiary font-bold">+5.0%</span>
+<span class="text-outline">Danceability Delta</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-code text-label-code">
+<span class="text-error font-bold">-14.0%</span>
+<span class="text-outline">Acousticness Offset</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Similar DNA Matches: Latent Cosine Metric Recommendations -->
+<div class="flex flex-col gap-space-md mb-margin-md">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-xs">
+<div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="material-symbols-outlined text-primary text-metric-sm">hub</span>
+<span class="font-label-code text-label-code uppercase text-primary tracking-widest">Mathematical Proximity</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Songs With Similar DNA</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Ranked by multi-dimensional cosine similarity across 7 normalized acoustic feature vectors.
+          </p>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-code text-label-code text-outline bg-surface-container px-2.5 py-1 rounded">
+            Metric: Cosine θ &gt; 0.90
+          </span>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm px-space-md py-1 rounded flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-label-code">tune</span>
+<span>Refine Bounds</span>
+</button>
+</div>
+</div>
+<!-- 4 Responsive Similar Track Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter">
+<!-- Match 1: Outro — M83 (96.4%) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-lg flex flex-col justify-between group hover:bg-surface-container-low transition-colors">
+<div>
+<!-- Header with Match Ring & Mini Art -->
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-12 h-12 rounded object-cover shrink-0 bg-surface-container" data-alt="Abstract album art cover for Outro by M83, dark dramatic ambient space aesthetics with glowing nebulas and soft cyan starlight, minimalist typography, high contrast dark theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuzfR848BdLfe47ciI05Y9bu2EYu4b4IeijVyu1tTT5YvtbzsPjxtwN9aips1rkP3qh4bKrJudupo10bE_jrUdvyl8rW-MxhlZzKDAf_4DI8rLfeJgOCX74zEktHJo1e866ShgYOmvl2yuCIxcHhuJSiHGlKnyaX5pcaw-HUL2M6V8luDK9CvZG5M4h2Q7CWg4t0K5d8bXsTx33Oku5MppFlpIcugXv-SGMtg-t4j6adxnvnvQDSsl3w"/>
+<div class="min-w-0">
+<h4 class="font-body-md text-body-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Outro</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">M83</p>
+<span class="font-label-code text-label-code text-outline truncate block">Post-Rock / Ambient</span>
+</div>
+</div>
+<!-- Similarity Percentage Radial Mini Badge -->
+<div class="relative w-12 h-12 flex items-center justify-center shrink-0">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#262a34" stroke-width="3"></circle>
+<circle cx="18" cy="18" fill="none" r="14" stroke="#53e076" stroke-dasharray="88, 100" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<span class="absolute font-label-code text-label-code font-bold text-primary">96.4%</span>
+</div>
+</div>
+<!-- Mini DNA Vector Indicators -->
+<div class="grid grid-cols-2 gap-space-xs bg-surface-container rounded p-space-xs font-label-code text-label-code mb-space-md">
+<div class="flex items-center justify-between px-1">
+<span class="text-outline">Energy:</span>
+<span class="text-primary font-semibold">0.82</span>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="text-outline">Valence:</span>
+<span class="text-secondary-fixed font-semibold">0.68</span>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="text-outline">Dance:</span>
+<span class="text-on-surface">0.42</span>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="text-outline">Tempo:</span>
+<span class="text-on-surface">144 BPM</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-between pt-space-xs gap-space-xs">
+<button class="flex-1 bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm py-1.5 px-space-xs rounded flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-metric-sm text-primary">playlist_add</span>
+<span>+ Add to Playlist</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-high text-outline hover:text-on-surface p-1.5 rounded transition-colors" title="Inspect DNA">
+<span class="material-symbols-outlined text-metric-sm">biotech</span>
+</button>
+</div>
+</div>
+<!-- Match 2: Instant Crush — Daft Punk (94.1%) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-lg flex flex-col justify-between group hover:bg-surface-container-low transition-colors">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-12 h-12 rounded object-cover shrink-0 bg-surface-container" data-alt="Album art for Instant Crush by Daft Punk, split futuristic chrome helmet glowing against obsidian black void with gold accents, sleek retro sci-fi minimal aesthetic, pristine studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxA5BiFZJANQqCl3bf5G0DxgT0xw2RoNMsWiuLTtqon3XXptfQ0EKX5elZGSMw2zmE6ViHjoXNEIHFO_YrKMhJVZtADMafgOJac_HbcRK79RhGU4Fas6KXZ9lOuMkwas-gZcDE5KE3wVP32qeQiuSwDNnT9ja3IrUnimkcrMz9ebt3A4xlY3g1WpWBe2mkoa_hxozUB28eoV0KVPnFYqQUMboSJQmv534tp94nw5JE-heoGy-rqssZbQ"/>
+<div class="min-w-0">
+<h4 class="font-body-md text-body-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Instant Crush</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Daft Punk ft. Julian C.</p>
+<span class="font-label-code text-label-code text-outline truncate block">Synthpop / Electro</span>
+</div>
+</div>
+<!-- Match Gauge -->
+<div class="relative w-12 h-12 flex items-center justify-center shrink-0">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#262a34" stroke-width="3"></circle>
+<circle cx="18" cy="18" fill="none" r="14" stroke="#53e076" stroke-dasharray="85, 100" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<span class="absolute font-label-code text-label-code font-bold text-primary">94.1%</span>
+</div>
+</div>
+<!-- Mini DNA Vector Indicators -->
+<div class="grid grid-cols-2 gap-space-xs bg-surface-container rounded p-space-xs font-label-code text-label-code mb-space-md">
+<div class="flex items-center justify-between px-1">
+<span class="text-outline">Energy:</span>
+<span class="text-primary font-semibold">0.79</span>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="text-outline">Valence:</span>
+<span class="text-secondary-fixed font-semibold">0.74</span>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="text-outline">Dance:</span>
+<span class="text-on-surface">0.69</span>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="text-outline">Tempo:</span>
+<span class="text-on-surface">110 BPM</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs gap-space-xs">
+<button class="flex-1 bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm py-1.5 px-space-xs rounded flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-metric-sm text-primary">playlist_add</span>
+<span>+ Add to Playlist</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-high text-outline hover:text-on-surface p-1.5 rounded transition-colors" title="Inspect DNA">
+<span class="material-symbols-outlined text-metric-sm">biotech</span>
+</button>
+</div>
+</div>
+<!-- Match 3: Kids — MGMT (92.8%) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-lg flex flex-col justify-between group hover:bg-surface-container-low transition-colors">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-12 h-12 rounded object-cover shrink-0 bg-surface-container" data-alt="Psychedelic indie synthpop album cover for Kids by MGMT, surreal geometric wave patterns in vivid electric tones and dark obsidian background, 2000s indie pop visual style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7JO05rM9pt61PnZMZeVY7b_DfSUHSJzod_0QORLgCrU2hi-Vc3AiFiAa0LEz1I4DZwooN1zrcbWjZqljqx1XvJQGvKoL8ktItOwOPteHxECv8w2BlvKCvMQ5-354EKbxRyMahYK4VRZDllllXqiUd_IDG07o4kt-1-v0mS3Lla4IlAmn2AWCamfsJQF5JGd17yLg3vE0eyADybTXYMtkXgfoK2-AhWCvpYD_YOcGdoq3bRb4CcyTHvQ"/>
+<div class="min-w-0">
+<h4 class="font-body-md text-body-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Kids</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">MGMT</p>
+<span class="font-label-code text-label-code text-outline truncate block">Indietronica / Pop</span>
+</div>
+</div>
+<!-- Match Gauge -->
+<div class="relative w-12 h-12 flex items-center justify-center shrink-0">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#262a34" stroke-width="3"></circle>
+<circle cx="18" cy="18" fill="none" r="14" stroke="#00f1fd" stroke-dasharray="82, 100" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<span class="absolute font-label-code text-label-code font-bold text-secondary-fixed">92.8%</span>
+</div>
+</div>
+<!-- Mini DNA Vector Indicators -->
+<div class="grid grid-cols-2 gap-space-xs bg-surface-container rounded p-space-xs font-label-code text-label-code mb-space-md">
+<div class="flex items-center justify-between px-1">
+<span class="text-outline">Energy:</span>
+<span class="text-primary font-semibold">0.88</span>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="text-outline">Valence:</span>
+<span class="text-secondary-fixed font-semibold">0.76</span>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="text-outline">Dance:</span>
+<span class="text-on-surface">0.65</span>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="text-outline">Tempo:</span>
+<span class="text-on-surface">123 BPM</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs gap-space-xs">
+<button class="flex-1 bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm py-1.5 px-space-xs rounded flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-metric-sm text-primary">playlist_add</span>
+<span>+ Add to Playlist</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-high text-outline hover:text-on-surface p-1.5 rounded transition-colors" title="Inspect DNA">
+<span class="material-symbols-outlined text-metric-sm">biotech</span>
+</button>
+</div>
+</div>
+<!-- Match 4: Electric Feel — MGMT (91.5%) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-lg flex flex-col justify-between group hover:bg-surface-container-low transition-colors">
+<div>
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<img class="w-12 h-12 rounded object-cover shrink-0 bg-surface-container" data-alt="Electric glowing vibrant album cover art for Electric Feel by MGMT, neon lightning trails over a dark iridescent liquid landscape, bold contemporary digital artwork, album cover style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCASU3eEAm829neJmKqK1d9fjauEYQvdtVOJbHKjb3opvGsnO8-HdZZ5N5PiB2zRBbBR_yGSGsfMI9cyUmgfrQOyb2AvkqjmBYKMbjnirlJ3ukzd8FxbOcr9LHoSJYI24_pCcY14VsykXft5fU65WDkzNVPlEgaRlPlfu2hmipg5i4vOqyyHk1r565YH819LdYZiwcRQvY4EWJ5PgsK4BDITG5LmKznrV4LyTisvGJoLFOMHDYFgR5XOQ"/>
+<div class="min-w-0">
+<h4 class="font-body-md text-body-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Electric Feel</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">MGMT</p>
+<span class="font-label-code text-label-code text-outline truncate block">Psychedelic Pop / Funk</span>
+</div>
+</div>
+<!-- Match Gauge -->
+<div class="relative w-12 h-12 flex items-center justify-center shrink-0">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#262a34" stroke-width="3"></circle>
+<circle cx="18" cy="18" fill="none" r="14" stroke="#00f1fd" stroke-dasharray="80, 100" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<span class="absolute font-label-code text-label-code font-bold text-secondary-fixed">91.5%</span>
+</div>
+</div>
+<!-- Mini DNA Vector Indicators -->
+<div class="grid grid-cols-2 gap-space-xs bg-surface-container rounded p-space-xs font-label-code text-label-code mb-space-md">
+<div class="flex items-center justify-between px-1">
+<span class="text-outline">Energy:</span>
+<span class="text-primary font-semibold">0.80</span>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="text-outline">Valence:</span>
+<span class="text-secondary-fixed font-semibold">0.79</span>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="text-outline">Dance:</span>
+<span class="text-on-surface">0.76</span>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="text-outline">Tempo:</span>
+<span class="text-on-surface">103 BPM</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs gap-space-xs">
+<button class="flex-1 bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm py-1.5 px-space-xs rounded flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-metric-sm text-primary">playlist_add</span>
+<span>+ Add to Playlist</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-high text-outline hover:text-on-surface p-1.5 rounded transition-colors" title="Inspect DNA">
+<span class="material-symbols-outlined text-metric-sm">biotech</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for radar comparison toggle
+  const genreBtn = document.getElementById('toggle-genre');
+  const trackBtn = document.getElementById('toggle-track');
+
+  if (genreBtn && trackBtn) {
+    genreBtn.addEventListener('click', () => {
+      genreBtn.classList.add('bg-surface-container', 'text-primary', 'font-semibold');
+      genreBtn.classList.remove('text-on-surface-variant');
+      trackBtn.classList.remove('bg-surface-container', 'text-primary', 'font-semibold');
+      trackBtn.classList.add('text-on-surface-variant');
+    });
+
+    trackBtn.addEventListener('click', () => {
+      trackBtn.classList.add('bg-surface-container', 'text-primary', 'font-semibold');
+      trackBtn.classList.remove('text-on-surface-variant');
+      genreBtn.classList.remove('bg-surface-container', 'text-primary', 'font-semibold');
+      genreBtn.classList.add('text-on-surface-variant');
+    });
+  }
+</script></main></div></body></html>
